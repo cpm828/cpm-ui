@@ -1,0 +1,5 @@
+/build/
+/config/
+/examples/demo/
+/*.js
+/test/unit/coverage/

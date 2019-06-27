@@ -1,0 +1,273 @@
+/**
+ * 375尺寸样式定义规范
+ * 字体大小、间距、高度、行高等命名:属性首字母-属性值首字母
+ * 字体：fs-10 -> font-size:10
+ * 间距：
+ *  pt-10 -> padding-top:10
+ *  mt-10 -> margin-top:10
+ *  lh-10 -> line-height:10
+ *
+ * 按照字母顺序添加新样式
+ */
+
+@function r($px){
+	@return $px/18.75 * 1rem;
+}
+
+/* a */
+[wrap ~= ai-fs]{
+	align-items: flex-start;
+}
+
+[wrap ~= ai-c]{
+	align-items: center;
+}
+
+[wrap ~= ai-fe]{
+	align-items: flex-end;
+}
+
+/* b */
+[wrap ~= bc-fff]{
+	background-color: #fff;
+}
+[wrap ~= bc-f3f3f3]{
+	background-color: #f3f3f3;
+}
+[wrap ~= bc-4080e8]{
+	background-color: #4080e8;
+}
+
+[wrap ~= br-2]{
+	border-radius: r(2);
+}
+[wrap ~= br-50p]{
+	border-radius: 50%;
+}
+
+[wrap ~= bs-bb]{
+	box-sizing: border-box;
+}
+
+[wrap ~= b-0]{
+	bottom: 0;
+}
+
+/* c */
+[wrap ~= c-333]{
+	color: #333;
+}
+[wrap ~= c-666]{
+	color: #666;
+}
+[wrap ~= c-999]{
+	color: #999;
+}
+[wrap ~= c-fff]{
+	color: #fff;
+}
+/* d */
+[wrap ~= d-b]{
+	display: block;
+}
+[wrap ~= d-ib]{
+	display: inline-block;
+}
+
+/* e */
+
+/* f */
+[wrap ~= flex]{
+	display: flex;
+}
+[wrap ~= flex-1]{
+	flex: 1;
+}
+[wrap ~= fd-r]{
+	flex-direction: row;
+}
+[wrap ~= fd-c]{
+	flex-direction: column;
+}
+[wrap ~= f-l]{
+	float:left;
+}
+[wrap ~= fw-b]{
+	font-weight: bold;
+}
+[wrap ~= fw-b]{
+	font-weight: bold;
+}
+@for $i from 4 through 50 {
+	[wrap ~= fs-#{$i}]{
+		font-size: r($i)
+	}
+}
+/* g */
+
+/* h */
+[wrap ~= h-100p]{
+	height: 100%;
+}
+/* i */
+
+/* j */
+[wrap ~= jc-fs]{
+	justify-content: flex-start;
+}
+[wrap ~= jc-c]{
+	justify-content: center;
+}
+[wrap ~= jc-fe]{
+	justify-content: flex-end;
+}
+[wrap ~= jc-sb]{
+	justify-content: space-between;
+}
+[wrap ~= jc-sa]{
+	justify-content: space-around;
+}
+/* k */
+
+/* l */
+[wrap ~= lh-14]{
+	line-height: r(14)
+}
+[wrap ~= l-0]{
+	left: 0;
+}
+/* m */
+[wrap ~= m-0_auto]{
+	margin: 0 auto;
+}
+@for $i from 1 through 40 {
+	[wrap ~= mt-#{$i}]{
+		margin-top: r($i)
+	}
+}
+@for $i from 1 through 40 {
+	[wrap ~= mr-#{$i}]{
+		margin-right: r($i)
+	}
+}
+@for $i from 1 through 40 {
+	[wrap ~= mb-#{$i}]{
+		margin-bottom: r($i)
+	}
+}
+@for $i from 1 through 40 {
+	[wrap ~= ml-#{$i}]{
+		margin-left: r($i)
+	}
+}
+
+/* n */
+
+/* o */
+[wrap ~= o-s]{
+	overflow: scroll;
+}
+[wrap ~= o-h]{
+	overflow: hidden;
+}
+[wrap ~= oy-s]{
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+[wrap ~= ox-h]{
+	overflow-x: hidden;
+}
+
+
+/* p */
+@for $i from 1 through 50 {
+	[wrap ~= pt-#{$i}]{
+		padding-top: r($i)
+	}
+}
+@for $i from 1 through 50 {
+	[wrap ~= pr-#{$i}]{
+		padding-right: r($i)
+	}
+}
+@for $i from 1 through 50 {
+	[wrap ~= pb-#{$i}]{
+		padding-bottom: r($i)
+	}
+}
+@for $i from 1 through 50 {
+	[wrap ~= pl-#{$i}]{
+		padding-left: r($i)
+	}
+}
+[wrap ~= p-r]{
+	position: relative;
+}
+[wrap ~= p-a]{
+	position: absolute;
+}
+[wrap ~= p-f]{
+	position: fixed;
+}
+/* q */
+
+/* r */
+[wrap ~= r-0]{
+	right: 0;
+}
+/* s */
+
+/* t */
+[wrap ~= ta-l]{
+	text-align: left;
+}
+[wrap ~= ta-c]{
+	text-align: center;
+}
+[wrap ~= ta-r]{
+	text-align: right;
+}
+[wrap ~= ta-j]{
+	text-align: justify;
+}
+
+[wrap ~= to-e]{
+	text-overflow: ellipsis;
+}
+
+[wrap ~= td-u]{
+	text-decoration: underline;
+}
+
+[wrap ~= t-0]{
+	top: 0;
+}
+
+/* u */
+
+/* v */
+[wrap ~= va-m]{
+	vertical-align: middle;
+}
+/* w */
+[wrap ~= w-50p]{
+	width: 50%;
+}
+[wrap ~= w-100p]{
+	width: 100%;
+}
+
+[wrap ~= ww-bw]{
+	word-wrap: break-word;
+}
+
+[wrap ~= ws-n]{
+	white-space: nowrap;
+}
+/* x */
+
+/* y */
+
+/* z */
+
+

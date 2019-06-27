@@ -1,0 +1,15 @@
+{
+  "name": "cpm-ui",
+  "version": "1.0.0",
+  "description": "A Vue.js 2.0 UI Toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vue",
+    "UI"
+  ],
+  "author": "chenpengmin / 1019242875@qq.com",
+  "license": "ISC"
+}
