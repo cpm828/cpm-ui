@@ -126,11 +126,6 @@ a,a:active,a:hover,a:visited{
 
 #app{
 	height: 100%;
-	&.inapp{
-		.r-titlebar{
-			display: none;
-		}
-	}
 }
 
 @function r($px){

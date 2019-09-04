@@ -66,7 +66,6 @@ if (!Object.keys) {
 }
 
 /* Array.findIndex Pollyfill */
-// https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
 if (!Array.prototype.findIndex) {
     Object.defineProperty(Array.prototype, 'findIndex', {
         value: function (predicate) {
@@ -112,7 +111,6 @@ if (!Array.prototype.findIndex) {
 }
 
 /* Array.includes Pollyfill */
-// https://tc39.github.io/ecma262/#sec-array.prototype.includes
 if (!Array.prototype.includes) {
     Object.defineProperty(Array.prototype, 'includes', {
         value: function (valueToFind, fromIndex) {
