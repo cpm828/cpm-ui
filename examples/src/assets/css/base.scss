@@ -1,9 +1,112 @@
 // https://www.sass.hk/docs/
 
 /************************* $变量 *************************/
+// 暂不使用
 $lightColor:  #999;
 $middleColor: #666;
 $heavyColor:  #333;
+
+
+/************************* css属性选择器（~=表示包含即可） *************************/
+// [c_wrap="flex"]  表示选择所有wrap="flex"的元素
+// [c_wrap~="flex"] 表示选择所有wrap属性中包含flex的元素
+
+// 10~40之间偶数字号
+$curFont: 10;
+@while $curFont <= 40 {
+	[c_wrap ~= fs-#{$curFont}]{
+		font-size: #{$curFont}px;
+	}
+  $curFont: $curFont + 2;
+}
+
+[c_wrap ~= ta-c]{
+	text-align: center;
+}
+[c_wrap ~= ta-l]{
+	text-align: left;
+}
+[c_wrap ~= ta-r]{
+	text-align: right;
+}
+[c_wrap ~= ta-j]{
+	text-align: justify;
+}
+
+[c_wrap ~= c-000]{ 
+	color: #000;
+}
+[c_wrap ~= c-333]{
+	color: #333;
+}
+[c_wrap ~= c-666]{
+	color: #666;
+}
+[c_wrap ~= c-999]{
+	color: #999;
+}
+[c_wrap ~= c-fa5d5d]{
+	color: #fa5d5d;
+}
+[c_wrap ~= c-4080e8]{
+	color: #4080e8;
+}
+
+[c_wrap ~= m-10]{
+	margin: 10px;
+}
+[c_wrap ~= m-20]{
+	margin: 20px;
+}
+[c_wrap ~= p-10]{
+	padding: 10px
+}
+[c_wrap ~= p-20]{
+	padding: 20px;
+}
+
+[c_wrap ~= flex]{
+	display: flex;
+}
+[c_wrap ~= flex-1]{
+	flex: 1;
+}
+[c_wrap ~= fd-r]{
+	flex-direction: row;
+}
+[c_wrap ~= fd-c]{
+	flex-direction: column;
+}
+[c_wrap ~= fw-w]{
+	flex-wrap: wrap;
+}
+[c_wrap ~= fw-n]{
+	flex-wrap: nowrap;
+}
+[c_wrap ~= jc-fs]{
+	justify-content: flex-start;
+}
+[c_wrap ~= jc-c]{
+	justify-content: center;
+}
+[c_wrap ~= jc-fe]{
+	justify-content: flex-end;
+}
+[c_wrap ~= jc-sb]{
+	justify-content: space-between;
+}
+[c_wrap ~= jc-sa]{
+	justify-content: space-around;
+}
+[c_wrap ~= ai-fs]{
+	align-items: flex-start;
+}
+[c_wrap ~= ai-c]{
+	align-items: center;
+}
+[c_wrap ~= ai-fe]{
+	align-items: flex-end;
+}
 
 
 /************************* extend继承 *************************/
@@ -13,10 +116,22 @@ $heavyColor:  #333;
 	text-overflow : ellipsis;
 	white-space   : nowrap;
 }
+.flexCenterH{
+	display: flex;
+	justify-content: center;
+}
+.flexCenterV{
+	display: flex;
+	align-content: center;
+}
 .flexCenter{
 	display: flex;
 	justify-content: center;
 	align-content: center;
+}
+.aLink{
+	color: #4080e8 !important;
+	text-decoration: underline;
 }
 
 

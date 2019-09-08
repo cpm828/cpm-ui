@@ -8,22 +8,27 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: resolve => resolve(require('../views/Index')),
+      component: resolve => resolve(require('../views/Index'))
     },
     {
       path: '/toast',
       name: 'index',
-      component: resolve => resolve(require('../views/Toast')),
+      component: resolve => resolve(require('../views/Toast'))
     },
     {
       path: '/loading',
       name: 'index',
-      component: resolve => resolve(require('../views/Loading')),
+      component: resolve => resolve(require('../views/Loading'))
     },
     {
       path: '/dialog',
       name: 'index',
-      component: resolve => resolve(require('../views/Dialog')),
+      component: resolve => resolve(require('../views/Dialog'))
+    },
+    {
+      path: '/icon',
+      name: 'icon',
+      component: resolve => resolve(require('../views/Icon'))
     }
   ]
 })

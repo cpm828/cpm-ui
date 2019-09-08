@@ -1,5 +1,5 @@
-import Vue from 'vue'
 import Toast from './toast'
+
 /*
 // https://cn.vuejs.org/v2/api/#vm-mount
 const ToastConstructor = Vue.extend(Toast)
@@ -26,25 +26,25 @@ Toast.install = function (Vue) {
     Vue.prototype.$toast = toastCst // 添加实例方法
 }
 
-export default Toast*/
+export default Toast */
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
-Toast.install = function(Vue) {
-    Vue.prototype.$toast = function(options) {
-        if (typeof options === 'string') {
-            options = {
-	            // https://cn.vuejs.org/v2/api/?#propsData
-                propsData: {
-                    message: options
-                }
-            }
+Toast.install = function (Vue) {
+  Vue.prototype.$toast = function (options) {
+    if (typeof options === 'string') {
+      options = {
+        // https://cn.vuejs.org/v2/api/?#propsData
+        propsData: {
+          message: options
         }
-
-	    // https://cn.vuejs.org/v2/api/#vm-mount
-        var toastComponent = Vue.extend(Toast)
-        var component = new toastComponent(options)
-        document.getElementById('app').appendChild(component.$mount().$el)
+      }
     }
+
+    // https://cn.vuejs.org/v2/api/#vm-mount
+    var ToastComponent = Vue.extend(Toast)
+    var component = new ToastComponent(options)
+    document.getElementById('app').appendChild(component.$mount().$el)
+  }
 }
 
 export default Toast
