@@ -41,3 +41,5 @@ const joinObj = obj => {
 }
 
 export { getQueryValue, getHashValue, isEmptyObj, joinObj }
+// 注意在import方法时不要使用@/来寻找路径，否则会在使用组件时会报错
+// To install it, you can run: npm install --save @/util/common

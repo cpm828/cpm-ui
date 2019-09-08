@@ -9,7 +9,7 @@
 
 <script>
 import cIcon from '../cIcon'
-import { isEmptyObj } from '@/util/common'
+import { isEmptyObj } from '../../util/common'
 export default {
   name: 'cpmToast',
   components: { cIcon },
