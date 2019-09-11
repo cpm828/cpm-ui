@@ -33,7 +33,7 @@ export default {
         },
         {
           title: 'Dialog弹窗',
-          path: '/dailog'
+          path: '/dialog'
         },
         {
           title: 'ActionSheet选择',
