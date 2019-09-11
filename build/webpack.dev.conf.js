@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const isDebug = process.argv.some(arg => arg.indexOf('debug') > -1)
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -57,7 +58,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       favicon: './static/favicon.ico',
       // template: 'index.html',
       template: path.join(__dirname, "../examples/src/", 'index.html'),
-      inject: true
+      inject: true,
+      vConsole: isDebug ? config.dev.vConsole : ''
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

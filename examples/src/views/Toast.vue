@@ -10,7 +10,7 @@
         :key="index"
       >
         <a @click.prevent="showToast(index)">
-          {{index + 1}}、{{item.title}}
+          <span class="text">{{index + 1}}、{{item.title}}</span>
           <i @click.prevent.stop="showCode(item, index)">code</i>
         </a>
         <code-block :code="item.code" v-if="item.showCode"></code-block>

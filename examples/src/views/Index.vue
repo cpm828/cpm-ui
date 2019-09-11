@@ -34,6 +34,10 @@ export default {
         {
           title: 'Dialog弹窗',
           path: '/dailog'
+        },
+        {
+          title: 'ActionSheet选择',
+          path: '/actionsheet'
         }
       ],
       list2: [

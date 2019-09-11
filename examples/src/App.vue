@@ -11,6 +11,25 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+ul{
+  list-style: none;
+}
+a{
+  font-size: r(26);
+  color: #4080c8;
+}
+html,body{
+  background: #efeff4;
+  height: 100%;
+  font-family: PingFangSC-Regular,Microsoft Yahei, sans-serif;
+  -webkit-overflow-scrolling: touch;/* 解决ios滑动不流畅问题 */
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,6 +63,13 @@ export default {
           border-bottom: 1px solid #eee;
           color: #666;
           position: relative;
+          box-sizing: border-box;
+          span.text{
+            display: inline-block;
+            font-size: 15px;
+            height: 44px;
+            line-height: 44px;
+          }
           i {
             display: inline-block;
             color: #fff;
@@ -54,6 +80,13 @@ export default {
             border-radius: 5px;
             font-size: 12px;
             margin-left: 5px;
+          }
+          span.tip{
+            font-size: 15px;
+            position: absolute;
+            right: 30px;
+            height: 44px;
+            line-height: 44px;
           }
         }
         a::before {

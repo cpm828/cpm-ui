@@ -12,18 +12,23 @@ export default new Router({
     },
     {
       path: '/toast',
-      name: 'index',
+      name: 'toast',
       component: resolve => resolve(require('../views/Toast'))
     },
     {
       path: '/loading',
-      name: 'index',
+      name: 'loading',
       component: resolve => resolve(require('../views/Loading'))
     },
     {
       path: '/dialog',
-      name: 'index',
+      name: 'dialog',
       component: resolve => resolve(require('../views/Dialog'))
+    },
+    {
+      path: '/actionsheet',
+      name: 'actionsheet',
+      component: resolve => resolve(require('../views/ActionSheet'))
     },
     {
       path: '/icon',
