@@ -89,31 +89,20 @@ html,body{
             line-height: 44px;
           }
         }
-        a::before {
-          content: "";
-          position: absolute;
-          right: 15px;
-          top: 50%;
-          transform-origin: right center;
-          transform: rotate(45deg);
-          width: 10px;
-          height: 1px;
-          overflow: hidden;
-          background-color: #999;
-          display: block;
-        }
+       
         a::after {
           content: "";
-          position: absolute;
-          right: 15px;
-          top: 50%;
-          transform-origin: right center;
-          transform: rotate(-45deg);
+          height: 10px;
           width: 10px;
-          height: 1px;
-          overflow: hidden;
-          background-color: #999;
-          display: block;
+          border-width: 1px 1px 0 0;
+          border-color: #b2b2b2;
+          border-style: solid;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          position: absolute;
+          top: 50%;
+          margin-top: -5px;
+          right: 15px;
         }
 
         // 代码

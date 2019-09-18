@@ -12,15 +12,16 @@
     <transition name="actionsheet-slide" v-on:after-leave="afterLeave">
       <div class="cpm-actionsheet-wrap" :style="actionSheetWrapStyle" v-show="animateShow">
         <div class="choice-box">
+          <div v-if="actionSheetTip" class="tip">{{actionSheetTip}}</div>
           <div
             v-for="(actionSheet, index) in actionSheetList"
             :key="index"
-            :style="actionSheetItemStyle"
+            :style="[actionSheetItemStyle, actionSheet._actionsheetItemStyle]"
             :class="{'active': activeSheet === actionSheet.key}"
             @click="clickItem(actionSheet)"
           >{{actionSheet.value}}</div>
         </div>
-        <div class="cancel-box" :style="actionSheetCancelStyle" v-if="showCancelBtn" @click="clickCancel">取消</div>
+        <div class="cancel-box" :style="actionSheetCancelStyle" v-if="showCancelBtn" @click="clickCancel">{{actionSheetCancelText}}</div>
       </div>
     </transition>
   </div>
@@ -48,13 +49,23 @@ export default {
       type: Object,
       default: () => { }
     },
-    // 备选列表
+    // 备选列表（对于绝大多数场景来说，使用actionSheetItemStyle可以实现样式的统一控制，但是如果出现每个item样式不一样的情况，可在actionSheetList每一项中增加一个_actionsheetItemStyle）
     actionSheetList: {
       type: Array,
       default: () => []
     },
     // 激活项
     activeSheet: [String, Number],
+    // 是否显示提示文案（非空时默认占第一行）
+    actionSheetTip: {
+      type: String,
+      default: ''
+    },
+    // 取消按钮文案
+    actionSheetCancelText: {
+      type: String,
+      default: '取消'
+    },
     // 是否显示取消按钮
     showCancelBtn: {
       type: Boolean,
@@ -123,7 +134,7 @@ export default {
     z-index: 888;
   }
   .cpm-actionsheet-wrap {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -160,6 +171,14 @@ export default {
       &.active {
         color: #415af6;
       }
+    }
+    .choice-box .tip{
+      font-size: 12px;
+      color: #888;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 10px;
     }
     .cancel-box {
       height: 45px;
