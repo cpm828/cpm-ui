@@ -11,17 +11,34 @@
 
     <transition name="actionsheet-slide" v-on:after-leave="afterLeave">
       <div class="cpm-actionsheet-wrap" :style="actionSheetWrapStyle" v-show="animateShow">
+        <div v-if="actionSheetTip" class="cpm-actionsheet-tip">{{actionSheetTip}}</div>
+
         <div class="choice-box">
-          <div v-if="actionSheetTip" class="tip">{{actionSheetTip}}</div>
           <div
-            v-for="(actionSheet, index) in actionSheetList"
-            :key="index"
+            v-for="actionSheet in actionSheetList"
+            :key="actionSheet.key"
             :style="[actionSheetItemStyle, actionSheet._actionsheetItemStyle]"
             :class="{'active': activeSheet === actionSheet.key}"
             @click="clickItem(actionSheet)"
           >{{actionSheet.value}}</div>
         </div>
-        <div class="cancel-box" :style="actionSheetCancelStyle" v-if="showCancelBtn" @click="clickCancel">{{actionSheetCancelText}}</div>
+
+        <div class="choice-box choice-box2">
+          <div
+            v-for="actionSheet in actionSheetList2"
+            :key="actionSheet.key"
+            :style="[actionSheetItemStyle, actionSheet._actionsheetItemStyle]"
+            :class="{'active': activeSheet === actionSheet.key}"
+            @click="clickItem(actionSheet)"
+          >{{actionSheet.value}}</div>
+        </div>
+
+        <div
+          class="cancel-box"
+          :style="actionSheetCancelStyle"
+          v-if="showCancelBtn"
+          @click="clickCancel"
+        >{{actionSheetCancelText}}</div>
       </div>
     </transition>
   </div>
@@ -54,6 +71,11 @@ export default {
       type: Array,
       default: () => []
     },
+    // 极少数情况下，我们需要将备选项分类展示，目前暂时只考虑2级分类
+    actionSheetList2: {
+      type: Array,
+      default: () => []
+    },
     // 激活项
     activeSheet: [String, Number],
     // 是否显示提示文案（非空时默认占第一行）
@@ -61,15 +83,15 @@ export default {
       type: String,
       default: ''
     },
-    // 取消按钮文案
-    actionSheetCancelText: {
-      type: String,
-      default: '取消'
-    },
     // 是否显示取消按钮
     showCancelBtn: {
       type: Boolean,
       default: true
+    },
+    // 取消按钮文案
+    actionSheetCancelText: {
+      type: String,
+      default: '取消'
     },
     // hash时是否移除
     removeOnHashChange: {
@@ -144,6 +166,30 @@ export default {
     border-radius: 5px 5px 0 0;
     color: #333;
     font-size: 16px;
+    .cpm-actionsheet-tip{
+      font-size: 12px;
+      color: #888;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0 10px;
+      height: 45px;
+      line-height: 45px;
+      background: #fff;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        background: #efeff4;
+        width: 100%;
+        height: 1px;
+        overflow: hidden;
+        transform: scaleY(0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
     .choice-box div {
       height: 45px;
       line-height: 45px;
@@ -151,8 +197,8 @@ export default {
       position: relative;
       text-align: center;
       &::after {
-        display: block;
         content: "";
+        display: block;
         background: #efeff4;
         width: 100%;
         height: 1px;
@@ -172,13 +218,8 @@ export default {
         color: #415af6;
       }
     }
-    .choice-box .tip{
-      font-size: 12px;
-      color: #888;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      padding: 0 10px;
+    .choice-box2 {
+      margin-top: 10px;
     }
     .cancel-box {
       height: 45px;
