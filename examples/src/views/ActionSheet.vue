@@ -188,9 +188,56 @@ export default {
 }`
         },
         {
-          title: '所有参数',
+          title: '分类选择',
           showCode: false,
           code: `showActionSheet6 (item) {
+  const self = this
+  this.$actionSheet({
+    propsData: {
+      actionSheetList: [
+        {
+          key: 'beijing',
+          value: '北京',
+          _actionsheetItemStyle: {
+            color: 'red'
+          }
+        },
+        {
+          key: 'shanghai',
+          value: '上海',
+          _actionsheetItemStyle: {
+            color: 'orange'
+          }
+        },
+        {
+          key: 'guangzhou',
+          value: '广州',
+          _actionsheetItemStyle: {
+            color: 'yellow'
+          }
+        },
+        {
+          key: 'shenzheng',
+          value: '深圳',
+          _actionsheetItemStyle: {
+            color: 'green'
+          }
+        }
+      ],
+      activeSheet: item._choiceInfo && item._choiceInfo.key, // 默认勾选项
+    },
+    mounted () {
+      this.$on('actionSheetChoiceItem', (actionSheet) => {
+        self.$set(item, '_choiceInfo', actionSheet)
+      })
+    }
+  })
+}`
+        },
+        {
+          title: '所有参数',
+          showCode: false,
+          code: `showActionSheet7 (item) {
   const self = this
   this.$actionSheet({
     propsData: {
@@ -236,6 +283,13 @@ export default {
       this.$on('actionSheetChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
+    },
+    methods: {
+      // 也可以使用methods覆盖的方式来捕获事件
+      // clickItem (actionSheet) {
+      //   console.log(2, actionSheet)
+      //   this.remove()
+      // }
     }
   })
 }`
@@ -391,8 +445,42 @@ export default {
         actionSheet.remove()
       }, 2000)
     },
-    // 全部参数
+    // 分类选择
     showActionSheet6 (item) {
+      const self = this
+      this.$actionSheet({
+        propsData: {
+          actionSheetList: [
+            {
+              key: 0,
+              value: '发送给朋友'
+            },
+            {
+              key: 1,
+              value: '收藏'
+            },
+            {
+              key: 2,
+              value: '保存图片'
+            }
+          ],
+          actionSheetList2: [
+            {
+              key: 3,
+              value: '识别图中二维码 >'
+            }
+          ],
+          activeSheet: item._choiceInfo && item._choiceInfo.key // 默认勾选项
+        },
+        mounted () {
+          this.$on('actionSheetChoiceItem', (actionSheet) => {
+            self.$set(item, '_choiceInfo', actionSheet)
+          })
+        }
+      })
+    },
+    // 全部参数
+    showActionSheet7 (item) {
       const self = this
       this.$actionSheet({
         propsData: {
@@ -438,8 +526,16 @@ export default {
         },
         mounted () {
           this.$on('actionSheetChoiceItem', (actionSheet) => {
+            console.log(1, actionSheet)
             self.$set(item, '_choiceInfo', actionSheet)
           })
+        },
+        methods: {
+          // 也可以使用methods覆盖的方式来捕获事件
+          clickItem (actionSheet) {
+            console.log(2, actionSheet)
+            this.remove()
+          }
         }
       })
     }
