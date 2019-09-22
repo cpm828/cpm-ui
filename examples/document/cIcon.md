@@ -38,7 +38,7 @@ Vue.use(cIcon)
 无
 
 ### 方法methods
-|参数|说明|
+|方法|说明|
 |:---|:---|
 |cIconClick|点击icon|
 

@@ -32,6 +32,7 @@ this.$toast({
 });
 ```
 
+
 ### 属性props（propsData）
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
@@ -41,11 +42,12 @@ this.$toast({
 |time|toast显示的时间|Number||2000|
 |type|toast类型（icon）|String|`success`、`info`、`error`|''|
 
+
 ### 初始化mounted
 无
 
 ### 方法methods
-|参数|说明|
+|方法|说明|
 |:---|:---|
 |callback|toast消失回调|
 |remove|移除toast|

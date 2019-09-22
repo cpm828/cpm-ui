@@ -61,8 +61,10 @@ this.$actionSheet({
 |actionSheetCancelText|取消按钮文案|String||''|
 |removeOnHashChange|hash变化时是否移除|String||true|
 
+
 ### 初始化mounted
 我们可以在mounted中设置 `this.$on` 来捕获组件内的派发的事件。
+
 |参数|说明|
 |:---|:---|
 |actionSheetClickCliper|点击蒙层|
@@ -104,9 +106,10 @@ this.$actionSheet({
 
 ### 方法methods
 也可以在methods中重新覆盖组件的方法，进行重写。注意：重写时可能需要处理额外的事情，比如此例中需要调用 `remove` 来关闭actionSheet
-|参数|说明|
+
+|方法|说明|
 |:---|:---|
-|clickCliper|点击蒙层|
+|clickCliper|点击蒙层|◊
 |clickCancel|点击取消|
 |clickItem|点击item|
 
