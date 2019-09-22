@@ -33,6 +33,7 @@ this.$loading(1); // 1 ~ 16
 |参数|说明|
 |:---|:---|
 |remove|移除loading|
+
 如：
 ```js
 const loading = this.$loading()
