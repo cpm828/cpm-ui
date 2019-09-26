@@ -22,7 +22,7 @@ export default new Router({
     },
     {
       path: '/dialog',
-      name: 'dialog',
+      name: 'globalDialog', // dialog为保留字
       component: resolve => resolve(require('../views/Dialog'))
     },
     {

@@ -21,15 +21,10 @@ npm install sass-loader@7.3.1 --save-dev
 ### 引入组件
 main.js中引入
 ```js
-import { Toast, Loading, Dialog, cIcon } from 'cpm-ui'
-// 或:
-import Toast from 'cpm-ui/packages/toast'
-import Loading from 'cpm-ui/packages/loading'
-import Dialog from 'cpm-ui/packages/dialog'
-import cIcon from 'cpm-ui/packages/cIcon'
+import { Toast, Loading, Dialog, ActionSheet, cIcon } from 'cpm-ui'
 
 // Vue.use
-let components = [Toast, Loading, Dialog, cIcon]
+let components = [Toast, Loading, Dialog, ActionSheet, cIcon]
 components.map(component => Vue.use(component))
 ```
 
@@ -42,11 +37,12 @@ components.map(component => Vue.use(component))
 -->
 |组件|调用方法|[使用教程](http://cpm828.github.io/cpm_ui/demo/index.html)|[使用文档](https://github.com/cpm828/cpm828.github.io/tree/master/cpm_ui/document)|
 |:---|:---|:---|:---|
-|全局组件||||
+|全局组件↓||||
 |Toast|this.$toast()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/toast)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Toast.md)|
 |Loading|this.$loading()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/loading)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Loading.md)|
 |Dialog|this.$dialog()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/dialog)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Dialog.md)|
-|页面内组件||||
+|ActionSheet|this.$actionSheet()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/actionsheet)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md)|
+|页面内组件↓||||
 |cIcon|\<cIcon\>\<\/cIcon\>|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/icon)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md)|
 
 > 未完待续...
