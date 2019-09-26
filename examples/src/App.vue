@@ -1,33 +1,49 @@
 <template>
   <div id="app">
     <router-view />
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-back">
+      <cIcon render="font-class" type="arrow-left" color="#333" size="1.8rem" @cIconClick="cIconClick('back')"></cIcon>
+    </div>
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home">
+      <cIcon render="font-class" type="home" color="#333" size="1.3rem" @cIconClick="cIconClick('home')"></cIcon>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    cIconClick (type) {
+      if (type === 'back') {
+        this.$router.back()
+      } else {
+        this.$router.push({ 'path': '/' })
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-*{
+* {
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
 }
-ul{
+ul {
   list-style: none;
 }
-a{
+a {
   font-size: r(26);
   color: #4080c8;
 }
-html,body{
+html,
+body {
   background: #efeff4;
   height: 100%;
-  font-family: PingFangSC-Regular,Microsoft Yahei, sans-serif;
-  -webkit-overflow-scrolling: touch;/* 解决ios滑动不流畅问题 */
+  font-family: PingFangSC-Regular, Microsoft Yahei, sans-serif;
+  -webkit-overflow-scrolling: touch; /* 解决ios滑动不流畅问题 */
 }
 
 #app {
@@ -64,7 +80,7 @@ html,body{
           color: #666;
           position: relative;
           box-sizing: border-box;
-          span.text{
+          span.text {
             display: inline-block;
             font-size: 15px;
             height: 44px;
@@ -81,7 +97,7 @@ html,body{
             font-size: 12px;
             margin-left: 5px;
           }
-          span.tip{
+          span.tip {
             font-size: 15px;
             position: absolute;
             right: 30px;
@@ -89,7 +105,7 @@ html,body{
             line-height: 44px;
           }
         }
-       
+
         a::after {
           content: "";
           height: 10px;
@@ -128,6 +144,24 @@ html,body{
           }
         }
       }
+    }
+  }
+
+  .global-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #ddd;
+    border-radius: 50%;
+    box-shadow: 0px 0 5px #bbb;
+    &.global-btn-back {
+      position: fixed;
+      left: 15px;
+      bottom: 15px;
+    }
+    &.global-btn-home {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
     }
   }
 }

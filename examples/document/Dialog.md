@@ -2,8 +2,6 @@
 
 # Dialog组件
 
-编写中...
-
 ## 一、使用教程
 [点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/dialog)
 
@@ -105,8 +103,9 @@ this.$dialog({
 |参数|说明|
 |:---|:---|
 |onClickCliper|点击蒙层|
-|onCancel|点击取消|
-|onChoiceItem|点击item|
+|onClose|点击关闭按钮|
+|onCancel|点击取消按钮|
+|onConfirm|点击确定按钮|
 
 如：
 ```js
@@ -184,4 +183,4 @@ this.$dialog({
 
 
 ## 三、特别提示
-dialog组件处理了内部滑动，保证弹出时无法滑动弹窗。对于弹窗内容需要滑动是，给需要滑动的元素增加 `class="scrollable"` 
+dialog组件处理了内部滑动，保证弹出时无法滑动弹窗。对于弹窗内容需要滑动时，给需要滑动的元素增加 `class="scrollable"` 
