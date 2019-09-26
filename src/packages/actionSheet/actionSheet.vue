@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  name: 'cpmActionSheet',
   props: {
     // 蒙层样式
     cliperStyleObj: {
@@ -59,11 +60,6 @@ export default {
     showCancelBtn: {
       type: Boolean,
       default: true
-    },
-    // hash时是否移除
-    removeOnHashChange: {
-      type: Boolean,
-      default: true
     }
   },
   data () {
@@ -73,7 +69,7 @@ export default {
   },
   mounted () {
     this.animateShow = true
-    this.removeOnHashChange && window.addEventListener('hashchange', this.remove)
+    window.addEventListener('hashchange', this.remove)
   },
   methods: {
     // 移除
