@@ -1,6 +1,6 @@
 <template>
-  <div class="page-wrap index-wrap">
-    <h2>Toast提示</h2>
+  <div class="page-wrap toast-wrap">
+    <div class="top">Toast提示</div>
 
     <div class="block">
       <div
@@ -28,7 +28,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'toast',
+  name: 'Toast',
   components: { codeBlock },
   data () {
     return {

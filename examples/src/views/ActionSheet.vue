@@ -1,6 +1,6 @@
 <template>
-  <div class="page-wrap index-wrap">
-    <h2>ActionSheet弹出选择</h2>
+  <div class="page-wrap actionsheet-wrap">
+    <div class="top">ActionSheet弹出选择</div>
 
     <div class="block">
       <div
@@ -29,7 +29,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'toast',
+  name: 'ActionSheet',
   components: { codeBlock },
   data () {
     return {

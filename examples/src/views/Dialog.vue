@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap dialog-wrap">
-    <h2>Dialog弹窗</h2>
+    <div class="top">Dialog弹窗</div>
 
     <div class="block">
       <div
@@ -24,7 +24,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'globalDialog',
+  name: 'Dialog',
   data () {
     return {
       list: [

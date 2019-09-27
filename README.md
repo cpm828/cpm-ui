@@ -2,6 +2,14 @@
 
 > 基于Vue.js 2.0 UI组件库.
 
+## 快速查看
+
+### 链接
+[点击查看教程](https://blog.pimichen.com/images/public/cpm_ui.png)
+
+### 扫码查看
+<img src="https://blog.pimichen.com/images/public/cpm_ui.png">
+
 
 ## 使用说明
 

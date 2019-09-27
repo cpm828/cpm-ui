@@ -4,13 +4,21 @@ import Loading from './packages/loading'
 import Dialog from './packages/dialog'
 import ActionSheet from './packages/actionSheet'
 
-// 页面组件类
+// 页面组件类（以c开头）
 import cIcon from './packages/cIcon'
+
+// 表单类（以c开头）
+import cRadio from './packages/cRadio'
+import cCheckbox from './packages/cCheckbox'
+import cSwitch from './packages/cSwitch'
 
 export {
   Toast,
   Loading,
   Dialog,
   ActionSheet,
-  cIcon
+  cIcon,
+  cRadio,
+  cCheckbox,
+  cSwitch
 }

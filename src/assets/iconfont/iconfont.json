@@ -1,9 +1,9 @@
 {
   "id": "1389784",
-  "name": "icon",
+  "name": "cpm-ui",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
-  "description": "",
+  "description": "主要来源于 阿里云官网 图标库，少部分来源来气图标库",
   "glyphs": [
     {
       "icon_id": "577302",
@@ -15,14 +15,14 @@
     {
       "icon_id": "577305",
       "name": "单选",
-      "font_class": "radio",
+      "font_class": "radio-disabled",
       "unicode": "e71f",
       "unicode_decimal": 59167
     },
     {
       "icon_id": "577306",
       "name": "方形未选中",
-      "font_class": "empty-rectangle",
+      "font_class": "checkbox",
       "unicode": "e720",
       "unicode_decimal": 59168
     },
@@ -36,14 +36,14 @@
     {
       "icon_id": "577308",
       "name": "方形选中",
-      "font_class": "checkbox",
+      "font_class": "checkbox-disabled",
       "unicode": "e722",
       "unicode_decimal": 59170
     },
     {
       "icon_id": "577322",
       "name": "圆形未选中",
-      "font_class": "empty-circle",
+      "font_class": "radio",
       "unicode": "e72f",
       "unicode_decimal": 59183
     },

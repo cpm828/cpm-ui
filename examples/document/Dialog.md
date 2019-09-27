@@ -1,5 +1,14 @@
 ## [返回总文档](https://github.com/cpm828/cpm-ui)
 
+## 快速查看
+
+### 链接
+[点击查看教程](https://blog.pimichen.com/images/public/cpm_ui.png)
+
+### 扫码查看
+<img src="https://blog.pimichen.com/images/public/cpm_ui.png">
+
+
 # Dialog组件
 
 ## 一、使用教程

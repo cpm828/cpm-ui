@@ -1,6 +1,6 @@
 <template>
-  <div class="page-wrap index-wrap">
-    <h2>Icon</h2>
+  <div class="page-wrap icon-wrap">
+    <div class="top">Icon</div>
 
     <div class="block">
       <div
@@ -26,12 +26,12 @@
       </div>
       <div c_wrap="flex ai-c fw-w">
         <div
-          style="width:25%;margin-bottom:10px"
-          c_wrap="flex fd-c"
+          style="width:25%;height:3.2rem;margin-bottom:10px"
+          c_wrap="flex fd-c jc-fs"
           v-for="(item, index) in list2"
           :key="index"
         >
-          <cIcon render="unicode" :type="item.unicode" :color="iconColor" size="1.5rem" @cIconClick="cIconClick" :key="iconColor"></cIcon>
+          <cIcon render="unicode" :type="item.unicode" :color="iconColor" size="1.3rem" @cIconClick="cIconClick" :key="iconColor"></cIcon>
           <i c_wrap="fs-10 c-333">{{item.unicode}}</i>
           <i c_wrap="fs-10 c-333">{{item.font}}</i>
           <i c_wrap="fs-10 c-333">{{item.symbol}}</i>
@@ -47,7 +47,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'icon',
+  name: 'Icon',
   components: { codeBlock },
   data () {
     return {
@@ -122,6 +122,57 @@ export default {
         },
         // 第4行
         {
+          unicode: '&#xe751;',
+          font: 'home'
+        },
+        {
+          unicode: '&#xe750;',
+          font: 'home-filled'
+        },
+        {
+          unicode: '&#xe65c;',
+          font: 'refresh'
+        },
+        {
+          unicode: '&#xe63f;',
+          font: 'search'
+        },
+        // 第5行
+        {
+          unicode: '&#xe72f;',
+          font: 'radio'
+        },
+        {
+          unicode: '&#xe71e;',
+          font: 'radio-filled'
+        },
+        {
+          unicode: '&#xe72f;',
+          font: 'radio(disabled)'
+        },
+        {
+          unicode: '&#xe71f;',
+          font: 'radio-disabled'
+        },
+        // 第6行
+        {
+          unicode: '&#xe720;',
+          font: 'checkbox'
+        },
+        {
+          unicode: '&#xe721;',
+          font: 'checkbox-filled'
+        },
+        {
+          unicode: '&#xe720;',
+          font: 'checkbox(disabled)'
+        },
+        {
+          unicode: '&#xe722;',
+          font: 'checkbox-disabled'
+        },
+        // 第7行
+        {
           unicode: '&#xe66b;',
           font: 'star'
         },
@@ -137,7 +188,7 @@ export default {
           unicode: '&#xe6e3;',
           font: 'volume'
         },
-        // 第5行
+        // 第8行
         {
           unicode: '&#xe66d;',
           font: 'arrow-up'
@@ -154,7 +205,7 @@ export default {
           unicode: '&#xe670;',
           font: 'arrow-right'
         },
-        // 第6行
+        // 第9行
         {
           unicode: '&#xe677;',
           font: 'show-less'
@@ -171,7 +222,11 @@ export default {
           unicode: '&#xe676;',
           font: 'page-turn-right'
         },
-        // 第7行
+        // 第10行
+        {
+          unicode: '&#xe687;',
+          font: 'benefits'
+        },
         {
           unicode: '&#xe69e;',
           font: 'close-simple'
@@ -179,10 +234,6 @@ export default {
         {
           unicode: '&#xe699;',
           font: 'delete'
-        },
-        {
-          unicode: '&#xe63f;',
-          font: 'search'
         },
         {
           unicode: '&#xe640;',

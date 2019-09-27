@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <router-view />
-    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-back">
-      <cIcon render="font-class" type="arrow-left" color="#333" size="1.8rem" @cIconClick="cIconClick('back')"></cIcon>
+
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home" v-if="showHomeBtn">
+      <cIcon render="font-class" type="home" color="#333" size="1.2rem" @cIconClick="onClick('home')"></cIcon>
     </div>
-    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home">
-      <cIcon render="font-class" type="home" color="#333" size="1.3rem" @cIconClick="cIconClick('home')"></cIcon>
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-refresh">
+      <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @cIconClick="onClick('refresh')"></cIcon>
     </div>
   </div>
 </template>
@@ -13,12 +14,30 @@
 <script>
 export default {
   name: 'App',
+  data () {
+    return {
+      randomKexy: 0,
+      showHomeBtn: false
+    }
+  },
+  watch: {
+    $route: {
+      handler: function () {
+        if (this.$route.name === 'Index') {
+          this.showHomeBtn = false
+        } else {
+          this.showHomeBtn = true
+        }
+      },
+      immediate: true
+    }
+  },
   methods: {
-    cIconClick (type) {
-      if (type === 'back') {
-        this.$router.back()
-      } else {
+    onClick (type) {
+      if (type === 'home') {
         this.$router.push({ 'path': '/' })
+      } else {
+        window.location.reload()
       }
     }
   }
@@ -42,22 +61,29 @@ html,
 body {
   background: #efeff4;
   height: 100%;
-  font-family: PingFangSC-Regular, Microsoft Yahei, sans-serif;
+  font-family: PingFangSC, Microsoft Yahei, sans-serif;
   -webkit-overflow-scrolling: touch; /* 解决ios滑动不流畅问题 */
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: PingFangSC, Microsoft Yahei, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 
   .page-wrap {
-    padding-bottom: 30px;
-    h2 {
-      padding: 30px 0;
-      font-size: 32px;
+    padding-bottom: 60px;
+    .top {
+      height: 120px;;
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h4{
+        font-size: 18px;
+        margin-top: 5px;
+      }
     }
     .block {
       padding-bottom: 20px;
@@ -145,23 +171,26 @@ body {
         }
       }
     }
+    .aLink{
+      font-size: 14px;
+    }
   }
 
   .global-btn {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background-color: #ddd;
     border-radius: 50%;
     box-shadow: 0px 0 5px #bbb;
-    &.global-btn-back {
-      position: fixed;
-      left: 15px;
-      bottom: 15px;
-    }
     &.global-btn-home {
       position: fixed;
-      right: 15px;
-      bottom: 15px;
+      right: 10px;
+      bottom: 60px;
+    }
+    &.global-btn-refresh {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
     }
   }
 }

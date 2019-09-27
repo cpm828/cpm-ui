@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'cpmActionSheet',
+  name: 'cActionSheet',
   props: {
     // 蒙层样式
     cliperStyleObj: {

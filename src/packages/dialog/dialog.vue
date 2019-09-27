@@ -34,7 +34,7 @@
 <script>
 import cIcon from '../cIcon'
 export default {
-  name: 'cpmDialog',
+  name: 'cDialog',
   components: {
     cIcon,
     cContent: {
@@ -272,6 +272,9 @@ export default {
         color: #333;
         font-weight: bold;
         margin-bottom: 16px;
+      }
+      .cpm-content{
+        word-break: break-all;
       }
     }
     .cpm-btn-box {
