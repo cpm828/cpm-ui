@@ -116,7 +116,7 @@
 
 <script>
 export default {
-  name: 'cpmLoading',
+  name: 'cLoading',
   props: {
     // 蒙层样式
     cliperStyleObj: {

@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span class="cpm-cIcon">
     <!-- unicode render -->
     <i
       class="iconfont"
@@ -70,6 +70,7 @@ export default {
       let style = {}
       if (this.size) {
         style['font-size'] = this.size
+        style['line-height'] = this.size
       }
       if (this.color) {
         style.color = this.color
@@ -85,7 +86,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import "../../assets/iconfont/iconfont.css";
 /*
 导入了阿里巴巴字体库，参考：https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.16&helptype=code
@@ -97,17 +98,20 @@ export default {
     3. symbol引用（js）
         支持 ie9+、支持多色图标、svg渲染
 */
-.iconfont{
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-}
-.iconsymbol {
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-  vertical-align: middle;
-  fill: currentColor;
-  overflow: hidden;
+.cpm-cIcon{
+  font-size: 0; // 清除行内元素产生的间隙
+  .iconfont{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+  }
+  .iconsymbol {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
+  }
 }
 </style>

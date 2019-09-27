@@ -1,1 +1,0 @@
-## fontdemo用于存放阿里巴巴矢量库 图表demo，icon组件只展示一部分常用的icon，此处demo从官网下载所得，后期icon可能会逐渐增加，此处demo较为详细

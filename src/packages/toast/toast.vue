@@ -11,7 +11,7 @@
 import cIcon from '../cIcon'
 import { isEmptyObj } from '../../util/common'
 export default {
-  name: 'cpmToast',
+  name: 'cToast',
   components: { cIcon },
   props: {
     // toast位置(top、middle、bottom)

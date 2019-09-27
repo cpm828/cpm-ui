@@ -1,6 +1,9 @@
 <template>
   <div class="page-wrap index-wrap">
-    <h2>cpm-ui--vue2.0</h2>
+    <div class="top">
+      <h2>cpm-ui</h2>
+      <h4>A Mobile UI Toolkit for Vue 2.0</h4>
+    </div>
 
     <div class="block">
       <div class="block-item" v-for="(item, index) in list1" :key="index">
@@ -14,12 +17,19 @@
       </div>
     </div>
 
+    <div class="block">
+      <div class="block-item" v-for="(item, index) in list3" :key="index">
+        <router-link :to="item.path">{{item.title}}</router-link>
+      </div>
+    </div>
+
     <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui">查看文档</a>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Index',
   data () {
     return {
       list1: [
@@ -28,7 +38,7 @@ export default {
           path: '/toast'
         },
         {
-          title: 'Loading加载',
+          title: 'Loading加载中',
           path: '/loading'
         },
         {
@@ -44,6 +54,20 @@ export default {
         {
           title: 'Icon图标',
           path: '/icon'
+        }
+      ],
+      list3: [
+        {
+          title: 'Radio单选',
+          path: '/radio'
+        },
+        {
+          title: 'Checkbox多选',
+          path: '/checkbox'
+        },
+        {
+          title: 'Switch开关',
+          path: '/switch'
         }
       ]
     }

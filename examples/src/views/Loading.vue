@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap loading-wrap">
-    <h2>Loading加载中</h2>
+    <div class="top">Loading加载中</div>
 
     <div class="block">
       <div
@@ -32,7 +32,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'loading',
+  name: 'Loading',
   components: { codeBlock },
   data () {
     return {

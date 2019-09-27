@@ -4,7 +4,7 @@
       <div
         class="cpm-actionsheet-cliper"
         :style="cliperStyleObj"
-        @click="clickCliper"
+        @click="onClickCliper"
         v-show="animateShow"
       ></div>
     </transition>
@@ -19,7 +19,7 @@
             :key="actionSheet.key"
             :style="[actionSheetItemStyle, actionSheet._actionsheetItemStyle]"
             :class="{'active': activeSheet === actionSheet.key}"
-            @click="clickItem(actionSheet)"
+            @click="onChoiceItem(actionSheet)"
           >{{actionSheet.value}}</div>
         </div>
 
@@ -29,7 +29,7 @@
             :key="actionSheet.key"
             :style="[actionSheetItemStyle, actionSheet._actionsheetItemStyle]"
             :class="{'active': activeSheet === actionSheet.key}"
-            @click="clickItem(actionSheet)"
+            @click="onChoiceItem(actionSheet)"
           >{{actionSheet.value}}</div>
         </div>
 
@@ -37,7 +37,7 @@
           class="cancel-box"
           :style="actionSheetCancelStyle"
           v-if="showCancelBtn"
-          @click="clickCancel"
+          @click="onCancel"
         >{{actionSheetCancelText}}</div>
       </div>
     </transition>
@@ -46,6 +46,7 @@
 
 <script>
 export default {
+  name: 'cActionSheet',
   props: {
     // 蒙层样式
     cliperStyleObj: {
@@ -92,11 +93,6 @@ export default {
     actionSheetCancelText: {
       type: String,
       default: '取消'
-    },
-    // hash时是否移除
-    removeOnHashChange: {
-      type: Boolean,
-      default: true
     }
   },
   data () {
@@ -106,7 +102,7 @@ export default {
   },
   mounted () {
     this.animateShow = true
-    this.removeOnHashChange && window.addEventListener('hashchange', this.remove)
+    window.addEventListener('hashchange', this.remove)
   },
   methods: {
     // 移除
@@ -122,19 +118,19 @@ export default {
       if (this.$el && this.$el.parentNode) {
         this.$el.parentNode.removeChild(this.$el)
         this.$destroy()
-        this.removeOnHashChange && window.removeEventListener('hashchange', this.remove)
+        window.removeEventListener('hashchange', this.remove)
       }
     },
-    clickCliper () {
-      this.$emit('actionSheetClickCliper')
+    onClickCliper () {
+      this.$emit('onClickCliper')
       this.remove()
     },
-    clickCancel () {
-      this.$emit('actionSheetClickCancel')
+    onCancel () {
+      this.$emit('onCancel')
       this.remove()
     },
-    clickItem (actionSheet) {
-      this.$emit('actionSheetChoiceItem', actionSheet)
+    onChoiceItem (actionSheet) {
+      this.$emit('onChoiceItem', actionSheet)
       this.remove()
     },
     touchmoveActionSheet (e) {

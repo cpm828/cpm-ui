@@ -2,6 +2,14 @@
 
 > 基于Vue.js 2.0 UI组件库.
 
+## 快速查看
+
+### 链接
+[点击查看教程](https://blog.pimichen.com/images/public/cpm_ui.png)
+
+### 扫码查看
+<img src="https://blog.pimichen.com/images/public/cpm_ui.png">
+
 
 ## 使用说明
 
@@ -21,15 +29,10 @@ npm install sass-loader@7.3.1 --save-dev
 ### 引入组件
 main.js中引入
 ```js
-import { Toast, Loading, Dialog, cIcon } from 'cpm-ui'
-// 或:
-import Toast from 'cpm-ui/packages/toast'
-import Loading from 'cpm-ui/packages/loading'
-import Dialog from 'cpm-ui/packages/dialog'
-import cIcon from 'cpm-ui/packages/cIcon'
+import { Toast, Loading, Dialog, ActionSheet, cIcon } from 'cpm-ui'
 
 // Vue.use
-let components = [Toast, Loading, Dialog, cIcon]
+let components = [Toast, Loading, Dialog, ActionSheet, cIcon]
 components.map(component => Vue.use(component))
 ```
 

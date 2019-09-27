@@ -1,47 +1,89 @@
 <template>
   <div id="app">
     <router-view />
+
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home" v-if="showHomeBtn">
+      <cIcon render="font-class" type="home" color="#333" size="1.2rem" @cIconClick="onClick('home')"></cIcon>
+    </div>
+    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-refresh">
+      <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @cIconClick="onClick('refresh')"></cIcon>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      randomKexy: 0,
+      showHomeBtn: false
+    }
+  },
+  watch: {
+    $route: {
+      handler: function () {
+        if (this.$route.name === 'Index') {
+          this.showHomeBtn = false
+        } else {
+          this.showHomeBtn = true
+        }
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    onClick (type) {
+      if (type === 'home') {
+        this.$router.push({ 'path': '/' })
+      } else {
+        window.location.reload()
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-*{
+* {
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
 }
-ul{
+ul {
   list-style: none;
 }
-a{
+a {
   font-size: r(26);
   color: #4080c8;
 }
-html,body{
+html,
+body {
   background: #efeff4;
   height: 100%;
-  font-family: PingFangSC-Regular,Microsoft Yahei, sans-serif;
-  -webkit-overflow-scrolling: touch;/* 解决ios滑动不流畅问题 */
+  font-family: PingFangSC, Microsoft Yahei, sans-serif;
+  -webkit-overflow-scrolling: touch; /* 解决ios滑动不流畅问题 */
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: PingFangSC, Microsoft Yahei, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 
   .page-wrap {
-    padding-bottom: 30px;
-    h2 {
-      padding: 30px 0;
-      font-size: 32px;
+    padding-bottom: 60px;
+    .top {
+      height: 120px;;
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h4{
+        font-size: 18px;
+        margin-top: 5px;
+      }
     }
     .block {
       padding-bottom: 20px;
@@ -64,7 +106,7 @@ html,body{
           color: #666;
           position: relative;
           box-sizing: border-box;
-          span.text{
+          span.text {
             display: inline-block;
             font-size: 15px;
             height: 44px;
@@ -81,7 +123,7 @@ html,body{
             font-size: 12px;
             margin-left: 5px;
           }
-          span.tip{
+          span.tip {
             font-size: 15px;
             position: absolute;
             right: 30px;
@@ -89,7 +131,7 @@ html,body{
             line-height: 44px;
           }
         }
-       
+
         a::after {
           content: "";
           height: 10px;
@@ -128,6 +170,27 @@ html,body{
           }
         }
       }
+    }
+    .aLink{
+      font-size: 14px;
+    }
+  }
+
+  .global-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    box-shadow: 0px 0 5px #bbb;
+    &.global-btn-home {
+      position: fixed;
+      right: 10px;
+      bottom: 60px;
+    }
+    &.global-btn-refresh {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
     }
   }
 }

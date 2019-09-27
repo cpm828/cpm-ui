@@ -1,6 +1,6 @@
 <template>
-  <div class="page-wrap index-wrap">
-    <h2>ActionSheet弹出选择</h2>
+  <div class="page-wrap actionsheet-wrap">
+    <div class="top">ActionSheet弹出选择</div>
 
     <div class="block">
       <div
@@ -29,7 +29,7 @@
 <script>
 import codeBlock from './components/codeBlock.vue'
 export default {
-  name: 'toast',
+  name: 'ActionSheet',
   components: { codeBlock },
   data () {
     return {
@@ -276,17 +276,16 @@ export default {
       cliperStyleObj: {}, // 蒙层样式
       actionSheetWrapStyle: {}, // 下拉菜单样式
       actionSheetItemStyle: {}, // 下拉菜单选项样式
-      actionSheetCancelStyle: {}, // 取消那妞样式
-      removeOnHashChange: true // hash变化时是否移除，默认为true，使用与SPA
+      actionSheetCancelStyle: {} // 取消那妞样式
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     },
     methods: {
       // 也可以使用methods覆盖的方式来捕获事件
-      // clickItem (actionSheet) {
+      // onChoiceItem (actionSheet) {
       //   console.log(2, actionSheet)
       //   this.remove()
       // }
@@ -329,7 +328,7 @@ export default {
           activeSheet: item._choiceInfo && item._choiceInfo.key
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             self.$set(item, '_choiceInfo', actionSheet)
           })
         }
@@ -362,7 +361,7 @@ export default {
           activeSheet: item._choiceInfo && item._choiceInfo.key
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             self.$set(item, '_choiceInfo', actionSheet)
           })
         }
@@ -386,7 +385,7 @@ export default {
           activeSheet: item._choiceInfo && item._choiceInfo.key
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             self.$set(item, '_choiceInfo', actionSheet)
           })
         }
@@ -417,7 +416,7 @@ export default {
           activeSheet: item._choiceInfo && item._choiceInfo.key
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             self.$set(item, '_choiceInfo', actionSheet)
           })
         }
@@ -473,7 +472,7 @@ export default {
           activeSheet: item._choiceInfo && item._choiceInfo.key // 默认勾选项
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             self.$set(item, '_choiceInfo', actionSheet)
           })
         }
@@ -521,18 +520,17 @@ export default {
           cliperStyleObj: {}, // 蒙层样式
           actionSheetWrapStyle: {}, // 下拉菜单样式
           actionSheetItemStyle: {}, // 下拉菜单选项样式
-          actionSheetCancelStyle: {}, // 取消那妞样式
-          removeOnHashChange: true // hash变化时是否移除，默认为true，使用与SPA
+          actionSheetCancelStyle: {} // 取消那妞样式
         },
         mounted () {
-          this.$on('actionSheetChoiceItem', (actionSheet) => {
+          this.$on('onChoiceItem', (actionSheet) => {
             console.log(1, actionSheet)
             self.$set(item, '_choiceInfo', actionSheet)
           })
         },
         methods: {
           // 也可以使用methods覆盖的方式来捕获事件
-          clickItem (actionSheet) {
+          onChoiceItem (actionSheet) {
             console.log(2, actionSheet)
             this.remove()
           }
