@@ -44,6 +44,11 @@ export default new Router({
       component: resolve => resolve(require('../views/Radio'))
     },
     {
+      path: '/radiogroup',
+      name: 'RadioGroup',
+      component: resolve => resolve(require('../views/RadioGroup'))
+    },
+    {
       path: '/checkbox',
       name: 'Checkbox',
       component: resolve => resolve(require('../views/Checkbox'))

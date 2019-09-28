@@ -9,6 +9,7 @@ import cIcon from './packages/cIcon'
 
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
+import cRadioGroup from './packages/cRadioGroup'
 import cCheckbox from './packages/cCheckbox'
 import cSwitch from './packages/cSwitch'
 
@@ -19,6 +20,7 @@ export {
   ActionSheet,
   cIcon,
   cRadio,
+  cRadioGroup,
   cCheckbox,
   cSwitch
 }

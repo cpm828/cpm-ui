@@ -20,7 +20,6 @@
       <div c_wrap="flex pt-20">
         <div c_wrap="flex jc-c ai-c c-fff fs-16 mr-10" class="sumbit-btn" @click="getData(1)">提交(vue)</div>
         <div c_wrap="flex jc-c ai-c c-fff fs-16 mr-10" class="sumbit-btn" @click="getData(2)">提交(js)</div>
-        <div c_wrap="flex jc-c ai-c c-fff fs-16" class="sumbit-btn" @click="getData(3)">表单提交</div>
       </div>
     </div>
 
@@ -65,9 +64,6 @@ export default {
         inputList.querySelectorAll('input').forEach((el) => {
           if (!el.disabled) formObj[el.name] = el.value
         })
-      } else if (type === 3) { // form表单提交
-        this.$refs.form1.submit()
-        return
       }
       console.log('需要接口传给后端的值：', formObj)
 
@@ -94,7 +90,7 @@ export default {
 <style lang="scss" scoped>
 .radio-wrap{
   .sumbit-btn{
-    width: 80px;
+    width: 100px;
     height: 28px;
     background-image: linear-gradient(-90deg, #508BEF 0%, #4B5FFE 100%);
     border-radius: 14px;

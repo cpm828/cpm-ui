@@ -62,6 +62,10 @@ export default {
           path: '/radio'
         },
         {
+          title: 'RadioGroup单选组',
+          path: '/radiogroup'
+        },
+        {
           title: 'Checkbox多选',
           path: '/checkbox'
         },

@@ -3,6 +3,9 @@
     <span class="cpm-radio-wrap" @click="onClick" v-if="!hidden">
       <cIcon :type="iconType" :color="iconColor" :size="size" class="icon"></cIcon><span class="label" :style="labelStyle" v-if="label">{{label}}</span>
     </span>
+    <!-- 将状态同步到input上，便于父级使用form表单提交数据，也可以不使用表单，直接获取状态使用 -->
+    <!-- 对于非radioGroup来说value为true时表示选中 -->
+    <input :name="name" :type="inputType" :disabled="disabled" :value="activeValue" v-model="currentValue">
   </div>
 </template>
 
@@ -12,20 +15,24 @@ export default {
   name: 'cRadio',
   components: { cIcon },
   props: {
-    // 类型：radio/radio单独使用，radioGroup/radioGroup使用
-    type: {
-      type: String,
-      default: 'radio'
-    },
-    // 表单值（v-model传入，单独使用radio时）
+    // 表单值（v-model传入）
     value: {
       type: [Boolean, Number, String],
       default: false
     },
-    // 当前radio是否选中
-    select: {
-      type: Boolean,
-      default: false
+    // 激活radio的值
+    activeValue: {
+      type: [Boolean, Number, String],
+      default: true
+    },
+    // 选中时的值
+    // trueValue: [Boolean, Number, String],
+    // 未选中时的值
+    // falseValue: [Boolean, Number, String],
+    // 表单name
+    name: {
+      type: String,
+      default: ''
     },
     // 文字：为空时只显示radio
     label: {
@@ -58,6 +65,9 @@ export default {
       currentValue: false // 设置一个中间变量，防止修改父组件数据
     }
   },
+  mounted () {
+    this.currentValue = this.value // 获取初始值
+  },
   computed: {
     // 图标类型
     iconType () {
@@ -81,33 +91,11 @@ export default {
   },
   methods: {
     onClick () {
-      // disabled、hidden、已选中均不处理
-      if (this.disabled || this.hidden || this.currentValue || this.select) return
-      // this.currentValue = true
-      this.$emit('onChange') // 辅助使用
-    }
-  },
-  watch: {
-    currentValue (val) {
-      if (this.type === 'radio') {
-        this.$emit('input', val) // 修改v-model绑定的值
-      }
-    },
-    value: {
-      handler: function (val) {
-        if (this.type === 'radio') {
-          this.currentValue = val
-        }
-      },
-      immediate: true
-    },
-    select: {
-      handler: function (val) {
-        if (this.type === 'radioGroup') {
-          this.currentValue = val
-        }
-      },
-      immediate: true
+      // disabled、hidden 均不处理
+      if (this.disabled || this.hidden || this.currentValue === this.activeValue) return
+      this.currentValue = !this.value
+      this.$emit('input', this.currentValue) // 对应于v-model
+      this.$emit('onChange', this.currentValue) // 辅助使用，少数情况下我们需要捕获change事件，如打点等
     }
   }
 }

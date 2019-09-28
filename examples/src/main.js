@@ -5,7 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import { Toast, Loading, Dialog, ActionSheet, cIcon, cRadio, cCheckbox, cSwitch } from '../../src/index'
+import { Toast, Loading, Dialog, ActionSheet, cIcon, cRadio, cRadioGroup, cCheckbox, cSwitch } from '../../src/index'
 
 // 代码code高亮
 import VueHighlightJS from 'vue-highlightjs'
@@ -14,7 +14,7 @@ import 'highlight.js/styles/atom-one-dark.css' // 配置主题颜色(https://hig
 require('./assets/common.js')
 require('./assets/common.scss')
 
-const components = [Toast, Loading, Dialog, ActionSheet, cIcon, cRadio, cCheckbox, cSwitch]
+const components = [Toast, Loading, Dialog, ActionSheet, cIcon, cRadio, cRadioGroup, cCheckbox, cSwitch]
 
 components.map(cp => Vue.use(cp))
 Vue.use(VueHighlightJS)
