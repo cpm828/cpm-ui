@@ -39,7 +39,7 @@ Vue.use(cRadio)
 |label|提示文字|String||''|
 |disabled|是否禁止操作|Boolean|`true`、`false`|false|
 |hidden|是否隐藏|Boolean|`true`、`false`|false|
-|radioColor|radio颜色，可传一个字符串表示正常颜色，也可传数组['正常颜色', '不可选置灰色']|String、Array||'#4574ff'、['#4574ff', '#C8C7CC']|
+|radioColor|radio颜色，可传一个字符串表示正常颜色，也可传数组['正常颜色', '不可选置灰色']|String、Array||['#4574ff', '#C8C7CC']|
 
 ### 初始化mounted
 无

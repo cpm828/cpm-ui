@@ -62,6 +62,13 @@ export default new Router({
       path: '/switch',
       name: 'Switch',
       component: resolve => resolve(require('../views/Switch'))
+    },
+    // 匹配不到重定向到首页
+    {
+      path: '*',
+      redirect: {
+        name: 'Index'
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

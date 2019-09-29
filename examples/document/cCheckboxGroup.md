@@ -7,7 +7,7 @@
 
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/checkgroup)
+[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/checkboxgroup)
 
 
 
