@@ -8,7 +8,7 @@
 import cIcon from '../cIcon'
 
 /**
- * cRadio组件可单独使用，也应用于cRadioGroup单选组，由type判断
+ * cRadio组件可单独使用，也应用于cRadioGroup单选组，由type判断，使用时不需要设置
  * cRadio单独使用所需核心字段：value(v-model传入)、currentValue
  * cRadioGroup单选组使用所需核心字段：select
  */
@@ -76,11 +76,6 @@ export default {
     iconColor () {
       if (this.disabled) return this.radioColorList[1]
       return this.radioColorList[0]
-    },
-    // 隐藏的input类型
-    inputType () {
-      if (this.hidden) return 'hidden'
-      return 'radio'
     }
   },
   methods: {
@@ -113,9 +108,6 @@ export default {
 .cpm-cRadio{
   display: flex;
   align-items: center;
-  &.inline{
-    display: inline-flex;
-  }
   .label{
     font-size: 14px;
     margin-left: 5px;

@@ -61,7 +61,7 @@ export default {
       })
       option._select = true
       this.currentValue = option.value
-      this.$emit('onChange', option)
+      this.$emit('onChange', option) // 辅助使用
     }
   }
 }

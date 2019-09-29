@@ -69,7 +69,7 @@ body {
   font-family: PingFangSC, Microsoft Yahei, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-align: center;
-  color: #2c3e50;
+  color: #333;
 
   .page-wrap {
     padding-bottom: 60px;
@@ -92,18 +92,21 @@ body {
         padding-left: 20px;
         text-align: left;
         font-size: 15px;
-        color: #666;
+        color: #f00;
         position: relative;
         &.active {
-          color: #333;
+          color: #000;
           font-weight: bold;
+          a {
+            color: #000;
+          }
         }
         a {
           display: block;
           height: 44px;
           line-height: 44px;
           border-bottom: 1px solid #eee;
-          color: #666;
+          color: #333;
           position: relative;
           box-sizing: border-box;
           span.text {
@@ -199,6 +202,7 @@ body {
     background-color: #999;
     border-radius: 5px;
     font-size: 12px;
+    margin-top: 10px;
   }
 }
 </style>

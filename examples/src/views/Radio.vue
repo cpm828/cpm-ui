@@ -4,12 +4,12 @@
 
     <div c_wrap="ta-l pl-20 pr-20">
       <p c_wrap="fs-14 mb-10 ta-j">特别说明：<br>
-        1. 考虑是移动端组件，几乎不存在使用form表单提价的情况。我们的组件会按照form表单的思想来构建属性，但不会使用form提交。<br>
+        1. 考虑是移动端组件，几乎不存在使用form表单提价的情况。组件会按照form表单的思想来构建属性，但不会使用form提交。<br>
         2. 考虑到页面设计的复杂可能性，组件本身只实现了功能，未配置相关style属性，推荐使用手写样式达到UI效果。<br>
-        3. 对于hidden属性，设计之初的目的是为了过滤掉某些不需要展示的项，hidden属性为true时隐藏组件。
+        3. disabled禁止修改，hidden隐藏不展示，是否需要传给后端由实际业务决定。
       </p>
 
-      <p c_wrap="fs-18 pb-10">所有状态如下：</p>
+      <p c_wrap="fs-16 pb-10">状态如下，cRadio单独使用时不可取消：</p>
       <div c_wrap="pb-10">
         <cRadio v-model="single1"></cRadio>
       </div>
@@ -83,8 +83,6 @@ export default {
 `
     }
   },
-  created () { },
-  mounted () { },
   methods: {
     showCode () {
       this.showCodeFlag = !this.showCodeFlag
@@ -92,10 +90,6 @@ export default {
     onChange () {
       this.$toast('被选中了')
     },
-    /**
-     * 模拟常见的几种提交方法，通常情况下使用方法1
-     * @param type {Number} 1/提交vue、2/提交js、3/form表单提交
-     */
     getData () {
       let formObj = {
         single1: this.single1,
@@ -105,7 +99,9 @@ export default {
         single5: this.single5,
         single6: this.single6,
         single7: this.single7,
-        single8: this.single8
+        single8: this.single8,
+        single9: this.single9,
+        single10: this.single10
       }
       // 以下为demo所需
       const message = `您要提交的数据为：<br>${JSON.stringify(formObj)}`
