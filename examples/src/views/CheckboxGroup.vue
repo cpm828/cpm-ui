@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap radio-wrap">
-    <div class="top">Checkbox</div>
+    <div class="top">CheckboxGroup多选组</div>
 
     <p>开发中...</p>
 
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Checkbox',
+  name: 'CheckboxGroup',
   data () {
     return {
     }

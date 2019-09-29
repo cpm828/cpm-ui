@@ -31,7 +31,7 @@
           v-for="(item, index) in list2"
           :key="index"
         >
-          <cIcon render="unicode" :type="item.unicode" :color="iconColor" size="1.3rem" @cIconClick="cIconClick" :key="iconColor"></cIcon>
+          <cIcon render="unicode" :type="item.unicode" :color="iconColor" size="1.3rem" @onClick="cIconClick" :key="iconColor"></cIcon>
           <i c_wrap="fs-10 c-333">{{item.unicode}}</i>
           <i c_wrap="fs-10 c-333">{{item.font}}</i>
           <i c_wrap="fs-10 c-333">{{item.symbol}}</i>
@@ -55,17 +55,17 @@ export default {
         {
           title: 'unicode渲染（ie6+）',
           showCode: false,
-          code: `<cIcon render="unicode" type="&#xe699;" color="white" size="15px" @cIconClick="cIconClick"></cIcon>`
+          code: `<cIcon render="unicode" type="&#xe699;" color="white" size="15px" @onClick="cIconClick"></cIcon>`
         },
         {
           title: 'font-class渲染（ie8+，默认）',
           showCode: false,
-          code: `<cIcon render="font-class" type="delete" color="white" size="2rem" @cIconClick="cIconClick"></cIcon>`
+          code: `<cIcon render="font-class" type="delete" color="white" size="2rem" @onClick="cIconClick"></cIcon>`
         },
         {
           title: 'symbol渲染（ie9+，svg渲染）',
           showCode: false,
-          code: `<cIcon render="symbol" type="delete" color="white" size="2rem" @cIconClick="cIconClick"></cIcon>`
+          code: `<cIcon render="symbol" type="delete" color="white" size="2rem" @onClick="cIconClick"></cIcon>`
         }
       ],
       list2: [

@@ -5,7 +5,7 @@
       class="iconfont"
       :style="cIconStyle"
       v-if="cIconRender === 'unicode'"
-      @click="cIconClick"
+      @click="onClick"
       v-html="type"
     ></i>
 
@@ -14,7 +14,7 @@
       :class="['iconfont', cIconType]"
       :style="cIconStyle"
       v-if="cIconRender === 'font-class'"
-      @click="cIconClick"
+      @click="onClick"
     ></i>
 
     <!-- symbol render -->
@@ -23,7 +23,7 @@
       aria-hidden="true"
       :style="cIconStyle"
       v-if="cIconRender === 'symbol'"
-      @click="cIconClick"
+      @click="onClick"
     >
       <use :xlink:href="'#' + cIconType" />
     </svg>
@@ -79,8 +79,8 @@ export default {
     }
   },
   methods: {
-    cIconClick (e) {
-      this.$emit('cIconClick', e)
+    onClick (e) {
+      this.$emit('onClick', e)
     }
   }
 }

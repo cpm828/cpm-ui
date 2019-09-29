@@ -49,11 +49,11 @@ Vue.use(cIcon)
 ### 方法methods
 |方法|说明|
 |:---|:---|
-|cIconClick|点击icon|
+|onClick|点击icon|
 
 如：
 ```js
-<cIcon type="delete" color="white" size="2rem" @cIconClick="cIconClick"></cIcon>
+<cIcon type="delete" color="white" size="2rem" @onClick="onClick"></cIcon>
 ```
 
 ### 插槽slot

@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- 存放一张图片，便于微信浏览器抓取分享头图 -->
+    <img src="https://blog.pimichen.com/images/public/favicon_300_transparent.png" alt="" style="display:none">
+
     <router-view />
 
     <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home" v-if="showHomeBtn">
@@ -74,13 +77,13 @@ body {
   .page-wrap {
     padding-bottom: 60px;
     .top {
-      height: 120px;;
+      height: 120px;
       font-size: 28px;
       font-weight: bold;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h4{
+      h4 {
         font-size: 18px;
         margin-top: 5px;
       }
@@ -171,9 +174,6 @@ body {
         }
       }
     }
-    .aLink{
-      font-size: 14px;
-    }
   }
 
   .global-btn {
@@ -192,6 +192,16 @@ body {
       right: 10px;
       bottom: 10px;
     }
+  }
+  .code-btn {
+    display: inline-block;
+    color: #fff;
+    height: 20px;
+    padding: 0 5px;
+    line-height: 20px;
+    background-color: #999;
+    border-radius: 5px;
+    font-size: 12px;
   }
 }
 </style>

@@ -58,7 +58,7 @@ export default {
       ],
       list3: [
         {
-          title: 'Radio单选',
+          title: 'Radio',
           path: '/radio'
         },
         {
@@ -66,8 +66,12 @@ export default {
           path: '/radiogroup'
         },
         {
-          title: 'Checkbox多选',
+          title: 'Checkbox',
           path: '/checkbox'
+        },
+        {
+          title: 'CheckboxGroup多选组',
+          path: '/checkboxgroup'
         },
         {
           title: 'Switch开关',

@@ -1,28 +1,32 @@
 <template>
-  <div class="cpm-radio">
-    <span class="cpm-radio-wrap" @click="onClick" v-if="!hidden">
-      <cIcon :type="iconType" :color="iconColor" :size="size" class="icon"></cIcon><span class="label" :style="labelStyle" v-if="label">{{label}}</span>
-    </span>
+  <div class="cpm-cRadio" @click="onClick" v-if="!hidden">
+    <cIcon :type="iconType" :color="iconColor"></cIcon><span class="label" v-if="label">{{label}}</span>
   </div>
 </template>
 
 <script>
 import cIcon from '../cIcon'
+
+/**
+ * cRadio组件可单独使用，也应用于cRadioGroup单选组，由type判断
+ * cRadio单独使用所需核心字段：value(v-model传入)、currentValue
+ * cRadioGroup单选组使用所需核心字段：select
+ */
 export default {
   name: 'cRadio',
   components: { cIcon },
   props: {
-    // 类型：radio/radio单独使用，radioGroup/radioGroup使用
+    // 类型：radio/radio使用，radioGroup/radioGroup使用
     type: {
       type: String,
       default: 'radio'
     },
-    // 表单值（v-model传入，单独使用radio时）
+    // 表单值：radio单选使用，v-model传入
     value: {
       type: [Boolean, Number, String],
       default: false
     },
-    // 当前radio是否选中
+    // 当前radio是否选中：radioGroup单选组使用
     select: {
       type: Boolean,
       default: false
@@ -32,37 +36,37 @@ export default {
       type: String,
       default: ''
     },
-    // 文字样式
-    labelStyle: {
-      type: Object,
-      default: () => { }
-    },
     // 是否禁用（不可点击 且 不上传）
     disabled: {
       type: Boolean,
       default: false
     },
-    // 是否设置为隐藏域（隐藏 且 上传）
+    // 是否设置为隐藏（隐藏 且 上传）
     hidden: {
       type: Boolean,
       default: false
     },
-    // 图标尺寸
-    size: {
-      type: String,
-      default: '1rem'
+    // radio icon颜色：'正常颜色' 、 ['正常颜色', '不可选置灰色']
+    radioColor: {
+      type: [String, Array],
+      default: () => ['#4574ff', '#C8C7CC']
     }
   },
   data () {
     return {
-      currentValue: false // 设置一个中间变量，防止修改父组件数据
+      currentValue: false // 设置一个中间变量，防止修改父组件数据，radio使用
     }
   },
   computed: {
+    // 处理一下radioColor传参类型，既可以传一个字符串表示正常颜色，也可以传数组['正常颜色', '不可选置灰色']
+    radioColorList () {
+      if (typeof this.radioColor === 'string') return this.radioColor ? [this.radioColor, '#C8C7CC'] : ['#4574ff', '#C8C7CC']
+      return this.radioColor
+    },
     // 图标类型
     iconType () {
       // radio（未选中、未选中置灰）、radio-filled（选中）、radio-disabled（选中置灰）
-      if (this.currentValue) { // 选中
+      if (this.currentValue || this.select) { // 选中
         if (this.disabled) return 'radio-disabled'
         return 'radio-filled'
       }
@@ -70,8 +74,8 @@ export default {
     },
     // 图标颜色
     iconColor () {
-      if (this.disabled) return '#C8C7CC'
-      return '#4574ff'
+      if (this.disabled) return this.radioColorList[1]
+      return this.radioColorList[0]
     },
     // 隐藏的input类型
     inputType () {
@@ -83,27 +87,19 @@ export default {
     onClick () {
       // disabled、hidden、已选中均不处理
       if (this.disabled || this.hidden || this.currentValue || this.select) return
-      // this.currentValue = true
-      this.$emit('onChange') // 辅助使用
+
+      if (this.type === 'radio') { // 单选
+        this.currentValue = true
+        this.$emit('input', this.currentValue) // 修改v-model绑定的值
+      }
+      this.$emit('onChange') // radioGroup必需，radio选用
     }
   },
   watch: {
-    currentValue (val) {
-      if (this.type === 'radio') {
-        this.$emit('input', val) // 修改v-model绑定的值
-      }
-    },
+    // radio单选使用--控制v-model value
     value: {
       handler: function (val) {
         if (this.type === 'radio') {
-          this.currentValue = val
-        }
-      },
-      immediate: true
-    },
-    select: {
-      handler: function (val) {
-        if (this.type === 'radioGroup') {
           this.currentValue = val
         }
       },
@@ -114,17 +110,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cpm-radio{
-  font-size: 0; // 清除行内元素间隙
-  .cpm-radio-wrap{
+.cpm-cRadio{
+  display: flex;
+  align-items: center;
+  &.inline{
     display: inline-flex;
-    align-items: center;
-    .icon{
-      margin-right: 5px;
-    }
-    .label{
-      font-size: 14px;
-    }
+  }
+  .label{
+    font-size: 14px;
+    margin-left: 5px;
   }
 }
 </style>

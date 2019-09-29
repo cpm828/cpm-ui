@@ -46,11 +46,17 @@ components.map(component => Vue.use(component))
 |组件|调用方法|[使用教程](http://cpm828.github.io/cpm_ui/demo/index.html)|[使用文档](https://github.com/cpm828/cpm828.github.io/tree/master/cpm_ui/document)|
 |:---|:---|:---|:---|
 |全局组件↓||||
-|Toast|this.$toast()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/toast)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Toast.md)|
-|Loading|this.$loading()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/loading)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Loading.md)|
-|Dialog|this.$dialog()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/dialog)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Dialog.md)|
-|ActionSheet|this.$actionSheet()|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/actionsheet)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md)|
+|Toast|`this.$toast()`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/toast)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Toast.md)|
+|Loading|`this.$loading()`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/loading)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Loading.md)|
+|Dialog|`this.$dialog()`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/dialog)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Dialog.md)|
+|ActionSheet|`this.$actionSheet()`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/actionsheet)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md)|
 |页面内组件↓||||
-|cIcon|\<cIcon\>\<\/cIcon\>|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/icon)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md)|
+|cIcon|`<cIcon></cIcon>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/icon)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md)|
+|表单类组件↓||||
+|cRadio|`<cRadio></cRadio>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radio)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md)|
+|cRadioGroup|`<cRadioGroup></cRadioGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radiogroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md)|
+|cCheckbox|`<cCheckbox></cCheckbox>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/checkbox)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckboox.md)|
+|cCheckboxGroup|`<cCheckboxGroup></cCheckboxGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/checkboxgroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckboxGroup.md)|
+|cSwitch|`<cSwitch></cSwitch>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/switch)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSwitch.md)|
 
 > 未完待续...

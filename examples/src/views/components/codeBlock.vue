@@ -1,6 +1,6 @@
 <template>
   <div class="code-view">
-    <pre v-highlightjs="code">
+    <pre v-highlightjs="code" class="code-pre">
       <i class="copy" @click="copyCode">copy</i>
       <code class="javascript"></code>
     </pre>
@@ -69,5 +69,21 @@ export default {
 .code-view {
   width: 100%;
   position: relative;
+  .code-pre{
+    position: relative;
+  }
+  .copy{
+    display: inline-block;
+    color: #fff;
+    height: 20px;
+    padding: 0 5px;
+    line-height: 20px;
+    background-color: #999;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 5px;
+    position: absolute;
+    right: 0;
+  }
 }
 </style>

@@ -258,7 +258,7 @@ export default {
     border-radius: 8px;
     background-color: #fff;
     z-index: 999;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(0, -50%);

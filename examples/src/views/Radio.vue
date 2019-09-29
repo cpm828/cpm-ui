@@ -1,30 +1,51 @@
 <template>
   <div class="page-wrap radio-wrap">
-    <div class="top">Radio单选</div>
+    <div class="top">Radio</div>
 
-    <div c_wrap="ta-l pl-20 pb-20">
-      <p c_wrap="fs-18 pb-10">1. 所有状态如下：</p>
-      <p>1.1 为true的激活</p>
-      <cRadio name="single1" v-model="single1"></cRadio>
-      <cRadio name="single2" v-model="single2"></cRadio>
-      <cRadio name="single3" label="已选择" v-model="single3"></cRadio>
-      <cRadio name="single4" label="未选择" v-model="single4"></cRadio>
-      <cRadio name="single5" label="已选择且禁用disabled" disabled v-model="single5"></cRadio>
-      <cRadio name="single6" label="未选择且禁用disabled" disabled v-model="single6"></cRadio>
-      <cRadio name="single7" label="已选择且隐为藏域hidden" hidden v-model="single7"></cRadio>
-      <cRadio name="single8" label="未选择且为隐藏域hidden" hidden v-model="single8"></cRadio>
-    </div>
+    <div c_wrap="ta-l pl-20 pr-20">
+      <p c_wrap="fs-14 mb-10 ta-j">特别说明：<br>
+        1. 考虑是移动端组件，几乎不存在使用form表单提价的情况。我们的组件会按照form表单的思想来构建属性，但不会使用form提交。<br>
+        2. 考虑到页面设计的复杂可能性，组件本身只实现了功能，未配置相关style属性，推荐使用手写样式达到UI效果。<br>
+        3. 对于hidden属性，设计之初的目的是为了过滤掉某些不需要展示的项，hidden属性为true时隐藏组件。
+      </p>
 
-    <div c_wrap="ta-l" style="padding-left:1rem">
-      <p c_wrap="fs-18 pb-10">2. radioGroup：</p>
-      <div c_wrap="flex pt-20">
-        <div c_wrap="flex jc-c ai-c c-fff fs-16 mr-10" class="sumbit-btn" @click="getData(1)">提交(vue)</div>
-        <div c_wrap="flex jc-c ai-c c-fff fs-16 mr-10" class="sumbit-btn" @click="getData(2)">提交(js)</div>
+      <p c_wrap="fs-18 pb-10">所有状态如下：</p>
+      <div c_wrap="pb-10">
+        <cRadio v-model="single1"></cRadio>
       </div>
-    </div>
+      <div c_wrap="pb-10">
+        <cRadio v-model="single2" @onChange="onChange"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="已选择" v-model="single3"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="未选择" v-model="single4" @onChange="onChange"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="已选择且修改激活色" radioColor="#f00" v-model="single5"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="未选择且修改激活色" :radioColor="['#f00', '#ccc']" v-model="single6" @onChange="onChange"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="已选择且禁用disabled" disabled v-model="single7"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="未选择且禁用disabled" disabled v-model="single8"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="已选择且隐藏hidden" hidden v-model="single9"></cRadio>
+      </div>
+      <div c_wrap="pb-10">
+        <cRadio label="未选择且隐藏hidden" hidden v-model="single10"></cRadio>
+      </div>
 
-    <!-- <cRadio label="男" v-model="sex"></cRadio> -->
-    <!-- <cRadio label="女" v-model="sex"></cRadio> -->
+      <span class="code-btn" @click.prevent.stop="showCode">code</span>
+      <code-block :code="code" v-if="showCodeFlag"></code-block>
+
+      <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
+    </div>
 
     <a class="aLink" c_wrap="fs-12"
       href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md">查看文档</a>
@@ -32,8 +53,10 @@
 </template>
 
 <script>
+import codeBlock from './components/codeBlock.vue'
 export default {
   name: 'Radio',
+  components: { codeBlock },
   data () {
     return {
       single1: true,
@@ -43,30 +66,47 @@ export default {
       single5: true,
       single6: false,
       single7: true,
-      single8: false
+      single8: false,
+      single9: true,
+      single10: false,
+      showCodeFlag: false,
+      code: `<cRadio v-model="single1"></cRadio>
+<cRadio v-model="single2" @onChange="onChange"></cRadio>
+<cRadio label="已选择" v-model="single3"></cRadio>
+<cRadio label="已选择" v-model="single4" @onChange="onChange"></cRadio>
+<cRadio label="已选择且修改激活色" radioColor="#f00" v-model="single5"></cRadio>
+<cRadio label="已选择且修改激活色" :radioColor="['#f00', '#ccc']" v-model="single6" @onChange="onChange"></cRadio>
+<cRadio label="已选择且禁用disabled" disabled v-model="single7"></cRadio>
+<cRadio label="未选择且禁用disabled" disabled v-model="single8"></cRadio>
+<cRadio label="已选择且隐藏hidden" hidden v-model="single9"></cRadio>
+<cRadio label="未选择且隐藏hidden" hidden v-model="single10"></cRadio>
+`
     }
   },
   created () { },
   mounted () { },
   methods: {
+    showCode () {
+      this.showCodeFlag = !this.showCodeFlag
+    },
+    onChange () {
+      this.$toast('被选中了')
+    },
     /**
      * 模拟常见的几种提交方法，通常情况下使用方法1
      * @param type {Number} 1/提交vue、2/提交js、3/form表单提交
      */
-    getData (type) {
-      let formObj = {}
-      if (type === 1) {
-        ['single1', 'single2', 'single3', 'single4', 'single7', 'single8'].forEach((item) => {
-          formObj[item] = this[item]
-        })
-      } else if (type === 2) {
-        const inputList = this.$refs.form1
-        inputList.querySelectorAll('input').forEach((el) => {
-          if (!el.disabled) formObj[el.name] = el.value
-        })
+    getData () {
+      let formObj = {
+        single1: this.single1,
+        single2: this.single2,
+        single3: this.single3,
+        single4: this.single4,
+        single5: this.single5,
+        single6: this.single6,
+        single7: this.single7,
+        single8: this.single8
       }
-      console.log('需要接口传给后端的值：', formObj)
-
       // 以下为demo所需
       const message = `您要提交的数据为：<br>${JSON.stringify(formObj)}`
       this.$dialog({
@@ -91,7 +131,7 @@ export default {
 .radio-wrap{
   .sumbit-btn{
     width: 100px;
-    height: 28px;
+    height: 30px;
     background-image: linear-gradient(-90deg, #508BEF 0%, #4B5FFE 100%);
     border-radius: 14px;
   }

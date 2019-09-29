@@ -54,9 +54,21 @@ export default new Router({
       component: resolve => resolve(require('../views/Checkbox'))
     },
     {
+      path: '/checkboxgroup',
+      name: 'CheckboxGroup',
+      component: resolve => resolve(require('../views/CheckboxGroup'))
+    },
+    {
       path: '/switch',
       name: 'Switch',
       component: resolve => resolve(require('../views/Switch'))
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
