@@ -6,10 +6,10 @@
     <router-view />
 
     <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home" v-if="showHomeBtn">
-      <cIcon render="font-class" type="home" color="#333" size="1.2rem" @cIconClick="onClick('home')"></cIcon>
+      <cIcon render="font-class" type="home" color="#333" size="1.2rem" @onClick="onClick('home')"></cIcon>
     </div>
     <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-refresh">
-      <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @cIconClick="onClick('refresh')"></cIcon>
+      <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @onClick="onClick('refresh')"></cIcon>
     </div>
   </div>
 </template>

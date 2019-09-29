@@ -5,7 +5,7 @@
 ## 快速查看
 
 ### 链接
-[点击查看教程](https://blog.pimichen.com/images/public/cpm_ui.png)
+[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/)
 
 ### 扫码查看
 <img src="https://blog.pimichen.com/images/public/cpm_ui.png">

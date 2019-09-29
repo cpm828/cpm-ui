@@ -11,6 +11,7 @@ import cIcon from './packages/cIcon'
 import cRadio from './packages/cRadio'
 import cRadioGroup from './packages/cRadioGroup'
 import cCheckbox from './packages/cCheckbox'
+import cCheckboxGroup from './packages/cCheckboxGroup'
 import cSwitch from './packages/cSwitch'
 
 export {
@@ -22,5 +23,6 @@ export {
   cRadio,
   cRadioGroup,
   cCheckbox,
+  cCheckboxGroup,
   cSwitch
 }
