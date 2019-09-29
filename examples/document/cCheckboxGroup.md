@@ -66,7 +66,7 @@ options结构，基本同 [cCheckbox](https://github.com/cpm828/cpm828.github.io
 |hidden|是否隐藏|Boolean|`true`、`false`|false|
 |checkboxColor|checkbox颜色，可传一个字符串表示正常颜色，也可传数组['正常颜色', '不可选置灰色']|String、Array||['#4574ff', '#C8C7CC']|
 
-### 初始化mounted
+### 初始化created或mounted
 无
 
 ### 方法methods

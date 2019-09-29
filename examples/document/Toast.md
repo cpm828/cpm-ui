@@ -44,7 +44,7 @@ this.$toast({
 |type|toast类型（icon）|String|`success`、`info`、`error`|''|
 
 
-### 初始化mounted
+### 初始化created或mounted
 无
 
 ### 方法methods

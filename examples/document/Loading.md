@@ -31,6 +31,9 @@ this.$loading(1); // 1 ~ 16
 |cliperStyleObj|loading蒙层样式|Ojbect||{}|
 |type|loading类型|Number|1~16|1|
 
+### 初始化created或mounted
+无
+
 ### 方法methods
 |参数|说明|
 |:---|:---|

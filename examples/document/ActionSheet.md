@@ -64,8 +64,8 @@ this.$actionSheet({
 |removeOnHashChange|hash变化时是否移除|String||true|
 
 
-### 初始化mounted
-我们可以在mounted中设置 `this.$on` 来捕获组件内的派发的事件。
+### 初始化created或mounted
+我们可以在mounted中设置 `this.$on` 来捕获组件内的派发的事件，即组件自身接受自己派发的事件。
 
 |参数|说明|
 |:---|:---|

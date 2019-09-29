@@ -35,7 +35,7 @@ Vue.use(cIcon)
 |size|icon大小|String||继承父级|
 |color|icon颜色|String||继承父级|
 
-### 初始化mounted
+### 初始化created或mounted
 无
 
 ### 方法methods

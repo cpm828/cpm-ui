@@ -20,7 +20,7 @@ Vue.use(cSwitch)
 
 ### 属性props（propsData）
 
-### 初始化mounted
+### 初始化created或mounted
 
 ### 方法methods
 
