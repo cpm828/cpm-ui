@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <!-- 存放一张图片，便于微信浏览器抓取分享头图 -->
-    <img src="https://blog.pimichen.com/images/public/favicon_300_transparent.png" alt="" style="display:none">
+    <img src="https://blog.pimichen.com/images/public/favicon_300_transparent.png" alt="" style="display:block;width:0;height:0">
 
     <router-view />
 
-    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home" v-if="showHomeBtn">
-      <cIcon render="font-class" type="home" color="#333" size="1.2rem" @onClick="onClick('home')"></cIcon>
-    </div>
-    <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-refresh">
-      <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @onClick="onClick('refresh')"></cIcon>
-    </div>
+    <template v-if="showBtn">
+      <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-home">
+        <cIcon render="font-class" type="home" color="#333" size="1.2rem" @onClick="onClick('home')"></cIcon>
+      </div>
+      <div c_wrap="flex jc-c ai-c" class="global-btn global-btn-refresh">
+        <cIcon render="font-class" type="refresh" color="#333" size="1.2rem" @onClick="onClick('refresh')"></cIcon>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -19,18 +21,13 @@ export default {
   name: 'App',
   data () {
     return {
-      randomKexy: 0,
-      showHomeBtn: false
+      showBtn: false
     }
   },
   watch: {
     $route: {
       handler: function () {
-        if (this.$route.name === 'Index') {
-          this.showHomeBtn = false
-        } else {
-          this.showHomeBtn = true
-        }
+        this.showBtn = this.$route.name !== 'Index'
       },
       immediate: true
     }
