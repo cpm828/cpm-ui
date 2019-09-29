@@ -1,6 +1,6 @@
 <template>
   <div class="cpm-cRadio" @click="onClick" v-if="!hidden">
-    <cIcon :type="iconType" :color="iconColor"></cIcon><span class="label" v-if="label">{{label}}</span>
+    <cIcon :type="iconType" :color="iconColor" :size="'1.067rem'"></cIcon><span class="label" v-if="label">{{label}}</span>
   </div>
 </template>
 

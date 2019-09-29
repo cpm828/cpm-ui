@@ -415,7 +415,7 @@ export default {
     .cpm-cRadio {
       padding: 6px 0;
       .iconfont {
-        font-size: 1.2rem;
+        font-size: 1.4rem !important;
       }
       .label {
         flex: 1;

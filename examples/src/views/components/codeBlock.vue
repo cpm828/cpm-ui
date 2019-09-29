@@ -85,5 +85,8 @@ export default {
     position: absolute;
     right: 0;
   }
+  code{
+    font-size: 12px;
+  }
 }
 </style>
