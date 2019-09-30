@@ -44,7 +44,9 @@
       <span class="code-btn" @click.prevent.stop="showCode">code</span>
       <code-block type="html" :code="code" v-if="showCodeFlag"></code-block>
 
-      <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
+      <div c_wrap="mt-20">
+        <cButton type="primary" size="small" @onClick="getData">提交全部</cButton>
+      </div>
     </div>
 
     <div>
@@ -126,12 +128,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.checkbox-wrap{
-  .sumbit-btn{
-    width: 100px;
-    height: 30px;
-    background-image: linear-gradient(-90deg, #508BEF 0%, #4B5FFE 100%);
-    border-radius: 14px;
-  }
-}
 </style>

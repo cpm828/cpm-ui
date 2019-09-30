@@ -51,7 +51,9 @@
         <code-block :code="config6.code" v-if="config6.showCode"></code-block>
       </div>
 
-      <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
+      <div c_wrap="mt-20">
+        <cButton type="primary" size="small" @onClick="getData">提交全部</cButton>
+      </div>
     </div>
 
     <div>
@@ -462,12 +464,6 @@ export default {
         font-size: 0.9rem;
       }
     }
-  }
-  .sumbit-btn {
-    width: 100px;
-    height: 30px;
-    background-image: linear-gradient(-90deg, #508bef 0%, #4b5ffe 100%);
-    border-radius: 14px;
   }
 }
 </style>
