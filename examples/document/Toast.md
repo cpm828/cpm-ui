@@ -53,9 +53,6 @@ this.$toast({
 |callback|toast消失回调|
 |remove|移除toast|
 
-### 插槽slot
-无
-
 
 
 ## 三、特别提示

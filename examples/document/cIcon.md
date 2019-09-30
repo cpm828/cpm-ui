@@ -27,7 +27,7 @@ Vue.use(cIcon)
 <cIcon render="symbol" type="delete" color="white" size="2rem" @cIconClick="cIconClick"></cIcon>
 ```
 
-### 属性props（propsData）
+### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |render|渲染方式|String|`unicode`、`font-class`、`symbol`|`font-class`|
@@ -35,10 +35,8 @@ Vue.use(cIcon)
 |size|icon大小|String||继承父级|
 |color|icon颜色|String||继承父级|
 
-### 初始化created或mounted
-无
 
-### 方法methods
+### 事件Event
 |方法|说明|
 |:---|:---|
 |onClick|点击icon|

@@ -17,15 +17,32 @@ Vue.use(cSwitch)
 ```
 
 ### 调用
+```html
+<cSwitch v-model="flag"></cSwitch>
+```
 
-### 属性props（propsData）
+### 属性props
+|参数|说明|类型|可选值|默认值|
+|:---|:---|:---|:---|:---|
+|color|颜色|String||`#4574ff`|
+|disabled|是否禁用|Boolean|`true`、`false`|`false`|
 
-### 初始化created或mounted
 
-### 方法methods
+### 事件Event
+|方法|说明|
+|:---|:---|
+|onClick|点击切换switch|
+
+如：
+```html
+<cSwitch v-model="flag" @onClick="onClick"></cSwitch>
+```
 
 ### 插槽slot
-无
+可在插槽中设置开关状态
+```html
+<cSwitch v-model="flag">{{flag ? '开' : '关'}}</cSwitch>
+```
 
 
 

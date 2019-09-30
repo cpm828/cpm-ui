@@ -163,9 +163,6 @@ this.$actionSheet({
 })
 ```
 
-### 插槽slot
-无
-
 
 
 ## 三、特别提示

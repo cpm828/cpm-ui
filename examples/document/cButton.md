@@ -20,7 +20,7 @@ Vue.use(cButton)
 <cButton type="primary" size="large">primary</cButton>
 ```
 
-### 属性props（propsData）
+### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |type|按钮类型|String|`default`、`primary`、`danger`|`default`|
@@ -29,10 +29,8 @@ Vue.use(cButton)
 |plain|是否为幽灵按钮，即有边框无背景色|Boolean|`true`、`false`|`false`|
 |disabled|是否为禁用按钮，0.6不透明度|Boolean|`true`、`false`|`false`|
 
-### 初始化created或mounted
-无
 
-### 方法methods
+### 事件Event
 |方法|说明|
 |:---|:---|
 |onClick|点击icon|

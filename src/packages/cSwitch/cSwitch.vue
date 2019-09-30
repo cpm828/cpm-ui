@@ -1,11 +1,10 @@
 <template>
   <div :class="[
     'cpm-cSwitch',
-    size,
+    hasSlot ? 'hasSlot' : '',
     value ? 'active' : '',
     disabled ? 'disabled' : '']" :style="switchStyle" @click="onClick">
-      <span class="tip"><slot></slot></span>
-    </div>
+      <span class="tip" ref="switchSlot"><slot></slot></span>
   </div>
 </template>
 
@@ -23,15 +22,18 @@ export default {
       type: String,
       default: '#4574ff'
     },
-    // size: small/normal，也可以方式small样式进行覆盖
-    size: {
-      type: String,
-      default: 'normal'
-    },
     disabled: {
-      tpye: Boolean,
+      type: Boolean,
       default: false
     }
+  },
+  data () {
+    return {
+      hasSlot: false // 是否有插槽内容
+    }
+  },
+  mounted () {
+    this.hasSlot = this.$refs.switchSlot.innerHTML !== ''
   },
   computed: {
     switchStyle () {
@@ -46,6 +48,7 @@ export default {
   },
   methods: {
     onClick () {
+      if (this.disabled) return
       this.$emit('input', !this.value)
       this.$emit('onClick') // 辅助使用
     }
@@ -67,7 +70,7 @@ export default {
   // 插槽提示
   .tip{
     width: 20px;
-    height: 30px;
+    height: 100%;
     position: absolute;
     left: 30px;
     top: 0;
@@ -83,7 +86,7 @@ export default {
   &::before{
     content: '';
     width: 50px;
-    height: 30px;
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -122,37 +125,29 @@ export default {
     }
   }
 
-  // small size
-  &.small{
-    width: 42px;
-    height: 26px;
-    border-radius: 13px;
-    .tip{
-      width: 14px;
-      left: 24px;
-    }
+  // 有插槽内容，需要改变宽度
+  &.hasSlot{
+    width: 62px;
     &::before{
-      width: 40px;
-      height: 24px;
-      border-radius: 12px;
-    }
-    &::after{
-      width: 24px;
-      height: 24px;
+      width: 60px;
     }
     &.active{
       &::after{
-        transform: translate(16px);
-      }
-      .tip{
-        transform: translate(-24px);
-        color: #fff;
+        transform: translate(30px);
       }
     }
+    .tip{
+      width: 30px;
+    }
   }
+
   // 禁用
   &.disabled{
-    
+    cursor: not-allowed;
+    opacity: .4;
+    &::before{
+      background-color: #ccc;
+    }
   }
 }
 </style>

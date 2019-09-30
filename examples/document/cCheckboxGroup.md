@@ -51,7 +51,7 @@ config: {
 }
 ```
 
-### 属性props（propsData）
+### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |options|可选数据，list map结构|Array|`checkbox`、`checkboxGroup`|`checkbox`|
@@ -66,10 +66,8 @@ options结构，基本同 [cCheckbox](https://github.com/cpm828/cpm828.github.io
 |hidden|是否隐藏|Boolean|`true`、`false`|false|
 |checkboxColor|checkbox颜色，可传一个字符串表示正常颜色，也可传数组['正常颜色', '不可选置灰色']|String、Array||['#4574ff', '#C8C7CC']|
 
-### 初始化created或mounted
-无
 
-### 方法methods
+### 事件Event
 |方法|说明|
 |:---|:---|
 |onChange|点击选中|
