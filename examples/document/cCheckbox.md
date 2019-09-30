@@ -50,7 +50,7 @@ Vue.use(cCheckbox)
 |onChange|被选中|
 
 如：
-```js
+```html
 <cCheckbox label="未选择" v-model="flag" @onChange="onChange"></cCheckbox>
 ```
 

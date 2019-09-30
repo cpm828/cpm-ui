@@ -75,7 +75,7 @@ options结构，基本同 [cCheckbox](https://github.com/cpm828/cpm828.github.io
 |onChange|点击选中|
 
 如：
-```js
+```html
 <cCheckboxGroup :options="config.options" v-model="config.activeValue" @onChange="onChange"></cCheckboxGroup>
 ```
 

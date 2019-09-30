@@ -42,13 +42,15 @@
       </div>
 
       <span class="code-btn" @click.prevent.stop="showCode">code</span>
-      <code-block :code="code" v-if="showCodeFlag"></code-block>
+      <code-block type="html" :code="code" v-if="showCodeFlag"></code-block>
 
       <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
     </div>
 
-    <a class="aLink" c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md">查看文档</a>
+    </div>
   </div>
 </template>
 
@@ -124,11 +126,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.radio-wrap{
-  .sumbit-btn{
+.radio-wrap {
+  .sumbit-btn {
     width: 100px;
     height: 30px;
-    background-image: linear-gradient(-90deg, #508BEF 0%, #4B5FFE 100%);
+    background-image: linear-gradient(-90deg, #508bef 0%, #4b5ffe 100%);
     border-radius: 14px;
   }
 }

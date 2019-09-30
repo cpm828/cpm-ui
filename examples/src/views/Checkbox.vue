@@ -42,13 +42,15 @@
       </div>
 
       <span class="code-btn" @click.prevent.stop="showCode">code</span>
-      <code-block :code="code" v-if="showCodeFlag"></code-block>
+      <code-block type="html" :code="code" v-if="showCodeFlag"></code-block>
 
       <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
     </div>
 
-    <a class="aLink" c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md">查看文档</a>
+    </div>
   </div>
 </template>
 

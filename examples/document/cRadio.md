@@ -50,7 +50,7 @@ Vue.use(cRadio)
 |onChange|被选中|
 
 如：
-```js
+```html
 <cRadio label="未选择" v-model="flag" @onChange="onChange"></cRadio>
 ```
 

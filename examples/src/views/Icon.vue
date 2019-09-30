@@ -13,7 +13,7 @@
           <span class="text">{{index + 1}}、{{item.title}}</span>
           <i @click.prevent.stop="showCode(item, index)">code</i>
         </a>
-        <code-block :code="item.code" v-if="item.showCode"></code-block>
+        <code-block type="html" :code="item.code" v-if="item.showCode"></code-block>
       </div>
     </div>
 
@@ -37,9 +37,14 @@
           <i c_wrap="fs-10 c-333">{{item.symbol}}</i>
         </div>
       </div>
-      <a class="aLink" c_wrap="fs-12" href="https://cpm828.github.io/cpm_ui/fontdemo/demo_index.html">以上只列举了使用频率较多的icon，更多请查看</a>
-      <br>
-      <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md">查看文档</a>
+      <div>
+        <a class="aLink" c_wrap="fs-12"
+          href="https://cpm828.github.io/cpm_ui/fontdemo/demo_index.html">以上只列举了使用频率较多的icon，更多请查看</a>
+      </div>
+      <div>
+        <a class="aLink" c_wrap="fs-12"
+          href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md">查看文档</a>
+      </div>
     </div>
   </div>
 </template>

@@ -76,7 +76,7 @@ options结构，基本同 [cRadio](https://github.com/cpm828/cpm828.github.io/bl
 |onChange|点击选中|
 
 如：
-```js
+```html
 <cRadioGroup :options="config.options" v-model="config.activeValue" @onChange="onChange"></cRadioGroup>
 ```
 

@@ -4,8 +4,10 @@
 
     <p>开发中...</p>
 
-    <a class="aLink" c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSwitch.md">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSwitch.md">查看文档</a>
+    </div>
   </div>
 </template>
 

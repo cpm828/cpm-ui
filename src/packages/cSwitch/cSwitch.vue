@@ -1,5 +1,5 @@
 <template>
-  <div class="div-view">
+  <div class="cpm-cSwitch">
 
   </div>
 </template>
@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.cpm-cSwitch{
+  
+}
 </style>

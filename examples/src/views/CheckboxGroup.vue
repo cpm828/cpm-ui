@@ -54,8 +54,10 @@
       <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
     </div>
 
-    <a class="aLink" c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckboxGroup.md">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckboxGroup.md">查看文档</a>
+    </div>
   </div>
 </template>
 
@@ -289,7 +291,14 @@ export default {
   activeValue: ['banana'],
 }
 
-<cCheckboxGroup :options="config5.options" v-model="config5.activeValue"></cCheckboxGroup>`
+<cCheckboxGroup :options="config5.options" v-model="config5.activeValue"></cCheckboxGroup>
+
+.config5 {
+  .cpm-cCheckbox {
+    display: inline-flex;
+    margin-right: 10px;
+  }
+}`
       },
       config6: {
         options: [
@@ -372,7 +381,21 @@ export default {
   activeValue: ['banana', 'watermelon', 'orange'],
 }
 
-<cCheckboxGroup :options="config6.options" v-model="config6.activeValue"></cCheckboxGroup>`
+<cCheckboxGroup :options="config6.options" v-model="config6.activeValue"></cCheckboxGroup>
+
+.config6 {
+  .cpm-cCheckbox {
+    padding: 6px 0;
+    .iconfont {
+      font-size: 1.4rem !important;
+    }
+    .label {
+      flex: 1;
+      text-align: right;
+      font-size: 0.9rem;
+    }
+  }
+}`
       }
     }
   },

@@ -2,7 +2,7 @@
   <div class="code-view">
     <pre v-highlightjs="code" class="code-pre">
       <i class="copy" @click="copyCode">copy</i>
-      <code class="javascript"></code>
+      <code :class="type"></code>
     </pre>
   </div>
 </template>
@@ -12,6 +12,10 @@ import ClipboardJS from 'clipboard'
 export default {
   name: 'codeBlock',
   props: {
+    type: {
+      type: String,
+      default: 'javascript'
+    },
     code: {
       type: String,
       default: ''
@@ -87,6 +91,7 @@ export default {
   }
   code{
     font-size: 12px;
+    text-align: left;
   }
 }
 </style>

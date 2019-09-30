@@ -3,12 +3,7 @@
     <div class="top">ActionSheet弹出选择</div>
 
     <div class="block">
-      <div
-        class="block-item"
-        :class="{'active': item.showCode}"
-        v-for="(item, index) in list"
-        :key="index"
-      >
+      <div class="block-item" :class="{'active': item.showCode}" v-for="(item, index) in list" :key="index">
         <a @click.prevent="showActionSheet(item, index)">
           <span class="text">{{index + 1}}、{{item.title}}</span>
           <i @click.prevent.stop="showCode(item, index)">code</i>
@@ -18,11 +13,10 @@
       </div>
     </div>
 
-    <a
-      class="aLink"
-      c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md"
-    >查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/ActionSheet.md">查看文档</a>
+    </div>
   </div>
 </template>
 

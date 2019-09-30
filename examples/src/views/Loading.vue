@@ -3,29 +3,21 @@
     <div class="top">Loading加载中</div>
 
     <div class="block">
-      <div
-        class="block-item"
-        :class="{'active': item.showCode}"
-        v-for="(item, index) in list"
-        :key="index"
-      >
+      <div class="block-item" :class="{'active': item.showCode}" v-for="(item, index) in list" :key="index">
         <a @click.prevent="showLoading(index)">
           <span class="text" v-if="index === 0">{{'默认' + item.title}}</span>
           <span class="text" v-else>{{item.title + index}}</span>
           <i @click.prevent.stop="showCode(item, index)">code</i>
         </a>
-        <code-block
-          :code="index === 0 ? 'this.$loading()' : 'this.$loading(' + index + ')'"
-          v-if="item.showCode"
-        ></code-block>
+        <code-block :code="index === 0 ? 'this.$loading()' : 'this.$loading(' + index + ')'" v-if="item.showCode">
+        </code-block>
       </div>
     </div>
 
-    <a
-      class="aLink"
-      c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Loading.md"
-    >查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/Loading.md">查看文档</a>
+    </div>
   </div>
 </template>
 

@@ -44,7 +44,7 @@ Vue.use(cIcon)
 |onClick|点击icon|
 
 如：
-```js
+```html
 <cIcon type="delete" color="white" size="2rem" @onClick="onClick"></cIcon>
 ```
 

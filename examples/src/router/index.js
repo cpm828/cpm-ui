@@ -37,6 +37,11 @@ export default new Router({
       name: 'Icon',
       component: resolve => resolve(require('../views/Icon'))
     },
+    {
+      path: '/button',
+      name: 'Button',
+      component: resolve => resolve(require('../views/Button'))
+    },
     // 表单类
     {
       path: '/radio',

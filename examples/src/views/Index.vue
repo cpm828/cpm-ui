@@ -23,7 +23,9 @@
       </div>
     </div>
 
-    <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui">查看文档</a>
+    </div>
   </div>
 </template>
 
@@ -54,6 +56,10 @@ export default {
         {
           title: 'Icon图标',
           path: '/icon'
+        },
+        {
+          title: 'Button按钮',
+          path: '/button'
         }
       ],
       list3: [

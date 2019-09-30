@@ -54,8 +54,10 @@
       <div c_wrap="flex jc-c ai-c c-fff fs-16 mt-20" class="sumbit-btn" @click="getData">提交全部</div>
     </div>
 
-    <a class="aLink" c_wrap="fs-12"
-      href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md">查看文档</a>
+    <div>
+      <a class="aLink" c_wrap="fs-12"
+        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md">查看文档</a>
+    </div>
   </div>
 </template>
 
@@ -273,7 +275,14 @@ export default {
   activeValue: 'A',
 }
 
-<cRadioGroup :options="config5.options" v-model="config5.activeValue"></cRadioGroup>`
+<cRadioGroup :options="config5.options" v-model="config5.activeValue"></cRadioGroup>
+
+.config5 {
+  .cpm-cRadio {
+    display: inline-flex;
+    margin-right: 10px;
+  }
+}`
       },
       config6: {
         options: [
@@ -356,7 +365,21 @@ export default {
   activeValue: 'A',
 }
 
-<cRadioGroup :options="config6.options" v-model="config6.activeValue"></cRadioGroup>`
+<cRadioGroup :options="config6.options" v-model="config6.activeValue"></cRadioGroup>
+
+.config6 {
+  .cpm-cRadio {
+    padding: 6px 0;
+    .iconfont {
+      font-size: 1.4rem !important;
+    }
+    .label {
+      flex: 1;
+      text-align: right;
+      font-size: 0.9rem;
+    }
+  }
+}`
       }
     }
   },

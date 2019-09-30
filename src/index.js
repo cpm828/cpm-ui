@@ -6,6 +6,7 @@ import ActionSheet from './packages/actionSheet'
 
 // 页面组件类（以c开头）
 import cIcon from './packages/cIcon'
+import cButton from './packages/cButton'
 
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
@@ -20,6 +21,7 @@ export {
   Dialog,
   ActionSheet,
   cIcon,
+  cButton,
   cRadio,
   cRadioGroup,
   cCheckbox,
