@@ -243,6 +243,32 @@ export default {
         {
           unicode: '&#xe640;',
           font: 'edit'
+        },
+        // 第11行
+        {
+          unicode: '&#xe726;',
+          font: 'jiahao2'
+        },
+        {
+          unicode: '&#xe728;',
+          font: 'jiahao2-filled'
+        },
+        {
+          unicode: '&#xe727;',
+          font: 'jiahao'
+        },
+        {
+          unicode: '&#xe729;',
+          font: 'jianhao'
+        },
+        // 第12行
+        {
+          unicode: '&#xe7a0;',
+          font: 'pullup'
+        },
+        {
+          unicode: '&#xe79f;',
+          font: 'pulldown'
         }
       ],
       iconColorArr: ['#333', '#4080e8', '#079a07', '#27c3d8', '#960596'],

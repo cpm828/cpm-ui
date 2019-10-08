@@ -5,68 +5,129 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // 页面类
+    // 首页index
     {
       path: '/',
       name: 'Index',
-      component: resolve => resolve(require('../views/Index'))
+      component: () => import(/* webpackChunkName: "/index/index" */ '../views/Index'),
+      meta: {
+        title: 'cpm-ui'
+      }
     },
+    // 页面类page
     {
       path: '/toast',
       name: 'Toast',
-      component: resolve => resolve(require('../views/Toast'))
+      component: () => import(/* webpackChunkName: "/page/toast" */ '../views/Toast'),
+      meta: {
+        title: 'Toast'
+      }
     },
     {
       path: '/loading',
       name: 'Loading',
-      component: resolve => resolve(require('../views/Loading'))
+      component: () => import(/* webpackChunkName: "/page/loading" */ '../views/Loading'),
+      meta: {
+        title: 'Loading'
+      }
     },
     {
       path: '/dialog',
-      name: 'Dialog', // dialog为保留字
-      component: resolve => resolve(require('../views/Dialog'))
+      name: 'Dialog',
+      component: () => import(/* webpackChunkName: "/page/dialog" */ '../views/Dialog'),
+      meta: {
+        title: 'Dialog'
+      }
     },
     {
       path: '/actionsheet',
       name: 'ActionSheet',
-      component: resolve => resolve(require('../views/ActionSheet'))
+      component: () => import(/* webpackChunkName: "/page/actionsheet" */ '../views/ActionSheet'),
+      meta: {
+        title: 'ActionSheet'
+      }
     },
-    // 组件类
+    // 组件类component
     {
       path: '/icon',
       name: 'Icon',
-      component: resolve => resolve(require('../views/Icon'))
+      component: () => import(/* webpackChunkName: "/component/icon" */ '../views/Icon'),
+      meta: {
+        title: 'Icon'
+      }
     },
     {
       path: '/button',
       name: 'Button',
-      component: resolve => resolve(require('../views/Button'))
+      component: () => import(/* webpackChunkName: "/component/button" */ '../views/Button'),
+      meta: {
+        title: 'Button'
+      }
     },
-    // 表单类
+    {
+      path: '/range',
+      name: 'Range',
+      component: () => import(/* webpackChunkName: "/component/range" */ '../views/Range'),
+      meta: {
+        title: 'Range'
+      }
+    },
+    {
+      path: '/rangedouble',
+      name: 'RangeDouble',
+      component: () => import(/* webpackChunkName: "/component/rangedouble" */ '../views/RangeDouble'),
+      meta: {
+        title: 'RangeDouble'
+      }
+    },
+    {
+      path: '/indexlist',
+      name: 'IndexList',
+      component: () => import(/* webpackChunkName: "/component/range" */ '../views/IndexList'),
+      meta: {
+        title: 'IndexList'
+      }
+    },
+    // 表单类form
     {
       path: '/radio',
       name: 'Radio',
-      component: resolve => resolve(require('../views/Radio'))
+      component: () => import(/* webpackChunkName: "/form/radio" */ '../views/Radio'),
+      meta: {
+        title: 'Radio'
+      }
     },
     {
       path: '/radiogroup',
       name: 'RadioGroup',
-      component: resolve => resolve(require('../views/RadioGroup'))
+      component: () => import(/* webpackChunkName: "/form/radiogroup" */ '../views/RadioGroup'),
+      meta: {
+        title: 'RadioGroup'
+      }
     },
     {
       path: '/checkbox',
       name: 'Checkbox',
-      component: resolve => resolve(require('../views/Checkbox'))
+      component: () => import(/* webpackChunkName: "/form/checkbox" */ '../views/Checkbox'),
+      meta: {
+        title: 'Checkbox'
+      }
     },
     {
       path: '/checkboxgroup',
       name: 'CheckboxGroup',
-      component: resolve => resolve(require('../views/CheckboxGroup'))
+      component: () => import(/* webpackChunkName: "/form/checkboxgroup" */ '../views/CheckboxGroup'),
+      meta: {
+        title: 'CheckboxGroup'
+      }
     },
     {
       path: '/switch',
       name: 'Switch',
-      component: resolve => resolve(require('../views/Switch'))
+      component: () => import(/* webpackChunkName: "/form/switch" */ '../views/Switch'),
+      meta: {
+        title: 'Switch'
+      }
     },
     // 匹配不到重定向到首页
     {

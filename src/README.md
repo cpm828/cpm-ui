@@ -53,6 +53,9 @@ components.map(component => Vue.use(component))
 |页面内组件↓||||
 |cIcon|`<cIcon></cIcon>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/icon)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md)|
 |cButton|`<cButton></cButton>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/button)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cButton.md)|
+|cRange|`<cButton></cButton>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/range)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRange.md)|
+|cRangeDouble|`<cButton></cButton>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/rangedouble)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRangeDouble.md)|
+|cIndexList|`<cButton></cButton>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/indexlist)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIndexList.md)|
 |表单类组件↓||||
 |cRadio|`<cRadio></cRadio>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radio)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md)|
 |cRadioGroup|`<cRadioGroup></cRadioGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radiogroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md)|

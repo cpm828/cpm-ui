@@ -60,6 +60,18 @@ export default {
         {
           title: 'Button按钮',
           path: '/button'
+        },
+        {
+          title: 'Range单滑块',
+          path: '/range'
+        },
+        {
+          title: 'RangeDouble双滑块',
+          path: '/rangedouble'
+        },
+        {
+          title: 'IndexList索引列表',
+          path: '/indexlist'
         }
       ],
       list3: [

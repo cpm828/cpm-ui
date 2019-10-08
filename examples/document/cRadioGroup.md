@@ -54,6 +54,7 @@ config: {
 ### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
+|value|当前值，v-model双向绑定|`Boolean`、`String`、`Number`||false|
 |options|可选数据，list map结构|Array|`radio`、`radioGroup`|`radio`|
 
 options结构，基本同 [cRadio](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md) 组件

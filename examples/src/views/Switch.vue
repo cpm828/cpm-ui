@@ -9,15 +9,17 @@
     <div c_wrap="flex fd-c ai-fs mb-20">
       <p c_wrap="fs-16">自定义颜色：</p>
       <cSwitch v-model="flag2" color="red"></cSwitch>
+      <cSwitch v-model="flag3" color="green"></cSwitch>
     </div>
     <div c_wrap="flex fd-c ai-fs mb-20">
-      <p c_wrap="fs-16">带插槽显示状态（自动加宽）：</p>
-      <cSwitch v-model="flag3">{{flag3 ? '开' : '关'}}</cSwitch>
+      <p c_wrap="fs-16">带插槽显示状态（自动加宽10px）：</p>
+      <cSwitch v-model="flag4">{{flag4 ? '开' : '关'}}</cSwitch>
+      <cSwitch v-model="flag5">{{flag5 ? 'on' : 'off'}}</cSwitch>
     </div>
     <div c_wrap="flex fd-c ai-fs mb-20">
       <p c_wrap="fs-16">禁用</p>
-      <cSwitch v-model="flag4" disabled></cSwitch>
-      <cSwitch v-model="flag5" disabled></cSwitch>
+      <cSwitch v-model="flag6" disabled></cSwitch>
+      <cSwitch v-model="flag7" disabled></cSwitch>
     </div>
 
     <span class="code-btn" @click.prevent.stop="showCode">code</span>
@@ -37,20 +39,24 @@ export default {
   components: { codeBlock },
   data () {
     return {
-      flag1: false,
-      flag2: false,
-      flag3: false,
+      flag1: true,
+      flag2: true,
+      flag3: true,
       flag4: true,
       flag5: false,
+      flag6: true,
+      flag7: false,
       showCodeFlag: false,
       code: `<cSwitch v-model="flag1"></cSwitch>
 
 <cSwitch v-model="flag2" color="red"></cSwitch>
+<cSwitch v-model="flag3" color="green"></cSwitch>
 
-<cSwitch v-model="flag3">{{flag3 ? '开' : '关'}}</cSwitch>
+<cSwitch v-model="flag4">{{flag4 ? '开' : '关'}}</cSwitch>
+<cSwitch v-model="flag5">{{flag5 ? 'on' : 'off'}}</cSwitch>
 
-<cSwitch v-model="flag4" disabled></cSwitch>
-<cSwitch v-model="flag5" disabled></cSwitch>`
+<cSwitch v-model="flag6" disabled></cSwitch>
+<cSwitch v-model="flag7" disabled></cSwitch>`
     }
   },
   created () { },

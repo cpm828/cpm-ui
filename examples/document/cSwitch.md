@@ -24,6 +24,7 @@ Vue.use(cSwitch)
 ### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
+|value|当前值，v-model双向绑定|Number||false|
 |color|颜色|String||`#4574ff`|
 |disabled|是否禁用|Boolean|`true`、`false`|`false`|
 

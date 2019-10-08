@@ -7,6 +7,9 @@ import ActionSheet from './packages/actionSheet'
 // 页面组件类（以c开头）
 import cIcon from './packages/cIcon'
 import cButton from './packages/cButton'
+import cRange from './packages/cRange'
+import cRangeDouble from './packages/cRangeDouble'
+import cIndexList from './packages/cIndexList'
 
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
@@ -22,9 +25,18 @@ export {
   ActionSheet,
   cIcon,
   cButton,
+  cRange,
+  cRangeDouble,
+  cIndexList,
   cRadio,
   cRadioGroup,
   cCheckbox,
   cCheckboxGroup,
   cSwitch
 }
+
+/**
+ * 提示：
+ * 1. 组件内所有的默认激活色为：background-color: #4574ff
+ * 2. 所有的渐变激活色为：background-image: linear-gradient(90deg, #508BEF 0%, #4B5FFE 100%);
+ */

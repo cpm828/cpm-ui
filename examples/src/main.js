@@ -7,7 +7,7 @@ import router from './router'
 
 import {
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton,
+  cIcon, cButton, cRange, cRangeDouble, cIndexList,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 } from '../../src/index'
 
@@ -20,7 +20,7 @@ require('./assets/common.scss')
 
 const components = [
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton,
+  cIcon, cButton, cRange, cRangeDouble, cIndexList,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 ]
 
@@ -28,6 +28,12 @@ components.map(cp => Vue.use(cp))
 Vue.use(VueHighlightJS)
 
 Vue.config.productionTip = false
+
+// 全局设置标题
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

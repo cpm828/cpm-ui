@@ -35,6 +35,7 @@ Vue.use(cRadio)
 ### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
+|value|当前值，v-model双向绑定|`Boolean`、`String`、`Number`||false|
 |type|使用类型，`cRadio` 组件可单独使用，也可被 `cRadioGroup` 套用|String|`radio`、`radioGroup`|`radio`|
 |label|提示文字|String||''|
 |disabled|是否禁止操作|Boolean|`true`、`false`|false|

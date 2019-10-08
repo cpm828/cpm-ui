@@ -133,23 +133,27 @@ body {
             height: 44px;
             line-height: 44px;
           }
+          &::after {
+            content: "";
+            height: 10px;
+            width: 10px;
+            border-width: 1px 1px 0 0;
+            border-color: #b2b2b2;
+            border-style: solid;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            margin-top: -5px;
+            right: 15px;
+          }
+          &:link, &:visited, &:hover, &:active{
+            color: #333;
+            &::after {
+              border-color: #b2b2b2;
+            }
+          }
         }
-
-        a::after {
-          content: "";
-          height: 10px;
-          width: 10px;
-          border-width: 1px 1px 0 0;
-          border-color: #b2b2b2;
-          border-style: solid;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-          position: absolute;
-          top: 50%;
-          margin-top: -5px;
-          right: 15px;
-        }
-
         // 代码
         pre {
           width: 100%;

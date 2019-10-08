@@ -41,6 +41,34 @@
       "unicode_decimal": 59170
     },
     {
+      "icon_id": "577312",
+      "name": "加号",
+      "font_class": "jiahao2",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "577313",
+      "name": "加号1",
+      "font_class": "jiahao",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "577314",
+      "name": "加号2-fill",
+      "font_class": "jiahao2-filled",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "577315",
+      "name": "减号",
+      "font_class": "jianhao",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
       "icon_id": "577322",
       "name": "圆形未选中",
       "font_class": "radio",
@@ -60,6 +88,13 @@
       "font_class": "home",
       "unicode": "e751",
       "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "639730",
+      "name": "pull_down",
+      "font_class": "pulldown",
+      "unicode": "e79f",
+      "unicode_decimal": 59295
     },
     {
       "icon_id": "8106217",
@@ -501,6 +536,13 @@
       "font_class": "info-down-filled",
       "unicode": "e68c",
       "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "11180065",
+      "name": "pull_down",
+      "font_class": "pullup",
+      "unicode": "e7a0",
+      "unicode_decimal": 59296
     }
   ]
 }

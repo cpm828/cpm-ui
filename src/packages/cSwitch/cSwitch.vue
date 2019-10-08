@@ -79,7 +79,7 @@ export default {
     align-items: center;
     color: #d9d9d9;
     font-size: 16px;
-    transition: transform 0.3s linear;
+    transition: all 0.3s linear;
   }
 
   // 开关闭合时的背景色
@@ -92,7 +92,7 @@ export default {
     top: 0;
     border-radius: 15px;
     background-color: #fdfdfd;
-    transition: transform 0.3s linear;
+    transition: all 0.3s linear;
   }
   // 圆
   &::after{
@@ -104,7 +104,7 @@ export default {
     top: 0;
     border-radius: 50%;
     background-color: #fff;
-    transition: transform 0.3s linear;
+    transition: all 0.3s linear;
     box-shadow: 0 1px 3px rgba(0,0,0,.4);
   }
 
@@ -135,9 +135,13 @@ export default {
       &::after{
         transform: translate(30px);
       }
+      .tip{
+        margin-left: 2px;
+      }
     }
     .tip{
       width: 30px;
+      margin-left: -2px;
     }
   }
 
