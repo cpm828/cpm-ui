@@ -269,6 +269,14 @@ export default {
         {
           unicode: '&#xe79f;',
           font: 'pulldown'
+        },
+        {
+          unicode: '&#xe7b2;',
+          font: 'user'
+        },
+        {
+          unicode: '&#xe7b3;',
+          font: 'team'
         }
       ],
       iconColorArr: ['#333', '#4080e8', '#079a07', '#27c3d8', '#960596'],

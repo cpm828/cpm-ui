@@ -88,6 +88,14 @@ export default new Router({
         title: 'IndexList'
       }
     },
+    {
+      path: '/rate',
+      name: 'Rate',
+      component: () => import(/* webpackChunkName: "/component/rate" */ '../views/Rate'),
+      meta: {
+        title: 'Rate'
+      }
+    },
     // 表单类form
     {
       path: '/radio',

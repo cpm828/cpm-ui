@@ -7,7 +7,7 @@ import router from './router'
 
 import {
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton, cRange, cRangeDouble, cIndexList,
+  cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 } from '../../src/index'
 
@@ -20,7 +20,7 @@ require('./assets/common.scss')
 
 const components = [
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton, cRange, cRangeDouble, cIndexList,
+  cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 ]
 

@@ -25,17 +25,18 @@ Vue.use(cRange)
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |value|当前值，v-model双向绑定|Number||0|
-|color|颜色|String||`#4574ff`|
 |min|最小阙值|Number||0|
 |max|最大阙值|Number||100|
 |step|步长|Number||1|
 |disabled|是否禁用|Boolean|`true`、`false`|`false`|
+|showValue|是否显示滑块上方当前值|Boolean|`true`、`false`|`false`|
+|calibrateList|刻度值list，可设置无规律|Array||[]|
 
 
 ### 事件Event
 |方法|说明|
 |:---|:---|
-|onChange|接受拖拽后的触发事件|
+|onChange|拖拽松开后的触发事件|
 
 如：
 ```html
@@ -59,4 +60,4 @@ Vue.use(cRange)
 
 
 ## 三、特别提示
-无
+1. 内部识别了touch和mouse事件，兼容移动端和PC端。

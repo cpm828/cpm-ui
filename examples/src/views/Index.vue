@@ -72,6 +72,10 @@ export default {
         {
           title: 'IndexList索引列表',
           path: '/indexlist'
+        },
+        {
+          title: 'Rate评分',
+          path: '/rate'
         }
       ],
       list3: [

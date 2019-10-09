@@ -2,7 +2,7 @@
   <div class="page-wrap range-wrap">
     <div class="top">Range单滑块</div>
     <div c_wrap="pl-20 pr-20">
-      <p c_wrap="fs-16 ta-l mb-20">内部识别了touch和mouse事件，兼容移动端和PC端</p>
+      <p c_wrap="fs-14 ta-l mb-20">内部识别了touch和mouse事件，兼容移动端和PC端</p>
       <div c_wrap="mb-20">
         <p c_wrap="fs-14 mb-10">默认，当前值：{{rangeConfig1.value}}</p>
         <cRange :min="rangeConfig1.min" :max="rangeConfig1.max" @onChange="onChange" v-model="rangeConfig1.value">
@@ -12,8 +12,8 @@
       </div>
 
       <div c_wrap="mb-20">
-        <p c_wrap="fs-14 mb-10">步长10，整除，当前值：{{rangeConfig2.value}}</p>
-        <cRange :min="rangeConfig2.min" :max="rangeConfig2.max" :step="rangeConfig2.step" v-model="rangeConfig2.value">
+        <p c_wrap="fs-14 mb-10">步长{{rangeConfig2.step}}，整除且显示提示，当前值：{{rangeConfig2.value}}</p>
+        <cRange :min="rangeConfig2.min" :max="rangeConfig2.max" :step="rangeConfig2.step" :showValue="true" v-model="rangeConfig2.value">
           <div slot="left">{{rangeConfig2.min}}</div>
           <div slot="right">{{rangeConfig2.max}}</div>
         </cRange>
@@ -22,8 +22,8 @@
       </div>
 
       <div c_wrap="mb-20">
-        <p c_wrap="fs-14 mb-10">步长{{rangeConfig3.step}}，非整除，当前值：{{rangeConfig3.value}}</p>
-        <cRange :min="rangeConfig3.min" :max="rangeConfig3.max" :step="rangeConfig3.step" v-model="rangeConfig3.value">
+        <p c_wrap="fs-14 mb-10">步长{{rangeConfig3.step}}，非整除且显示提示，当前值：{{rangeConfig3.value}}</p>
+        <cRange :min="rangeConfig3.min" :max="rangeConfig3.max" :step="rangeConfig3.step" :showValue="true" v-model="rangeConfig3.value">
           <div slot="left">{{rangeConfig3.min}}</div>
           <div slot="right">{{rangeConfig3.max}}</div>
         </cRange>
@@ -41,8 +41,8 @@
       </div>
 
       <div c_wrap="mb-20">
-        <p c_wrap="fs-14 mb-10">左右slot显示最大最小值，当前值：{{rangeConfig5.value}}</p>
-        <cRange :min="rangeConfig5.min" :max="rangeConfig5.max" :step="rangeConfig5.step" v-model="rangeConfig5.value">
+        <p c_wrap="fs-14 mb-10">显示当前值，显示刻度，当前值：{{rangeConfig5.value}}</p>
+        <cRange :min="rangeConfig5.min" :max="rangeConfig5.max" :step="rangeConfig5.step" :showValue="rangeConfig5.showValue" :calibrateList="rangeConfig5.calibrateList" v-model="rangeConfig5.value">
           <div slot="left">{{rangeConfig5.min}}</div>
           <div slot="right">{{rangeConfig5.max}}</div>
         </cRange>
@@ -51,17 +51,27 @@
       </div>
 
       <div c_wrap="mb-20">
-        <p c_wrap="fs-14 mb-10">左右slot显示加减按钮，当前值：{{rangeConfig6.value}}</p>
-        <cRange class="range6" :min="rangeConfig6.min" :max="rangeConfig6.max" :step="rangeConfig6.step" v-model="rangeConfig6.value">
-          <div :class="['left-btn', rangeConfig6.value === rangeConfig6.min ? 'disabled' : '']" slot="left" @click="sub(rangeConfig6)">
+        <p c_wrap="fs-14 mb-10">左右slot显示最大最小值，当前值：{{rangeConfig6.value}}</p>
+        <cRange :min="rangeConfig6.min" :max="rangeConfig6.max" :step="rangeConfig6.step" v-model="rangeConfig6.value">
+          <div slot="left">{{rangeConfig6.min}}</div>
+          <div slot="right">{{rangeConfig6.max}}</div>
+        </cRange>
+        <span class="code-btn" @click.prevent.stop="showCode(5)">code</span>
+        <code-block type="html" :code="rangeConfig6.code" v-if="rangeConfig6.showCode"></code-block>
+      </div>
+
+      <div c_wrap="mb-20">
+        <p c_wrap="fs-14 mb-10">左右slot显示加减按钮，当前值：{{rangeConfig7.value}}</p>
+        <cRange class="range7" :min="rangeConfig7.min" :max="rangeConfig7.max" :step="rangeConfig7.step" v-model="rangeConfig7.value">
+          <div :class="['left-btn', rangeConfig7.value === rangeConfig7.min ? 'disabled' : '']" slot="left" @click="sub(rangeConfig7)">
             <cIcon type="jianhao"></cIcon>
           </div>
-          <div :class="['right-btn', rangeConfig6.value === rangeConfig6.max ? 'disabled' : '']" slot="right" @click="add(rangeConfig6)">
+          <div :class="['right-btn', rangeConfig7.value === rangeConfig7.max ? 'disabled' : '']" slot="right" @click="add(rangeConfig7)">
             <cIcon type="jiahao"></cIcon>
           </div>
         </cRange>
         <span class="code-btn" @click.prevent.stop="showCode(6)">code</span>
-        <code-block type="html" :code="rangeConfig6.code" v-if="rangeConfig6.showCode"></code-block>
+        <code-block type="html" :code="rangeConfig7.code" v-if="rangeConfig7.showCode"></code-block>
       </div>
     </div>
     <div>
@@ -101,7 +111,7 @@ rangeConfig1: {
         max: 120,
         step: 10,
         showCode: false,
-        code: `<cRange :min="rangeConfig2.min" :max="rangeConfig2.max" :step="rangeConfig2.step" v-model="rangeConfig2.value">
+        code: `<cRange :min="rangeConfig2.min" :max="rangeConfig2.max" :step="rangeConfig2.step" :showValue="true" v-model="rangeConfig2.value">
   <div slot="left">{{rangeConfig2.min}}</div>
   <div slot="right">{{rangeConfig2.max}}</div>
 </cRange>
@@ -119,7 +129,7 @@ rangeConfig2: {
         max: 100,
         step: 15,
         showCode: false,
-        code: `<cRange :min="rangeConfig3.min" :max="rangeConfig3.max" :step="rangeConfig3.step" v-model="rangeConfig3.value">
+        code: `<cRange :min="rangeConfig3.min" :max="rangeConfig3.max" :step="rangeConfig3.step" :showValue="true" v-model="rangeConfig3.value">
   <div slot="left">{{rangeConfig3.min}}</div>
   <div slot="right">{{rangeConfig3.max}}</div>
 </cRange>
@@ -153,17 +163,21 @@ rangeConfig4: {
         min: 0,
         max: 100,
         step: 10,
+        showValue: true,
+        calibrateList: [20, 40, 60, 80],
         showCode: false,
-        code: `<cRange :min="rangeConfig5.min" :max="rangeConfig5.max" :step="rangeConfig5.step" v-model="rangeConfig5.value">
-  <div slot="left">{{rangeConfig5.min}}</div>
-  <div slot="right">{{rangeConfig5.max}}</div>
+        code: `<cRange :min="rangeConfig6.min" :max="rangeConfig6.max" :step="rangeConfig6.step" v-model="rangeConfig6.value">
+  <div slot="left">{{rangeConfig6.min}}</div>
+  <div slot="right">{{rangeConfig6.max}}</div>
 </cRange>
 
-rangeConfig5: {
+rangeConfig6: {
   value: 0,
   min: 0,
   max: 100,
-  step: 10
+  step: 10,
+  showValue: true,
+  calibrateList: [20, 40, 60, 80],
 }`
       },
       rangeConfig6: {
@@ -172,16 +186,34 @@ rangeConfig5: {
         max: 100,
         step: 10,
         showCode: false,
-        code: `<cRange class="range6" :min="rangeConfig6.min" :max="rangeConfig6.max" :step="rangeConfig6.step" v-model="rangeConfig6.value">
-  <div :class="['left-btn', rangeConfig6.value === rangeConfig6.min ? 'disabled' : '']" slot="left" @click="sub(rangeConfig6)">
+        code: `<cRange :min="rangeConfig6.min" :max="rangeConfig6.max" :step="rangeConfig6.step" v-model="rangeConfig6.value">
+  <div slot="left">{{rangeConfig6.min}}</div>
+  <div slot="right">{{rangeConfig6.max}}</div>
+</cRange>
+
+rangeConfig6: {
+  value: 0,
+  min: 0,
+  max: 100,
+  step: 10
+}`
+      },
+      rangeConfig7: {
+        value: 0,
+        min: 0,
+        max: 100,
+        step: 10,
+        showCode: false,
+        code: `<cRange class="range7" :min="rangeConfig7.min" :max="rangeConfig7.max" :step="rangeConfig7.step" v-model="rangeConfig7.value">
+  <div :class="['left-btn', rangeConfig7.value === rangeConfig7.min ? 'disabled' : '']" slot="left" @click="sub(rangeConfig7)">
     <cIcon type="jianhao"></cIcon>
   </div>
-  <div :class="['right-btn', rangeConfig6.value === rangeConfig6.max ? 'disabled' : '']" slot="right" @click="add(rangeConfig6)">
+  <div :class="['right-btn', rangeConfig7.value === rangeConfig7.max ? 'disabled' : '']" slot="right" @click="add(rangeConfig7)">
     <cIcon type="jiahao"></cIcon>
   </div>
 </cRange>
 
-rangeConfig6: {
+rangeConfig7: {
   value: 0,
   min: 0,
   max: 100,
@@ -207,7 +239,7 @@ add (config) {
         this[`rangeConfig${type}`].showCode = false
         return
       }
-      for (let i = 1, len = 6; i <= len; i++) {
+      for (let i = 1, len = 7; i <= len; i++) {
         this[`rangeConfig${i}`].showCode = false
       }
       this[`rangeConfig${type}`].showCode = true
@@ -229,7 +261,7 @@ add (config) {
 
 <style lang="scss">
 .range-wrap{
-  .range6 {
+  .range7 {
     .left-btn, .right-btn{
       display: flex;
       justify-content: center;
@@ -253,7 +285,7 @@ add (config) {
     }
     .c-range-thumb{
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAIAAADkwkEeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjg3Q0Y5MjA3OTk3RDExRTlBOUZFOUI4MzE4RTk0OEIxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjg3Q0Y5MjA4OTk3RDExRTlBOUZFOUI4MzE4RTk0OEIxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODdDRjkyMDU5OTdEMTFFOUE5RkU5QjgzMThFOTQ4QjEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODdDRjkyMDY5OTdEMTFFOUE5RkU5QjgzMThFOTQ4QjEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4NSYc+AAAAn0lEQVR42syRwQ2DMAxFjQurce+FrboFEzACV6bhRJ2mdXEQIOLIoJz4hy/lxT+OE2Dmtn83r3F2XtX2UyBTkiAAdAMRicOqbnCBuCSRDIVi2iMnpBTzCJFMovYuSPqwLyJqk9w+8FFJk9x+nm98qk2WP1UVJsl/AyzK33FiVG+Ax7ulik7/VN3eJDnzSKbCx+aLbCKZZy2L2TfZ5C/AAE8zc7A4AvCfAAAAAElFTkSuQmCC") center center no-repeat;
-      background-size: 9.5px auto;
+      background-size: 8.5px 10px;
     }
   }
 }

@@ -1,14 +1,20 @@
 <template>
-  <div :class="['cpm-cRange', disabled ? 'cpm-cRange-disabled' : '']">
+  <div :class="[
+    'cpm-cRange',
+    disabled ? 'cpm-cRange-disabled' : '',
+    showValue ? 'cpm-cRange-paddingtop' : '',
+    calibrateList.length ? 'cpm-cRange-paddingbottom' : '']">
     <slot name="left"></slot>
-    <div class="c-range-wrap" >
-      <div class="c-range-content" ref="content">
-        <!-- 可滑动区域 -->
-        <div class="c-range-runway"></div>
-        <!-- 已滑动进度 -->
-        <div class="c-range-progress" :style="progressStyle"></div>
-        <!-- 滑块 -->
-        <div class="c-range-thumb" ref="thumb" :style="thumbStyle"></div>
+    <div class="c-range-wrap" ref="content">
+      <!-- 可滑动区域 -->
+      <div class="c-range-runway"></div>
+      <!-- 已滑动进度 -->
+      <div class="c-range-progress" :style="progressStyle"></div>
+      <!-- 滑块 -->
+      <div class="c-range-thumb" ref="thumb" :style="thumbStyle"><span v-if="showValue">{{value}}</span></div>
+      <!-- 刻度 -->
+      <div>
+        <span class="c-range-calibrate" v-for="(calibrate, index) in calibrateList" :key="index" :style="{left:((calibrate - min) / (max-min) * 100 + '%')}"><i>{{calibrate}}</i></span>
       </div>
     </div>
     <slot name="right"></slot>
@@ -44,6 +50,16 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    // 显示当前值
+    showValue: {
+      type: Boolean,
+      default: false
+    },
+    // 显示的刻度
+    calibrateList: {
+      type: Array,
+      default: () => []
     }
   },
   data () {
@@ -93,7 +109,7 @@ export default {
          * 1为变值，2、3、4为定值，差值即为拖动的距离
          */
         const diffX = event.pageX - contentBox.left - dragState.thumbStartLeft - dragState.thumbClickDetailX
-        const stepCount = Math.ceil((this.max - this.min) / this.step)
+        const stepCount = Math.ceil((this.max - this.min) / this.step) // 步数
         /**
          * dragState.thumbStartLeft + diffX: 当前值
          * (dragState.thumbStartLeft + diffX) % (contentBox.width / stepCount): 步长校验补偿值
@@ -144,30 +160,34 @@ export default {
 <style lang="scss" scoped>
 .cpm-cRange {
   width: 100%;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   &.cpm-cRange-disabled{
+    cursor: not-allowed;
     opacity: .6;
   }
+  &.cpm-cRange-paddingtop{
+    padding-top: 20px;
+  }
+  &.cpm-cRange-paddingbottom{
+    padding-bottom: 20px;
+  }
   .c-range-wrap {
-    width: 100%;
-    height: 10px;
     display: flex;
     flex: 1;
+    width: 100%;
+    height: 10px;
     border-radius: 5px;
+    position: relative;
     background-color: #a9acb1;
-    .c-range-content{
-      width: 100%;
-      height: 100%;
-      position: relative;
-      margin-right: 24px; // 偏离滑块的距离，父级多套了一层div，背景色给父级
-    }
+    margin: 0 15px;
     .c-range-runway {
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
       border-radius: 5px;
@@ -187,10 +207,35 @@ export default {
       transform: translate(0, -50%);
       width: 24px;
       height: 24px;
+      margin-left: -12px; // 偏离半个滑块
       border-radius: 50%;
       background-color: #fff;
       box-shadow: 0 0 4px 0 #d8d9dc;
       cursor: all-scroll;
+      span{
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 24px;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+    .c-range-calibrate{
+      width: 1px;
+      height: 10px;
+      background-color: #fff;
+      position: absolute;
+      left: 40%;
+      i{
+        width: 24px;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        text-align: center;
+        font-size: 12px;
+        margin-left: -12px;
+      }
     }
   }
 }
