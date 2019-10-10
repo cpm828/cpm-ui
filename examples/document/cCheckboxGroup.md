@@ -1,7 +1,7 @@
 ## [返回总文档](https://github.com/cpm828/cpm-ui)
 
 
-# cCheckboxGroup组件
+# cCheckboxGroup多选组组件
 
 `cCheckboxGroup` 组件依赖 [cCheckbox](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md) 构建。
 

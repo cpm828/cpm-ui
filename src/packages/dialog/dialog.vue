@@ -148,6 +148,7 @@ export default {
         this.scrollableList = this.$refs.cpmDialog.querySelectorAll('.scrollable') // 查找所有带scrollable的子元素
       }
     })
+    window.addEventListener('hashchange', this.remove)
   },
   computed: {
     messageStyle () {

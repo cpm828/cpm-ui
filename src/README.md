@@ -57,11 +57,17 @@ components.map(component => Vue.use(component))
 |cRangeDouble|`<cRangeDouble></cRangeDouble>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/rangedouble)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRangeDouble.md)|
 |cIndexList|`<cIndexList></cIndexList>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/indexlist)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIndexList.md)|
 |cRate|`<cRate></cRate>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/rate)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRate.md)|
+|布局类组件↓||||
+|cSticky|`<cSticky></cSticky>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/sticky)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSticky.md)|
+|cHeader|`<cHeader></cHeader>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/header)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cHeader.md)|
+|cFooter|`<cFooter></cFooter>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/footer)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cFooter.md)|
 |表单类组件↓||||
 |cRadio|`<cRadio></cRadio>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radio)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md)|
 |cRadioGroup|`<cRadioGroup></cRadioGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radiogroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md)|
 |cCheckbox|`<cCheckbox></cCheckbox>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/checkbox)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md)|
 |cCheckboxGroup|`<cCheckboxGroup></cCheckboxGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/checkboxgroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckboxGroup.md)|
 |cSwitch|`<cSwitch></cSwitch>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/switch)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSwitch.md)|
+|css组件↓||||
+|1px边框|`class="cpm-1px"`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/cssonepx)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cssOnePx.md)|
 
 > 未完待续...

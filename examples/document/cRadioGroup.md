@@ -1,7 +1,7 @@
 ## [返回总文档](https://github.com/cpm828/cpm-ui)
 
 
-# cRadioGroup组件
+# cRadioGroup但选组组件
 
 `cRadioGroup` 组件依赖 [cRadio](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md) 构建。
 

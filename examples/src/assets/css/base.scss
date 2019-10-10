@@ -169,6 +169,16 @@ $curFont: 10;
 	align-items: flex-end;
 }
 
+// scroll
+[c_wrap ~= scroll-x]{
+	overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+[c_wrap ~= scroll-y]{
+	overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 /************************* extend继承 *************************/
 // 用法：@extend .textOverflow;bina

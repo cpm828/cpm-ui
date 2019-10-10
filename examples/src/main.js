@@ -5,9 +5,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// cpm-ui
 import {
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
+  cSticky, cHeader, cFooter,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 } from '../../src/index'
 
@@ -15,15 +17,17 @@ import {
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css' // 配置主题颜色(https://highlightjs.org/static/demo/)
 
+// 样式
+require('../../src/index.scss') // 组件样式放在前面
 require('./assets/common.js')
 require('./assets/common.scss')
 
 const components = [
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
+  cSticky, cHeader, cFooter,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 ]
-
 components.map(cp => Vue.use(cp))
 Vue.use(VueHighlightJS)
 

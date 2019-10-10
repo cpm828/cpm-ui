@@ -96,6 +96,31 @@ export default new Router({
         title: 'Rate'
       }
     },
+    // 布局类
+    {
+      path: '/sticky',
+      name: 'Sticky',
+      component: () => import(/* webpackChunkName: "/component/sticky" */ '../views/Sticky'),
+      meta: {
+        title: 'Sticky'
+      }
+    },
+    {
+      path: '/header',
+      name: 'Header',
+      component: () => import(/* webpackChunkName: "/component/header" */ '../views/Header'),
+      meta: {
+        title: 'Header'
+      }
+    },
+    {
+      path: '/footer',
+      name: 'Footer',
+      component: () => import(/* webpackChunkName: "/component/footer" */ '../views/Footer'),
+      meta: {
+        title: 'Footer'
+      }
+    },
     // 表单类form
     {
       path: '/radio',
@@ -135,6 +160,15 @@ export default new Router({
       component: () => import(/* webpackChunkName: "/form/switch" */ '../views/Switch'),
       meta: {
         title: 'Switch'
+      }
+    },
+    // css
+    {
+      path: '/cssonepx',
+      name: 'CssOnePx',
+      component: () => import(/* webpackChunkName: "/form/onepx" */ '../views/CssOnePx'),
+      meta: {
+        title: '1px解决方案'
       }
     },
     // 匹配不到重定向到首页

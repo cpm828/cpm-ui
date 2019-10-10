@@ -23,6 +23,18 @@
       </div>
     </div>
 
+    <div class="block">
+      <div class="block-item" v-for="(item, index) in list4" :key="index">
+        <router-link :to="item.path">{{item.title}}</router-link>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-item" v-for="(item, index) in list5" :key="index">
+        <router-link :to="item.path">{{item.title}}</router-link>
+      </div>
+    </div>
+
     <div>
       <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui">查看文档</a>
     </div>
@@ -80,7 +92,21 @@ export default {
       ],
       list3: [
         {
-          title: 'Radio',
+          title: 'Sticky滚动吸顶',
+          path: '/sticky'
+        },
+        {
+          title: 'Header顶部固定',
+          path: '/header'
+        },
+        {
+          title: 'Footer底部固定',
+          path: '/footer'
+        }
+      ],
+      list4: [
+        {
+          title: 'Radio单选',
           path: '/radio'
         },
         {
@@ -88,7 +114,7 @@ export default {
           path: '/radiogroup'
         },
         {
-          title: 'Checkbox',
+          title: 'Checkbox复选',
           path: '/checkbox'
         },
         {
@@ -98,6 +124,12 @@ export default {
         {
           title: 'Switch开关',
           path: '/switch'
+        }
+      ],
+      list5: [
+        {
+          title: '1px边框解决方案',
+          path: '/cssonepx'
         }
       ]
     }

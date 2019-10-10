@@ -12,12 +12,20 @@ import cRangeDouble from './packages/cRangeDouble'
 import cIndexList from './packages/cIndexList'
 import cRate from './packages/cRate'
 
+// 布局类（以c开头）
+import cSticky from './packages/cSticky'
+import cHeader from './packages/cHeader'
+import cFooter from './packages/cFooter'
+
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
 import cRadioGroup from './packages/cRadioGroup'
 import cCheckbox from './packages/cCheckbox'
 import cCheckboxGroup from './packages/cCheckboxGroup'
 import cSwitch from './packages/cSwitch'
+
+// css类
+// 1px解决方案，直接导入class即可
 
 export {
   Toast,
@@ -30,6 +38,9 @@ export {
   cRangeDouble,
   cIndexList,
   cRate,
+  cSticky,
+  cHeader,
+  cFooter,
   cRadio,
   cRadioGroup,
   cCheckbox,
@@ -39,7 +50,8 @@ export {
 
 /**
  * 提示：
- * 1. 组件内所有的默认激活色为：background-color: #4574ff、color: #4574ff
- * 2. 组件内部分灰色为：color: #C8C7CC
- * 2. 所有的渐变激活色为：background-image: linear-gradient(90deg, #508BEF 0%, #4B5FFE 100%);
+ * 1. 全局组件包括：toast、loading、dialog、actionsheet，页面内组件使用c开头
+ * 2. 组件内所有的默认激活色为：background-color: #4574ff、color: #4574ff
+ * 3. 组件内部分灰色为：color: #C8C7CC
+ * 4. 所有的渐变激活色为：background-image: linear-gradient(90deg, #508BEF 0%, #4B5FFE 100%);
  */

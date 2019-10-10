@@ -1,7 +1,7 @@
 ## [返回总文档](https://github.com/cpm828/cpm-ui)
 
 
-# cCheckbox组件
+# cCheckbox多选框组件
 
 ## 一、使用教程
 [点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/checkbox)

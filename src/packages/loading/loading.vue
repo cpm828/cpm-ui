@@ -136,6 +136,7 @@ export default {
     remove () {
       this.$el.remove() // 删除toast
       this.$destroy() // 销毁组件
+      window.removeEventListener('hashchange', this.remove)
     },
     touchmoveLoading (e) {
       e.preventDefault()
