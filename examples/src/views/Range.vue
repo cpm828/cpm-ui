@@ -2,7 +2,7 @@
   <div class="page-wrap range-wrap">
     <div class="top">Range单滑块</div>
     <div c_wrap="pl-20 pr-20">
-      <p c_wrap="fs-14 ta-l mb-20">内部识别了touch和mouse事件，兼容移动端和PC端</p>
+      <p c_wrap="fs-14 ta-l mb-20">提示：<br>1. 内部识别了touch和mouse事件，兼容移动端和PC端</p>
       <div c_wrap="mb-20">
         <p c_wrap="fs-14 mb-10">默认，当前值：{{rangeConfig1.value}}</p>
         <cRange :min="rangeConfig1.min" :max="rangeConfig1.max" @onChange="onChange" v-model="rangeConfig1.value">

@@ -2,7 +2,7 @@
   <div c_wrap="scroll-y" class="page-wrap sticky-wrap" id="stickyWrap">
     <div class="top">sticky吸顶</div>
     <p c_wrap="fs-14 mb-20 p-20 ta-j">
-      注意：<br>
+      提示：<br>
       1. 实现原理，touchmove时比较scollTop和offsetTop，所以需要在手机端测试效果，PC模拟器滚动鼠标无效。<br>
       2. 通常情况下，我们页面的最外层应该是100%高度，即在当前页面滚动，此时设置scrollEl即可。如果未设置高度100%，那么则无需设置scrollEl，会自动获取document的scrollTop来计算。<br>
       3. scrollEl传一个固定高度的元素id或class，如scrollEl="#stickyWrap"或scrollEl=".sticky-wrap".

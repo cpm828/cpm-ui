@@ -76,6 +76,13 @@
       "unicode_decimal": 59183
     },
     {
+      "icon_id": "577338",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e73a",
+      "unicode_decimal": 59194
+    },
+    {
       "icon_id": "577363",
       "name": "首页-fill",
       "font_class": "home-filled",
@@ -88,6 +95,13 @@
       "font_class": "home",
       "unicode": "e751",
       "unicode_decimal": 59217
+    },
+    {
+      "icon_id": "579920",
+      "name": "Android更多",
+      "font_class": "gengduo2",
+      "unicode": "e78d",
+      "unicode_decimal": 59277
     },
     {
       "icon_id": "639730",

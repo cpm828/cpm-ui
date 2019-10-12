@@ -59,8 +59,8 @@ components.map(component => Vue.use(component))
 |cRate|`<cRate></cRate>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/rate)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRate.md)|
 |布局类组件↓||||
 |cSticky|`<cSticky></cSticky>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/sticky)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cSticky.md)|
-|cHeader|`<cHeader></cHeader>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/header)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cHeader.md)|
-|cFooter|`<cFooter></cFooter>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/footer)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cFooter.md)|
+|cFixed|`<cFixed></cFixed>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/fixed)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cFixed.md)|
+|cTitleBar|`<cTitleBar></cTitleBar>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/titlebar)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cTitleBar.md)|
 |表单类组件↓||||
 |cRadio|`<cRadio></cRadio>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radio)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md)|
 |cRadioGroup|`<cRadioGroup></cRadioGroup>`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/radiogroup)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadioGroup.md)|
@@ -71,3 +71,15 @@ components.map(component => Vue.use(component))
 |1px边框|`class="cpm-1px"`|[点击查看](https://cpm828.github.io/cpm_ui/demo/index.html#/cssonepx)|[点击查看](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cssOnePx.md)|
 
 > 未完待续...
+
+
+## 特别鸣谢
+cpm-ui组件库部分组件心得来源于以下开源组件库：
+- [mint-ui](http://mint-ui.github.io/docs/#/zh-cn2)
+- [cube-ui](https://didi.github.io/cube-ui/)
+- [rong-ui](https://rong360.github.io/rong-ui/demo/index.html#/)
+- [vux](https://doc.vux.li/zh-CN/components/actionsheet.html)
+- [iview](https://www.iviewui.com/docs/introduce)
+- [element-ui](https://element.eleme.cn/#/zh-CN/component/quickstart)
+
+以上排名不分先后，特别鸣谢。

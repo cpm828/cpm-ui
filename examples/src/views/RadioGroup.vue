@@ -3,7 +3,8 @@
     <div class="top">RadioGroup单选组</div>
 
     <div c_wrap="ta-l pl-20 pr-20">
-      <p c_wrap="fs-14 mb-10 ta-j">特别说明：<br>
+      <p c_wrap="fs-14 mb-10 ta-j">
+        提示：<br>
         1. 考虑是移动端组件，几乎不存在使用form表单提价的情况。组件会按照form表单的思想来构建属性，但不会使用form提交。<br>
         2. 考虑到页面设计的复杂可能性，组件本身只实现了功能，未配置相关style属性，推荐使用手写样式达到UI效果，如案例5、案例6。<br>
         3. 对于hidden属性，设计之初的目的是为了过滤掉某些不需要展示的项，hidden属性为true时隐藏组件。

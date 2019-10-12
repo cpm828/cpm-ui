@@ -9,7 +9,7 @@ import router from './router'
 import {
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
-  cSticky, cHeader, cFooter,
+  cSticky, cFixed, cTitleBar,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 } from '../../src/index'
 
@@ -25,7 +25,7 @@ require('./assets/common.scss')
 const components = [
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
-  cSticky, cHeader, cFooter,
+  cSticky, cFixed, cTitleBar,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
 ]
 components.map(cp => Vue.use(cp))

@@ -2,7 +2,8 @@
   <div class="page-wrap rangedouble-wrap">
     <div class="top">RangeDouble双滑块</div>
     <div c_wrap="pl-20 pr-20">
-      <p c_wrap="fs-14 ta-l mb-20">
+      <p c_wrap="fs-14 ta-j mb-20">
+        提示：<br>
         1. 内部识别了touch和mouse事件，兼容移动端和PC端。<br>
         2. 对于双滑块而言，我处理了最小范围为一个步长，所以当步长设置太小时，滑块会碰撞在一起。合理来说，我们应该设置一个合适的步长，避免发生碰撞。
       </p>

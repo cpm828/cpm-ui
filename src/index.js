@@ -14,8 +14,8 @@ import cRate from './packages/cRate'
 
 // 布局类（以c开头）
 import cSticky from './packages/cSticky'
-import cHeader from './packages/cHeader'
-import cFooter from './packages/cFooter'
+import cFixed from './packages/cFixed'
+import cTitleBar from './packages/cTitleBar'
 
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
@@ -39,8 +39,8 @@ export {
   cIndexList,
   cRate,
   cSticky,
-  cHeader,
-  cFooter,
+  cFixed,
+  cTitleBar,
   cRadio,
   cRadioGroup,
   cCheckbox,

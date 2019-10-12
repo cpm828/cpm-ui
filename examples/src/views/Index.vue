@@ -96,12 +96,12 @@ export default {
           path: '/sticky'
         },
         {
-          title: 'Header顶部固定',
-          path: '/header'
+          title: 'Fixed顶部或底部固定',
+          path: '/fixed'
         },
         {
-          title: 'Footer底部固定',
-          path: '/footer'
+          title: 'TitleBar标题栏',
+          path: '/titlebar'
         }
       ],
       list4: [

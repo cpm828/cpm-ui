@@ -207,6 +207,7 @@ body {
     border-radius: 5px;
     font-size: 12px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 </style>

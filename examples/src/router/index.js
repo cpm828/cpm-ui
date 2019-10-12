@@ -106,19 +106,19 @@ export default new Router({
       }
     },
     {
-      path: '/header',
-      name: 'Header',
-      component: () => import(/* webpackChunkName: "/component/header" */ '../views/Header'),
+      path: '/fixed',
+      name: 'Fixed',
+      component: () => import(/* webpackChunkName: "/component/fixed" */ '../views/Fixed'),
       meta: {
-        title: 'Header'
+        title: 'Fixed'
       }
     },
     {
-      path: '/footer',
-      name: 'Footer',
-      component: () => import(/* webpackChunkName: "/component/footer" */ '../views/Footer'),
+      path: '/titlebar',
+      name: 'TitleBar',
+      component: () => import(/* webpackChunkName: "/component/titlebar" */ '../views/TitleBar'),
       meta: {
-        title: 'Footer'
+        title: 'TitleBar'
       }
     },
     // 表单类form

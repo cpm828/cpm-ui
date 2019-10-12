@@ -2,7 +2,7 @@
   <div class="page-wrap cssonepx-wrap">
     <div class="top">CSS 1px边框解决方案</div>
 
-    <p c_wrap="fs-14">使用transform:scale(.5)放缩来实现1px，使用伪类构建边框线</p>
+    <p c_wrap="fs-14 pl-20 pr-20 ta-j">提示：<br>使用transform:scale(.5)放缩来实现1px，使用伪类构建边框线</p>
     <div c_wrap="p-20">
       <div class="cssonepx-btnbox">
         <span c_wrap="fs-14">添加class: 空</span>
