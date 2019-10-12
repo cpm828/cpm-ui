@@ -87,6 +87,12 @@ body {
     }
     .block {
       padding-bottom: 20px;
+      .block-title{
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        padding: 10px 0 10px 20px;
+      }
       .block-item {
         background: #fff;
         padding-left: 20px;

@@ -6,30 +6,35 @@
     </div>
 
     <div class="block">
+      <p class="block-title">全局类</p>
       <div class="block-item" v-for="(item, index) in list1" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
+      <p class="block-title">基础类</p>
       <div class="block-item" v-for="(item, index) in list2" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
+      <p class="block-title">布局类</p>
       <div class="block-item" v-for="(item, index) in list3" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
+      <p class="block-title">表单类</p>
       <div class="block-item" v-for="(item, index) in list4" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
+      <p class="block-title">CSS类</p>
       <div class="block-item" v-for="(item, index) in list5" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
