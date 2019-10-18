@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap checkboxgroup-wrap">
-    <div class="top">CheckboxGroup多选组</div>
+    <div class="top">CheckboxGroup复选组</div>
 
     <div c_wrap="ta-l pl-20 pr-20">
       <p c_wrap="fs-14 mb-10 ta-j">

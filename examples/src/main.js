@@ -8,9 +8,9 @@ import router from './router'
 // cpm-ui
 import {
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
+  cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
-  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
+  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch
 } from '../../src/index'
 
 // 代码code高亮
@@ -24,9 +24,9 @@ require('./assets/common.scss')
 
 const components = [
   Toast, Loading, Dialog, ActionSheet,
-  cIcon, cButton, cRange, cRangeDouble, cIndexList, cRate,
+  cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
-  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cSwitch
+  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch
 ]
 components.map(cp => Vue.use(cp))
 Vue.use(VueHighlightJS)

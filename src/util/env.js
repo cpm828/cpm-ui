@@ -8,10 +8,13 @@ const isAndroid = /android/gi.test(ua)
 
 const isIos = !!UA.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
 
+const iosVersion = isIos ? +ua.match(/cpu iphone os (.*?) like mac os/)[1].replace(/_/g, '.') : 0
+
 export {
   UA,
   ua,
   isWeiXin,
   isAndroid,
-  isIos
+  isIos,
+  iosVersion
 }

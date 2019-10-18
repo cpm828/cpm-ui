@@ -8,44 +8,54 @@ import ActionSheet from './packages/actionSheet'
 import cIcon from './packages/cIcon'
 import cButton from './packages/cButton'
 import cRange from './packages/cRange'
-import cRangeDouble from './packages/cRangeDouble'
-import cIndexList from './packages/cIndexList'
 import cRate from './packages/cRate'
-
-// 布局类（以c开头）
-import cSticky from './packages/cSticky'
-import cFixed from './packages/cFixed'
-import cTitleBar from './packages/cTitleBar'
+import cProgress from './packages/cProgress'
+import cSearch from './packages/cSearch'
+import cCountDown from './packages/cCountDown'
 
 // 表单类（以c开头）
 import cRadio from './packages/cRadio'
 import cRadioGroup from './packages/cRadioGroup'
 import cCheckbox from './packages/cCheckbox'
 import cCheckboxGroup from './packages/cCheckboxGroup'
+import cRangeDouble from './packages/cRangeDouble'
+import cIndexList from './packages/cIndexList'
 import cSwitch from './packages/cSwitch'
+
+// 布局类（以c开头）
+import cSticky from './packages/cSticky'
+import cFixed from './packages/cFixed'
+import cTitleBar from './packages/cTitleBar'
 
 // css类
 // 1px解决方案，直接导入class即可
 
 export {
+  // 反馈组件
   Toast,
   Loading,
   Dialog,
   ActionSheet,
+  // 基础组件
   cIcon,
   cButton,
-  cRange,
-  cRangeDouble,
   cIndexList,
   cRate,
-  cSticky,
-  cFixed,
-  cTitleBar,
+  cProgress,
+  cSearch,
+  cCountDown,
+  // 表单组件
   cRadio,
   cRadioGroup,
   cCheckbox,
   cCheckboxGroup,
-  cSwitch
+  cRange,
+  cRangeDouble,
+  cSwitch,
+  // 布局组件
+  cSticky,
+  cFixed,
+  cTitleBar
 }
 
 /**

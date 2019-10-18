@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap checkbox-wrap">
-    <div class="top">Checkbox</div>
+    <div class="top">Checkbox复现框</div>
 
     <div c_wrap="ta-l pl-20 pr-20">
       <p c_wrap="fs-14 mb-10 ta-j">

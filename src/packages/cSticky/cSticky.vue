@@ -10,10 +10,13 @@
 export default {
   name: 'cSticky',
   props: {
-    scrollEl: {
-      type: String,
-      default: ''
-    }
+    // 吸顶距离
+    top: {
+      type: Number,
+      default: 0
+    },
+    // 滚动元素（可传class或id，也可传dom对象）
+    container: null
   },
   data () {
     return {
@@ -23,32 +26,37 @@ export default {
   },
   created () { },
   mounted () {
-    // 获取初始值
-    this.headerViewStyle = {
-      height: this.$refs.headerWrap.offsetHeight + 'px'
-    }
-    this.headerOffsetTop = this.$refs.headerWrap.offsetTop
-    // 监听touch事件
-    this.scrollDom = this.scrollEl ? document.querySelector(this.scrollEl) : window
-    this.scrollDom.addEventListener('touchstart', this.handleTouchStart)
+    this.$nextTick(() => {
+      // 支持sticky布局的走stick，不支持的安卓走scroll监听，iOS走touch监听
+      if (CSS.supports('position', 'sticky') || CSS.supports('position', '-webkit-sticky')) {
+        this.headerViewStyle = {
+          'position': '-webkit-sticky',
+          'position': 'sticky',
+          'top': `${this.top}px`
+        }
+      } else {
+        // 获取初始值
+        this.headerViewStyle = {
+          height: this.$refs.headerWrap.offsetHeight + 'px'
+        }
+        this.scrollDom = this.container || window
+        if (!this.container) {
+          this.scrollDom = window
+        } else if (typeof this.container === 'object') {
+          this.scrollDom = this.container
+        } else {
+          this.scrollDom = document.querySelector(this.container)
+        }
+        this.scrollDom.addEventListener('scroll', this.setHeader)
+      }
+    })
   },
   methods: {
-    handleTouchStart () {
-      this.scrollDom.addEventListener('touchmove', this.handleTouchMove)
-      this.scrollDom.addEventListener('touchend', this.handleTouchEnd)
-      window.addEventListener('hashchange', this.hashChangeEvent)
-    },
-    handleTouchMove () {
-      this.setHeader()
-    },
-    handleTouchEnd () {
-      this.startAnimateWatch()
-    },
     setHeader () {
-      const scrollTop = this.scrollEl ? this.scrollDom.scrollTop : document.documentElement.scrollTop
-      if (scrollTop >= this.headerOffsetTop) {
+      if (this.$refs.headerView.getBoundingClientRect().top <= this.top) {
         this.headerWrapStyle = {
-          position: 'fixed'
+          position: 'fixed',
+          top: `${this.top}px`
         }
       } else {
         this.headerWrapStyle = {
@@ -56,26 +64,9 @@ export default {
         }
       }
     },
-    // touchend存在惯性滚动，此时无法获取自动scrollTop，所以使用轮询监听，轮询5s
-    startAnimateWatch () {
-      const self = this
-      let start = null // 起始时间
-
-      function step (timestamp) {
-        if (!start) start = timestamp
-        const progress = timestamp - start
-        if (progress < 5000) {
-          self.timeId = requestAnimationFrame(step)
-        }
-        self.setHeader()
-      }
-      self.timeId && cancelAnimationFrame(self.timeId)
-      self.timeId = requestAnimationFrame(step)
-    },
     // hash变化时销毁监听
     hashChangeEvent () {
-      this.timeId && cancelAnimationFrame(this.timeId)
-      window.removeEventListener('hashchange', this.hashChange)
+      this.scrollDom.removeEventListener('scroll', this.setHeader)
     }
   }
 }

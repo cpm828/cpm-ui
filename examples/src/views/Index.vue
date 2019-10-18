@@ -6,35 +6,35 @@
     </div>
 
     <div class="block">
-      <p class="block-title">全局类</p>
+      <p class="block-title">反馈组件</p>
       <div class="block-item" v-for="(item, index) in list1" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
-      <p class="block-title">基础类</p>
+      <p class="block-title">基础组件</p>
       <div class="block-item" v-for="(item, index) in list2" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
-      <p class="block-title">布局类</p>
+      <p class="block-title">表单组件</p>
       <div class="block-item" v-for="(item, index) in list3" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
-      <p class="block-title">表单类</p>
+      <p class="block-title">布局组件</p>
       <div class="block-item" v-for="(item, index) in list4" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
     </div>
 
     <div class="block">
-      <p class="block-title">CSS类</p>
+      <p class="block-title">CSS组件</p>
       <div class="block-item" v-for="(item, index) in list5" :key="index">
         <router-link :to="item.path">{{item.title}}</router-link>
       </div>
@@ -78,6 +78,44 @@ export default {
           title: 'Button按钮',
           path: '/button'
         },
+        // {
+        //   title: 'IndexList索引列表',
+        //   path: '/indexlist'
+        // },
+        {
+          title: 'Rate评分',
+          path: '/rate'
+        },
+        // {
+        //   title: 'Progress进度',
+        //   path: '/progress'
+        // },
+        // {
+        //   title: 'Search搜索',
+        //   path: '/search'
+        // },
+        {
+          title: 'CountDown倒计时',
+          path: '/countdown'
+        }
+      ],
+      list3: [
+        {
+          title: 'Radio单选框',
+          path: '/radio'
+        },
+        {
+          title: 'RadioGroup单选组',
+          path: '/radiogroup'
+        },
+        {
+          title: 'Checkbox复选框',
+          path: '/checkbox'
+        },
+        {
+          title: 'CheckboxGroup复选组',
+          path: '/checkboxgroup'
+        },
         {
           title: 'Range单滑块',
           path: '/range'
@@ -87,15 +125,11 @@ export default {
           path: '/rangedouble'
         },
         {
-          title: 'IndexList索引列表',
-          path: '/indexlist'
-        },
-        {
-          title: 'Rate评分',
-          path: '/rate'
+          title: 'Switch开关',
+          path: '/switch'
         }
       ],
-      list3: [
+      list4: [
         {
           title: 'Sticky滚动吸顶',
           path: '/sticky'
@@ -107,28 +141,6 @@ export default {
         {
           title: 'TitleBar标题栏',
           path: '/titlebar'
-        }
-      ],
-      list4: [
-        {
-          title: 'Radio单选',
-          path: '/radio'
-        },
-        {
-          title: 'RadioGroup单选组',
-          path: '/radiogroup'
-        },
-        {
-          title: 'Checkbox复选',
-          path: '/checkbox'
-        },
-        {
-          title: 'CheckboxGroup多选组',
-          path: '/checkboxgroup'
-        },
-        {
-          title: 'Switch开关',
-          path: '/switch'
         }
       ],
       list5: [

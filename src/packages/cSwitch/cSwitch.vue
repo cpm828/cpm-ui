@@ -1,10 +1,10 @@
 <template>
   <div :class="[
     'cpm-cSwitch',
-    hasSlot ? 'hasSlot' : '',
+    $scopedSlots.default ? 'hasSlot' : '',
     value ? 'active' : '',
     disabled ? 'disabled' : '']" :style="switchStyle" @click="onClick">
-      <span class="tip" ref="switchSlot"><slot></slot></span>
+      <span class="tip" v-if="$scopedSlots.default"><slot></slot></span>
   </div>
 </template>
 
@@ -29,12 +29,9 @@ export default {
   },
   data () {
     return {
-      hasSlot: false // 是否有插槽内容
     }
   },
-  mounted () {
-    this.hasSlot = this.$refs.switchSlot.innerHTML !== ''
-  },
+  mounted () {},
   computed: {
     switchStyle () {
       // 激活时

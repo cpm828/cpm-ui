@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrap radio-wrap">
-    <div class="top">Radio</div>
+    <div class="top">Radio单选框</div>
 
     <div c_wrap="ta-l pl-20 pr-20">
       <p c_wrap="fs-14 mb-10 ta-j">
