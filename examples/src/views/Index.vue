@@ -86,10 +86,10 @@ export default {
           title: 'Rate评分',
           path: '/rate'
         },
-        // {
-        //   title: 'Progress进度',
-        //   path: '/progress'
-        // },
+        {
+          title: 'Progress进度',
+          path: '/progress'
+        },
         // {
         //   title: 'Search搜索',
         //   path: '/search'

@@ -45,13 +45,13 @@ const SECOND = 1000
 const MINUTE = 60 * SECOND
 const HOUR = 60 * MINUTE
 const DAY = 24 * HOUR
-// 毫秒拆分
+// 毫秒拆分，返回的h、m、s等未补充前缀0
 const formatMSTime = time => {
   const d = Math.floor(time / DAY)
-  const h = `0${Math.floor((time % DAY) / HOUR)}`.slice(-2)
-  const m = `0${Math.floor((time % HOUR) / MINUTE)}`.slice(-2)
-  const s = `0${Math.floor((time % MINUTE) / SECOND)}`.slice(-2)
-  const ms = `00${Math.floor(time % SECOND)}`.slice(-3)
+  const h = Math.floor((time % DAY) / HOUR)
+  const m = Math.floor((time % HOUR) / MINUTE)
+  const s = Math.floor((time % MINUTE) / SECOND)
+  const ms = Math.floor(time % SECOND)
   return {
     d,
     h,
