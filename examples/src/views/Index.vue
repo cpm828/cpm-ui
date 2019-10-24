@@ -87,9 +87,13 @@ export default {
           path: '/rate'
         },
         {
-          title: 'Progress进度',
+          title: 'Progress长条进度',
           path: '/progress'
         },
+        // {
+        //   title: 'ProgressCircle圆环进度',
+        //   path: '/progresscircle'
+        // },
         // {
         //   title: 'Search搜索',
         //   path: '/search'

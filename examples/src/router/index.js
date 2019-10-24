@@ -89,6 +89,14 @@ export default new Router({
       }
     },
     {
+      path: '/progresscircle',
+      name: 'ProgressCircle',
+      component: () => import(/* webpackChunkName: "/basic/progresscircle" */ '../views/ProgressCircle'),
+      meta: {
+        title: 'ProgressCircle'
+      }
+    },
+    {
       path: '/search',
       name: 'Search',
       component: () => import(/* webpackChunkName: "/basic/search" */ '../views/Search'),

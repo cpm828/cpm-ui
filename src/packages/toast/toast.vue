@@ -1,6 +1,6 @@
 <template>
   <div class="cpm-toast">
-    <div class="cpm-toast-wrap" v-bind:style="[styleObj, wrapStyleObj]">
+    <div :class="['cpm-toast-wrap', iconType ? 'cpm-toast2-wrap' : '']" v-bind:style="[styleObj, wrapStyleObj]">
       <cIcon class="icon" :type="iconType" color="white" size="2rem" v-if="iconType"></cIcon>
       <div class="cpm-toast-msg" v-html="message"></div>
     </div>
@@ -105,7 +105,7 @@ export default {
   .cpm-toast-wrap {
     position: fixed;
     left: 50%;
-    background: #4c4c4c;
+    background: #000;
     border-radius: 7px;
     width: 144px;
     margin-left: -92px;
@@ -113,8 +113,10 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-
+    padding: 10px;
+    &.cpm-toast2-wrap{
+      padding: 20px;
+    }
     .icon{
       margin-bottom: 10px;
     }
