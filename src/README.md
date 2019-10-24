@@ -44,8 +44,6 @@ components.map(component => Vue.use(component))
   markdown文档:   https://github.com/cpm828/cpm-ui/tree/gh-pages/document/***
 -->
 
-https://cpm828.github.io/cpm-ui/demo/index.html
-
 
 |组件|调用方法|[使用教程](https://cpm828.github.io/cpm-ui/demo/index.html)|[使用文档](https://github.com/cpm828/cpm-ui/tree/gh-pages/document)|
 |:---|:---|:---|:---|
