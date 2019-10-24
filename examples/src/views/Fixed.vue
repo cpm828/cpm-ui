@@ -31,7 +31,7 @@
       1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>1<br>
       <div>
         <a class="aLink" c_wrap="fs-12"
-          href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/fixed.md">查看文档</a>
+          href="https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cFixed.md">查看文档</a>
       </div>
 
       <cButton slot="footer" type="primary" size="large" @onClick="onClick('header')">footer</cButton>

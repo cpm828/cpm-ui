@@ -39,11 +39,11 @@
       </div>
       <div>
         <a class="aLink" c_wrap="fs-12"
-          href="https://cpm828.github.io/cpm_ui/fontdemo/demo_index.html">以上只列举了使用频率较多的icon，更多请查看</a>
+          href="https://cpm828.github.io/cpm-ui/fontdemo/demo_index.html">以上只列举了使用频率较多的icon，更多请查看</a>
       </div>
       <div>
         <a class="aLink" c_wrap="fs-12"
-          href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cIcon.md">查看文档</a>
+          href="https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cIcon.md">查看文档</a>
       </div>
     </div>
   </div>

@@ -52,7 +52,7 @@
 
     <div>
       <a class="aLink" c_wrap="fs-12"
-        href="https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md">查看文档</a>
+        href="hhttps://github.com/cpm828/cpm-ui/tree/gh-pages/document/cCheckbox.md">查看文档</a>
     </div>
   </div>
 </template>
