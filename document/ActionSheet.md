@@ -3,7 +3,7 @@
 # ActionSheet选择组件
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/actionsheet)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html)
 
 
 ## 二、使用文档

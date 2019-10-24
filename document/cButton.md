@@ -4,7 +4,7 @@
 # cButton按钮组件
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/button)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/button)
 
 
 ## 二、使用文档

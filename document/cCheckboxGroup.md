@@ -3,11 +3,11 @@
 
 # cCheckboxGroup多选组组件
 
-`cCheckboxGroup` 组件依赖 [cCheckbox](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cCheckbox.md) 构建。
+`cCheckboxGroup` 组件依赖 [cCheckbox](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cCheckbox.md) 构建。
 
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/checkboxgroup)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/checkboxgroup)
 
 
 

@@ -4,7 +4,7 @@
 # CSS 1px解决方案
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/onepx)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/onepx)
 
 ## 二、使用文档
 ### 导入

@@ -3,11 +3,11 @@
 
 # cRadioGroup但选组组件
 
-`cRadioGroup` 组件依赖 [cRadio](https://github.com/cpm828/cpm828.github.io/blob/master/cpm_ui/document/cRadio.md) 构建。
+`cRadioGroup` 组件依赖 [cRadio](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cRadio.md) 构建。
 
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/radiogroup)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/radiogroup)
 
 
 

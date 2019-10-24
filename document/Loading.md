@@ -4,7 +4,7 @@
 # Loading加载组件
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/loading)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/loading)
 
 > 动画来源：https://github.com/duenyang/css3-loading 
 

@@ -4,7 +4,7 @@
 # Dialog弹窗组件
 
 ## 一、使用教程
-[点击查看教程](https://cpm828.github.io/cpm_ui/demo/index.html#/dialog)
+[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html#/dialog)
 
 
 ## 二、使用文档
