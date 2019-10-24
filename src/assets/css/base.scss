@@ -1,0 +1,224 @@
+// https://www.sass.hk/docs/
+
+/************************* $变量 *************************/
+// 暂不使用
+$lightColor:  #999;
+$middleColor: #666;
+$heavyColor:  #333;
+
+
+/************************* css属性选择器（~=表示包含即可） *************************/
+// [c_wrap="flex"]  表示选择所有wrap="flex"的元素
+// [c_wrap~="flex"] 表示选择所有wrap属性中包含flex的元素
+
+// 10~40之间偶数字号
+$curFont: 10;
+@while $curFont <= 40 {
+	[c_wrap ~= fs-#{$curFont}]{
+		font-size: #{$curFont}px;
+	}
+  $curFont: $curFont + 2;
+}
+
+// text-align
+[c_wrap ~= ta-c]{
+	text-align: center;
+}
+[c_wrap ~= ta-l]{
+	text-align: left;
+}
+[c_wrap ~= ta-r]{
+	text-align: right;
+}
+[c_wrap ~= ta-j]{
+	text-align: justify;
+}
+
+// color
+[c_wrap ~= c-000]{ 
+	color: #000;
+}
+[c_wrap ~= c-333]{
+	color: #333;
+}
+[c_wrap ~= c-666]{
+	color: #666;
+}
+[c_wrap ~= c-999]{
+	color: #999;
+}
+[c_wrap ~= c-fff]{
+	color: #fff;
+}
+[c_wrap ~= c-fa5d5d]{
+	color: #fa5d5d;
+}
+[c_wrap ~= c-4080e8]{
+	color: #4080e8;
+}
+
+// margin
+[c_wrap ~= m-10]{
+	margin: 10px;
+}
+[c_wrap ~= m-20]{
+	margin: 20px;
+}
+[c_wrap ~= mt-10]{
+	margin-top: 10px;
+}
+[c_wrap ~= mt-20]{
+	margin-top: 20px;
+}
+[c_wrap ~= mr-10]{
+	margin-right: 10px;
+}
+[c_wrap ~= mr-20]{
+	margin-right: 20px;
+}
+[c_wrap ~= mb-10]{
+	margin-bottom: 10px;
+}
+[c_wrap ~= mb-20]{
+	margin-bottom: 20px;
+}
+[c_wrap ~= ml-10]{
+	margin-left: 10px;
+}
+[c_wrap ~= ml-20]{
+	margin-left: 20px;
+}
+
+
+// padding
+[c_wrap ~= p-10]{
+	padding: 10px
+}
+[c_wrap ~= p-20]{
+	padding: 20px;
+}
+[c_wrap ~= pt-10]{
+	padding-top: 10px;
+}
+[c_wrap ~= pt-20]{
+	padding-top: 20px;
+}
+[c_wrap ~= pr-10]{
+	padding-right: 10px;
+}
+[c_wrap ~= pr-20]{
+	padding-right: 20px;
+}
+[c_wrap ~= pb-10]{
+	padding-bottom: 10px;
+}
+[c_wrap ~= pb-20]{
+	padding-bottom: 20px;
+}
+[c_wrap ~= pl-10]{
+	padding-left: 10px;
+}
+[c_wrap ~= pl-20]{
+	padding-left: 20px;
+}
+
+// flex
+[c_wrap ~= flex]{
+	display: flex;
+}
+[c_wrap ~= flex-inline]{
+	display: inline-flex;
+}
+[c_wrap ~= flex-1]{
+	flex: 1;
+}
+[c_wrap ~= fd-r]{
+	flex-direction: row;
+}
+[c_wrap ~= fd-c]{
+	flex-direction: column;
+}
+[c_wrap ~= fw-w]{
+	flex-wrap: wrap;
+}
+[c_wrap ~= fw-n]{
+	flex-wrap: nowrap;
+}
+[c_wrap ~= jc-fs]{
+	justify-content: flex-start;
+}
+[c_wrap ~= jc-c]{
+	justify-content: center;
+}
+[c_wrap ~= jc-fe]{
+	justify-content: flex-end;
+}
+[c_wrap ~= jc-sb]{
+	justify-content: space-between;
+}
+[c_wrap ~= jc-sa]{
+	justify-content: space-around;
+}
+[c_wrap ~= ai-fs]{
+	align-items: flex-start;
+}
+[c_wrap ~= ai-c]{
+	align-items: center;
+}
+[c_wrap ~= ai-fe]{
+	align-items: flex-end;
+}
+
+// scroll
+[c_wrap ~= scroll-x]{
+	overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+[c_wrap ~= scroll-y]{
+	overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/************************* extend继承 *************************/
+// 用法：@extend .textOverflow;bina
+.textOverflow{
+	overflow      : hidden;
+	text-overflow : ellipsis;
+	white-space   : nowrap;
+}
+.flexCenterH{
+	display: flex;
+	justify-content: center;
+}
+.flexCenterV{
+	display: flex;
+	align-content: center;
+}
+.flexCenter{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+.aLink{
+	display: inline-block;
+	font-size: 14px;
+	padding: 20px 0;
+	color: #4080e8 !important;
+	text-decoration: underline;
+}
+
+
+/************************* mixin/include混合 *************************/
+// 定义混合指令：@mixin backImage() {};
+// 使用混合指令：@include backImage();
+@mixin backImage($url, $width: 100%, $height: 100%){
+	background-image : url($url) no-repeat;
+	background-size  : $width $height;
+}
+@mixin multiTextOverflow($num) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $num;
+	overflow: hidden;
+}
