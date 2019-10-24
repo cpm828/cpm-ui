@@ -72,11 +72,11 @@ resetCount () {
 
 <cCountDown :time="30 * 60 * 60 * 1000" class="count-down">
   <template v-slot="slotProps">
-    <span>{{ `0${slotProps.timeData.h}`.slice(-2) }}</span>
+    <span>{{ ('0' + slotProps.timeData.h).slice(-2) }}</span>
     <i>:</i>
-    <span>{{ `0${slotProps.timeData.m}`.slice(-2) }}</span>
+    <span>{{ ('0' + slotProps.timeData.m).slice(-2) }}</span>
     <i>:</i>
-    <span>{{ `0${slotProps.timeData.s}`.slice(-2) }}</span>
+    <span>{{ ('0' + slotProps.timeData.s).slice(-2) }}</span>
   </template>
 </cCountDown>
 ```
