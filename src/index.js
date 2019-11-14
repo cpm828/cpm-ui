@@ -10,7 +10,6 @@ import cButton from './packages/cButton'
 import cRange from './packages/cRange'
 import cRate from './packages/cRate'
 import cProgress from './packages/cProgress'
-import cProgressCircle from './packages/cProgressCircle'
 import cSearch from './packages/cSearch'
 import cCountDown from './packages/cCountDown'
 
@@ -43,7 +42,6 @@ export {
   cIndexList,
   cRate,
   cProgress,
-  cProgressCircle,
   cSearch,
   cCountDown,
   // 表单组件

@@ -91,13 +91,9 @@ export default {
           path: '/progress'
         },
         {
-          title: 'ProgressCircle圆环进度',
-          path: '/progresscircle'
+          title: 'Search搜索',
+          path: '/search'
         },
-        // {
-        //   title: 'Search搜索',
-        //   path: '/search'
-        // },
         {
           title: 'CountDown倒计时',
           path: '/countdown'

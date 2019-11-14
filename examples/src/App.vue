@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 存放一张图片，便于微信浏览器抓取分享头图 -->
-    <img src="https://blog.pimichen.com/images/public/favicon_300_transparent.png" alt="" style="display:block;width:0;height:0">
+    <img src="https://pimichen.com/blog/images/public/favicon_300_transparent.png" alt="" style="display:block;width:0;height:0">
 
     <router-view />
 

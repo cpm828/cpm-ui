@@ -58,7 +58,6 @@ components.map(component => Vue.use(component))
 |cIndexList|`<cIndexList></cIndexList>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/indexlist)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cIndexList.md)|
 |cRate|`<cRate></cRate>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/rate)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cRate.md)|
 |cProgress|`<cProgress></cProgress>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/progress)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cProgress.md)|
-|cProgressCircle|`<cProgressCircle></cProgressCircle>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/progresscircle)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cProgressCircle.md)|
 |cSearch|`<cSearch></cSearch>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/search)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cSearch.md)|
 |cCountDown|`<cCountDown></cCountDown>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/countdown)|[点击查看](https://github.com/cpm828/cpm-ui/blob/gh-pages/document/cCountDown.md)|
 |表单组件↓||||
