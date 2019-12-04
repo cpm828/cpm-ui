@@ -31,14 +31,16 @@ config: {
 |:---|:---|:---|:---|:---|
 |config|配置项|Object||`{}`|
 
+
 config中包含的属性：
+
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |value|当前值，v-model双向绑定|String||''|
 |type|input类型|String||`search`|
-|placeholder|提示文字|String|''|''|
-|label|搜索框前面的label|String|''|''|
-|button|搜索框后面的按钮文案|String|''|''|
+|placeholder|提示文字|String||''|
+|label|搜索框前面的label|String||''|
+|button|搜索框后面的按钮文案|String||''|
 |maxlength|最大输入长度|Number||1000|
 
 

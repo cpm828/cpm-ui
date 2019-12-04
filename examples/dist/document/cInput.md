@@ -33,19 +33,21 @@ config: {
 |:---|:---|:---|:---|:---|
 |config|配置项|Object||`{}`|
 
+
 config中包含的属性：
+
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
 |name|当前input key值|String||''|
 |title|当前提示文案|String||''|
 |value|当前值，v-model双向绑定|String||''|
 |type|input类型|String||`text`|
-|placeholder|提示文字|String|''|''|
+|placeholder|提示文字|String||''|
 |maxlength|最大输入长度|Number||1000|
 |lr|输入框对齐方式|String||`right`|
-|readonly|是否只读|Boolean||`false`|
-|disabled|是否禁用|Boolean||`false`|
-|showBottomBorder|是否显示底边框|Boolean||`true`|
+|readonly|是否只读|Boolean|`true`、`false`|`false`|
+|disabled|是否禁用|Boolean|`true`、`false`|`false`|
+|showBottomBorder|是否显示底边框|Boolean|`true`、`false`|`true`|
 |labelIconType|label后面的icon类型|String||''|
 |unit|input后面的单位|String||''|
 |inputIconType|input后面的icon类型|String||''|
