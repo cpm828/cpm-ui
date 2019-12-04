@@ -17,40 +17,52 @@ Vue.use(cSearch)
 
 ### 调用
 ```html
-<cSearch v-model="inputText" button="搜索"></cSearch>
+<cSearch :config="config" v-model="config.value"></cSearch>
+```
 
-{
-  value: 0
+```js
+config: {
+  value: ''
 }
 ```
 
 ### 属性props
 |参数|说明|类型|可选值|默认值|
 |:---|:---|:---|:---|:---|
-|value|当前值，v-model双向绑定|Number||0|
+|config|配置项|Object||`{}`|
+
+config中包含的属性：
+|参数|说明|类型|可选值|默认值|
+|:---|:---|:---|:---|:---|
+|value|当前值，v-model双向绑定|String||''|
+|type|input类型|String||`search`|
 |placeholder|提示文字|String|''|''|
 |label|搜索框前面的label|String|''|''|
 |button|搜索框后面的按钮文案|String|''|''|
-|type|input类型|String||`search`|
 |maxlength|最大输入长度|Number||1000|
 
 
 ### 事件Event
 |方法|说明|
 |:---|:---|
-|onChange|输入后失焦时|
-|onInput|输入时|
 |onFocus|输入框激活|
 |onBlur|输入框失焦|
+|onInput|输入时|
+|onChange|输入后失焦时|
 |onClear|点击清除按钮|
 |onSearch|点击搜索按钮|
 
 如：
 ```html
-<cSearch label="地址" button="搜索" placeholder="请输入您的地址" v-model="inputText" @onFocus="onFocus" @onBlur="onBlur" @onSearch="onSearch"></cSearch>
+<cSearch :config="config" v-model="config.value" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onClear="onClear" @onSearch="onSearch"></cSearch>
+```
 
-{
-  inputText: ''
+```js
+config: {
+  value: '',
+  placeholder: '请输入您的地址',
+  label: '地址',
+  button: '搜索'
 }
 ```
 
