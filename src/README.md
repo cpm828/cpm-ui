@@ -68,6 +68,7 @@ components.map(component => Vue.use(component))
 |cRange|`<cRange></cRange>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/range)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cRange.md)|
 |cRangeDouble|`<cRangeDouble></cRangeDouble>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/rangedouble)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cRangeDouble.md)|
 |cSwitch|`<cSwitch></cSwitch>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/switch)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cSwitch.md)|
+|cInput|`<cInput></cInput>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/input)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cInput.md)|
 |布局组件↓||||
 |cSticky|`<cSticky></cSticky>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/sticky)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cSticky.md)|
 |cFixed|`<cFixed></cFixed>`|[点击查看](https://cpm828.github.io/cpm-ui/demo/index.html#/fixed)|[点击查看](https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cFixed.md)|

@@ -47,6 +47,14 @@ export default new Router({
         title: 'ActionSheet'
       }
     },
+    {
+      path: '/datepicker',
+      name: 'DatePicker',
+      component: () => import(/* webpackChunkName: "/feedback/datepicker" */ '../views/DatePicker'),
+      meta: {
+        title: 'DatePicker'
+      }
+    },
     // 基础组件
     {
       path: '/icon',
@@ -159,6 +167,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "/form/switch" */ '../views/Switch'),
       meta: {
         title: 'Switch'
+      }
+    },
+    {
+      path: '/input',
+      name: 'Input',
+      component: () => import(/* webpackChunkName: "/form/input" */ '../views/Input'),
+      meta: {
+        title: 'Input'
       }
     },
     // 布局组件

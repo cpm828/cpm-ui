@@ -1,32 +1,32 @@
 <template>
-  <div class="page-wrap progress-wrap">
+  <div class="page-wrap search-wrap">
     <div c_wrap="mb-20">
-      <cSearch v-model="inputText" type="tel" placeholder="请输入手机号" button="搜索"></cSearch>
+      <cSearch :config="config1" v-model="config1.value"></cSearch>
     </div>
     <div class="top">Search搜索</div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">默认</p>
-      <cSearch v-model="inputText"></cSearch>
+      <cSearch :config="config2" v-model="config2.value"></cSearch>
     </div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">左侧带label</p>
-      <cSearch label="地址" v-model="inputText"></cSearch>
+      <cSearch :config="config3" v-model="config3.value"></cSearch>
     </div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">右侧带按钮</p>
-      <cSearch label="地址" button="搜索" v-model="inputText"></cSearch>
+      <cSearch :config="config4" v-model="config4.value"></cSearch>
     </div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">提示文案</p>
-      <cSearch label="地址" button="搜索" placeholder="请输入您的地址" v-model="inputText"></cSearch>
+      <cSearch :config="config5" v-model="config5.value"></cSearch>
     </div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">键盘类型</p>
-      <cSearch label="电话" button="搜索" placeholder="请输入您的手机号" :maxlength="11" type="tel" v-model="inputText"></cSearch>
+      <cSearch :config="config6" v-model="config6.value"></cSearch>
     </div>
     <div c_wrap="mb-20">
       <p c_wrap="fs-16 ta-l pl-20 mb-10">绑定触发事件</p>
-      <cSearch label="地址" button="搜索" placeholder="请输入您的地址" v-model="inputText" @onFocus="onFocus" @onBlur="onBlur" @onSearch="onSearch"></cSearch>
+      <cSearch :config="config7" v-model="config7.value" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onSearch="onSearch"></cSearch>
     </div>
     <span class="code-btn" @click.prevent.stop="showCode">code</span>
     <code-block type="html" :code="code" v-if="showCodeFlag"></code-block>
@@ -43,10 +43,66 @@ export default {
   components: { codeBlock },
   data () {
     return {
-      inputText: '',
+      config1: {
+        name: 'tel',
+        value: '',
+        type: 'tel',
+        maxlength: 11,
+        placeholder: '请输入手机号',
+        button: '搜索'
+      },
+      config2: {
+        name: 'text',
+        value: '',
+        placeholder: '请输入'
+      },
+      config3: {
+        name: 'address',
+        value: '',
+        placeholder: '',
+        label: '地址'
+      },
+      config4: {
+        name: 'address',
+        value: '',
+        placeholder: '',
+        label: '地址',
+        button: '搜索'
+      },
+      config5: {
+        name: 'address',
+        value: '',
+        placeholder: '请输入您的地址',
+        label: '地址',
+        button: '搜索'
+      },
+      config6: {
+        name: 'tel',
+        value: '',
+        type: 'tel',
+        placeholder: '请输入您的电话',
+        label: '电话',
+        maxlength: 11,
+        button: '搜索'
+      },
+      config7: {
+        name: 'address',
+        value: '',
+        placeholder: '请输入您的地址',
+        label: '地址',
+        button: '搜索'
+      },
       showCodeFlag: false,
       code: `
-<cSearch label="地址" button="搜索" placeholder="请输入您的地址" v-model="inputText" @onFocus="onFocus" @onBlur="onBlur" @onSearch="onSearch"></cSearch>
+<cSearch :config="config7" v-model="config7.value" @onFocus="onFocus" @onBlur="onBlur" @onSearch="onSearch"></cSearch>
+
+config7: {
+  name: 'address',
+  value: '',
+  placeholder: '请输入您的地址',
+  label: '地址',
+  button: '搜索'
+}
 `
     }
   },
@@ -61,6 +117,15 @@ export default {
     },
     onBlur () {
       console.log('onBlur')
+    },
+    onInput (e, value) {
+      console.log('onInput', e, value)
+    },
+    onChange (e, value) {
+      console.log('onChange', e, value)
+    },
+    onClear (value) {
+      console.log('onClear')
     },
     onSearch (value) {
       this.$toast(`搜索：${value}`)

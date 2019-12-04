@@ -61,32 +61,66 @@ $curFont: 10;
 [c_wrap ~= m-10]{
 	margin: 10px;
 }
+[c_wrap ~= m-15]{
+	margin: 15px;
+}
 [c_wrap ~= m-20]{
 	margin: 20px;
 }
+[c_wrap ~= m-30]{
+	margin: 30px;
+}
+
 [c_wrap ~= mt-10]{
 	margin-top: 10px;
+}
+[c_wrap ~= mt-15]{
+	margin-top: 15px;
 }
 [c_wrap ~= mt-20]{
 	margin-top: 20px;
 }
+[c_wrap ~= mt-30]{
+	margin-top: 30px;
+}
+
 [c_wrap ~= mr-10]{
 	margin-right: 10px;
+}
+[c_wrap ~= mr-15]{
+	margin-right: 15px;
 }
 [c_wrap ~= mr-20]{
 	margin-right: 20px;
 }
+[c_wrap ~= mr-30]{
+	margin-right: 30px;
+}
+
 [c_wrap ~= mb-10]{
 	margin-bottom: 10px;
+}
+[c_wrap ~= mb-15]{
+	margin-bottom: 15px;
 }
 [c_wrap ~= mb-20]{
 	margin-bottom: 20px;
 }
+[c_wrap ~= mb-30]{
+	margin-bottom: 30px;
+}
+
 [c_wrap ~= ml-10]{
 	margin-left: 10px;
 }
+[c_wrap ~= ml-15]{
+	margin-left: 15px;
+}
 [c_wrap ~= ml-20]{
 	margin-left: 20px;
+}
+[c_wrap ~= ml-30]{
+	margin-left: 30px;
 }
 
 

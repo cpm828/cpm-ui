@@ -1,5 +1,5 @@
 <template>
-  <div class="cpm-cSticky" :style="headerViewStyle" ref="headerView">
+  <div :class="['cpm-cSticky', headerViewClass]" :style="headerViewStyle" ref="headerView">
     <div class="c-sticky-wrap" :style="headerWrapStyle" ref="headerWrap">
       <slot></slot>
     </div>
@@ -20,6 +20,7 @@ export default {
   },
   data () {
     return {
+      headerViewClass: '',
       headerViewStyle: {},
       headerWrapStyle: {}
     }
@@ -27,17 +28,17 @@ export default {
   created () { },
   mounted () {
     this.$nextTick(() => {
-      // 支持sticky布局的走stick，不支持的安卓走scroll监听，iOS走touch监听
-      if (CSS.supports('position', 'sticky') || CSS.supports('position', '-webkit-sticky')) {
+      // 支持sticky布局的走stick，不支持的走scroll监听
+      if (this.cssSupport('position', '-webkit-sticky') || this.cssSupport('position', 'sticky')) {
+        this.headerViewClass = 'cpm-cSticky--sticky' // sticky属性涉及到前缀，css可自动补全，不建议通过js设置
         this.headerViewStyle = {
-          'position': '-webkit-sticky',
-          'position': 'sticky',
-          'top': `${this.top}px`
+          top: `${this.top}px`,
+          'z-index': 1
         }
       } else {
         // 获取初始值
         this.headerViewStyle = {
-          height: this.$refs.headerWrap.offsetHeight + 'px'
+          height: `${this.$refs.headerWrap.offsetHeight}px`
         }
         this.scrollDom = this.container || window
         if (!this.container) {
@@ -52,6 +53,15 @@ export default {
     })
   },
   methods: {
+    cssSupport (attr, value) {
+      const element = document.createElement('div')
+      if (attr in element.style) {
+        element.style[attr] = value
+        return element.style[attr] === value
+      } else {
+        return false
+      }
+    },
     setHeader () {
       if (this.$refs.headerView.getBoundingClientRect().top <= this.top) {
         this.headerWrapStyle = {
@@ -74,6 +84,9 @@ export default {
 
 <style lang="scss" scoped>
 .cpm-cSticky {
+  &.cpm-cSticky--sticky{
+    position: sticky;
+  }
   .c-sticky-wrap {
     width: 100%;
     left: 0;

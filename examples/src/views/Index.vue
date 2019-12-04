@@ -67,7 +67,11 @@ export default {
         {
           title: 'ActionSheet选择',
           path: '/actionsheet'
-        }
+        },
+        // {
+        //   title: 'DatePicker日期选择器',
+        //   path: '/datepicker'
+        // }
       ],
       list2: [
         {
@@ -127,6 +131,10 @@ export default {
         {
           title: 'Switch开关',
           path: '/switch'
+        },
+        {
+          title: 'Input用户输入',
+          path: '/input'
         }
       ],
       list4: [

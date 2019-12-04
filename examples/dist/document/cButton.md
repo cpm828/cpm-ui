@@ -25,6 +25,7 @@ Vue.use(cButton)
 |:---|:---|:---|:---|:---|
 |type|按钮类型|String|`default`、`primary`、`danger`|`default`|
 |size|按钮大小，除large外其他均为行内|String|`smaller`、`small`、`normal`、`large`|`normal`|
+|circle|是否开启圆角|Boolean|`true`、`false`|`false`|
 |btnStyle|按钮样式，也可以通过css重置|Object||{}|
 |plain|是否为幽灵按钮，即有边框无背景色|Boolean|`true`、`false`|`false`|
 |disabled|是否为禁用按钮，0.6不透明度|Boolean|`true`、`false`|`false`|

@@ -1,11 +1,9 @@
 <template>
-  <div :class="[
-    'cpm-cButton',
-    this.size,
-    this.type,
-    this.plain ? 'plain' : '' ,
-    this.disabled ? 'disabled' : ''
-  ]" :style="btnStyle" @click="onClick">
+  <div :class="['cpm-cButton', `cpm-cButton--${this.size}`, `cpm-cButton--${this.type}`, {
+    'cpm-cButton--plain': this.plain,
+    'cpm-cButton--circle': this.circle,
+    'cpm-cButton--disabled': this.disabled,
+  }]" :style="btnStyle" @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -25,6 +23,11 @@ export default {
     size: {
       type: String,
       default: 'normal'
+    },
+    // 是否开启圆角
+    circle: {
+      type: Boolean,
+      default: false
     },
     // 按钮样式，可设置背景色、文字颜色等
     btnStyle: {
@@ -46,8 +49,8 @@ export default {
     return {
     }
   },
-  created () {},
-  mounted () {},
+  created () { },
+  mounted () { },
   computed: {
     // icon配置，Object类型，设定某些字段的默认值
     iconOpt () {
@@ -69,82 +72,95 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cpm-cButton{
+.cpm-cButton {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
 
   // smaller: 行内超小按钮
-  &.smaller{
+  &.cpm-cButton--smaller {
     white-space: nowrap;
     display: inline-flex;
     height: 22px;
     font-size: 12px;
     padding: 0 10px;
-    border-radius: 11px;
+    &.cpm-cButton--circle {
+      border-radius: 11px;
+    }
   }
   // small: 行内小按钮
-  &.small{
+  &.cpm-cButton--small {
     white-space: nowrap;
     display: inline-flex;
     height: 30px;
     font-size: 14px;
     padding: 0 30px;
-    border-radius: 30px;
+    &.cpm-cButton--circle {
+      border-radius: 15px;
+    }
   }
   // normal: 普通行内按钮
-  &.normal{
+  &.cpm-cButton--normal {
     white-space: nowrap;
     display: inline-flex;
     height: 45px;
     font-size: 16px;
     padding: 0 50px;
-    border-radius: 22.5px;
+    &.cpm-cButton--circle {
+      border-radius: 22.5px;
+    }
   }
   // 铺满一行大按钮，默认无圆角
-  &.large{
+  &.cpm-cButton--large {
     display: flex;
     height: 45px;
     font-size: 16px;
+    &.cpm-cButton--circle {
+      border-radius: 22.5px;
+    }
   }
-  // 样式
-  &.default{
+
+  // default样式
+  &.cpm-cButton--default {
     background-color: #dde2ea;
-    // color: #acbed0;
-    color: #8A99AB;
-    &.plain{
-      border: 1px solid #8A99AB;
+    color: #8a99ab;
+    &.cpm-cButton--plain {
+      border: 1px solid #8a99ab;
       background-color: transparent;
-      color: #8A99AB;
+      color: #8a99ab;
     }
-    &.disabled {
-      opacity: .6;
+    &.cpm-cButton--disabled {
+      opacity: 0.6;
       cursor: not-allowed;
     }
   }
-  &.primary{
-    background-image: linear-gradient(90deg, #508BEF 0%, #4B5FFE 100%);
+
+  // primary样式
+  &.cpm-cButton--primary {
+    background-image: linear-gradient(90deg, #508bef 0%, #4b5ffe 100%);
     color: #fff;
-    &.plain{
+    &.cpm-cButton--plain {
       background-image: none;
-      border: 1px solid #4B5FFE;
-      color: #4B5FFE;
+      border: 1px solid #4b5ffe;
+      color: #4b5ffe;
     }
-    &.disabled {
-      opacity: .6;
+    &.cpm-cButton--disabled {
+      opacity: 0.6;
       cursor: not-allowed;
     }
   }
-  &.danger{
-    background-image: linear-gradient(90deg, #FE7449 0%, #FB2842 100%);
+
+  // danger样式
+  &.cpm-cButton--danger {
+    background-image: linear-gradient(90deg, #fe7449 0%, #fb2842 100%);
     color: #fff;
-    &.plain{
+    &.cpm-cButton--plain {
       background-image: none;
-      border: 1px solid #FB2842;
-      color: #FB2842;
+      border: 1px solid #fb2842;
+      color: #fb2842;
     }
-    &.disabled {
-      opacity: .6;
+    &.cpm-cButton--disabled {
+      opacity: 0.6;
       cursor: not-allowed;
     }
   }

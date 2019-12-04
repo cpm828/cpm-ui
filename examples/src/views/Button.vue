@@ -64,18 +64,24 @@
     <span class="code-btn" @click.prevent.stop="showCode(4)">code</span>
     <code-block type="html" :code="code4" v-if="showCodeFlag4"></code-block>
 
-    <p c_wrap="fs-16 ta-l pb-10  pt-20">5. 不同size的按钮</p>
-    <div c_wrap="pb-10 flex">
-      <cButton class="button-55" type="primary" size="normal">normal</cButton>
-      <cButton class="button-55" type="primary" size="normal" plain>normal</cButton>
+    <p c_wrap="fs-16 ta-l pb-10  pt-20">5. 不同size带圆角的按钮</p>
+    <div c_wrap="pb-10">
+      <cButton type="primary" size="large" :circle="true">large</cButton>
+    </div>
+    <div c_wrap="pb-10">
+      <cButton type="primary" size="large" :circle="true" plain>large plain</cButton>
     </div>
     <div c_wrap="pb-10 flex">
-      <cButton class="button-56" type="primary" size="small">small</cButton>
-      <cButton class="button-56" type="primary" size="small" plain>small</cButton>
+      <cButton class="button-55" type="primary" size="normal" :circle="true">normal</cButton>
+      <cButton class="button-55" type="primary" size="normal" :circle="true" plain>normal plain</cButton>
     </div>
     <div c_wrap="pb-10 flex">
-      <cButton class="button-57" type="primary" size="smaller">smaller</cButton>
-      <cButton class="button-57" type="primary" size="smaller" plain>smaller</cButton>
+      <cButton class="button-56" type="primary" size="small" :circle="true">small</cButton>
+      <cButton class="button-56" type="primary" size="small" :circle="true" plain>small plain</cButton>
+    </div>
+    <div c_wrap="pb-10 flex">
+      <cButton class="button-57" type="primary" size="smaller" :circle="true">smaller</cButton>
+      <cButton class="button-57" type="primary" size="smaller" :circle="true" plain>smaller plain</cButton>
     </div>
     <span class="code-btn" @click.prevent.stop="showCode(5)">code</span>
     <code-block type="html" :code="code5" v-if="showCodeFlag5"></code-block>
@@ -152,14 +158,17 @@ export default {
 
 <cButton class="button-43" size="large" type="primary">分享(各50%)</cButton>
 <cButton class="button-44" size="large" type="danger">保存图片(各50%)</cButton>`,
-      code5: `<cButton class="button-55" type="primary" size="normal">normal</cButton>
-<cButton class="button-55" type="primary" size="normal" plain>normal</cButton>
+      code5: `<cButton type="primary" size="large" :circle="true">large</cButton>
+<cButton type="primary" size="large" :circle="true" plain>large plain</cButton>
 
-<cButton class="button-56" type="primary" size="small">small</cButton>
-<cButton class="button-56" type="primary" size="small" plain>small</cButton>
+<cButton class="button-55" type="primary" size="normal :circle="true">normal</cButton>
+<cButton class="button-55" type="primary" size="normal" :circle="true" plain>normal</cButton>
 
-<cButton class="button-57" type="primary" size="smaller">smaller</cButton>
-<cButton class="button-57" type="primary" size="smaller" plain>smaller</cButton>`,
+<cButton class="button-56" type="primary" size="small" :circle="true">small</cButton>
+<cButton class="button-56" type="primary" size="small" :circle="true" plain>small</cButton>
+
+<cButton class="button-57" type="primary" size="smaller" :circle="true">smaller</cButton>
+<cButton class="button-57" type="primary" size="smaller" :circle="true" plain>smaller</cButton>`,
       code6: `<cButton type="primary" size="large">
   <cIcon class="icon-left" type="search" size="1rem" style="margin-right:0.26rem;"></cIcon>
   搜索

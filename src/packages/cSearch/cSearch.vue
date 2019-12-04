@@ -1,15 +1,15 @@
 <template>
   <div class="cpm-cSearch">
     <div class="c-search-content">
-      <div class="c-search-label">{{label}}</div>
+      <div class="c-search-label">{{conf.label}}</div>
       <div class="c-search-field">
         <div class="c-seach-icon">
           <cIcon type="search" size="1rem"></cIcon>
         </div>
         <div class="c-search-box">
           <form action="javascript:;">
-            <input ref="input" :type="type" :maxlength="maxlength" :placeholder="placeholder" @focus="onfocus"
-              @blur="onblur" @input="onInput" @change="onChange" @keyup.enter="onEnter" v-springBack
+            <input :ref="conf.name" :type="conf.type" :maxlength="conf.maxlength" :placeholder="conf.placeholder" @focus="onFocus"
+              @blur="onBlur" @input="onInput" @change="onChange" @keyup.enter="onEnter" v-springBack
               v-model="currentValue">
           </form>
           <cIcon class="c-seach-clear" type="close-filled" size="1rem" color="#ccc" @onClick="onClear"
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="c-search-button" @click="onSearch">{{button}}</div>
+    <div class="c-search-button" @click="onSearch">{{conf.button}}</div>
   </div>
 </template>
 
@@ -27,58 +27,43 @@ import cIcon from '../cIcon'
 export default {
   name: 'cSearch',
   directives: springBack,
+  components: { cIcon },
   props: {
-    // 双向绑定的输入信息
-    value: {
-      type: String,
-      default: ''
-    },
-    // 输入框提示文案
-    placeholder: {
-      type: String,
-      default: ''
-    },
-    // 输入框前提示文案
-    label: {
-      type: String,
-      default: ''
-    },
-    // 输入框后按钮文案
-    button: {
-      type: String,
-      default: ''
-    },
-    // 键盘类型
-    type: {
-      type: String,
-      default: 'search'
-    },
-    // 最大输入长度
-    maxlength: {
-      type: Number,
-      default: 1000
+    config: {
+      type: Object,
+      default: () => { }
     }
   },
-  components: { cIcon },
   data () {
     return {
-      currentValue: this.value,
+      currentValue: this.config.value || '',
       clearIconShow: false
     }
   },
   created () { },
   mounted () { },
   computed: {
+    conf () {
+      const defaultConfig = {
+        name: '', // key
+        type: 'text', // input类型
+        placeholder: '', // input提示文字
+        maxlength: 20, // input最大输入
+        label: '', // 前面的提示文案
+        button: '' // 后面的按钮文案
+      }
+      return Object.assign(defaultConfig, this.config)
+    },
     clearIconShow2 () {
-      return this.clearIconShow && this.currentValue
+      return this.clearIconShow && !!this.currentValue
     }
   },
   methods: {
-    onfocus (e) {
+    onFocus (e) {
       if (this.currentValue) this.clearIconShow = true
       this.$emit('onFocus', e)
     },
-    onblur (e) {
+    onBlur (e) {
       // 异步目的：不加异步时，点击clear icon，同时触发blur，icon隐藏，事件无法响应
       setTimeout(() => {
         this.clearIconShow = false
@@ -93,16 +78,17 @@ export default {
     },
     // 失去焦点时才触发
     onChange (e) {
-      this.$emit('onInput', e, this.currentValue)
+      this.$emit('onChange', e, this.currentValue)
     },
+    // 点击输入框后面的清除按钮
     onClear () {
-      this.$refs.input.focus()
+      this.$refs[this.conf.name].focus()
       this.currentValue = ''
       this.$emit('input', '')
       this.$emit('onClear')
     },
     onEnter () {
-      this.$refs.input.blur()
+      this.$refs[this.conf.name].blur()
       this.$emit('onSearch', this.currentValue)
     },
     onSearch (e) {

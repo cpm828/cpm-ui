@@ -10,7 +10,7 @@ import {
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
-  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch
+  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch, cInput
 } from '../../src/index'
 
 // 代码code高亮
@@ -26,7 +26,7 @@ const components = [
   Toast, Loading, Dialog, ActionSheet,
   cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
-  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch
+  cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch, cInput
 ]
 components.map(cp => Vue.use(cp))
 Vue.use(VueHighlightJS)

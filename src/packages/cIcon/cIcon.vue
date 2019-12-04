@@ -80,7 +80,6 @@ export default {
   },
   methods: {
     onClick (e) {
-      console.log(111212)
       this.$emit('onClick', e)
     }
   }

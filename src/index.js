@@ -3,6 +3,7 @@ import Toast from './packages/toast'
 import Loading from './packages/loading'
 import Dialog from './packages/dialog'
 import ActionSheet from './packages/actionSheet'
+import DatePicker from './packages/datePicker'
 
 // 页面组件类（以c开头）
 import cIcon from './packages/cIcon'
@@ -21,6 +22,7 @@ import cCheckboxGroup from './packages/cCheckboxGroup'
 import cRangeDouble from './packages/cRangeDouble'
 import cIndexList from './packages/cIndexList'
 import cSwitch from './packages/cSwitch'
+import cInput from './packages/cInput'
 
 // 布局类（以c开头）
 import cSticky from './packages/cSticky'
@@ -36,6 +38,7 @@ export {
   Loading,
   Dialog,
   ActionSheet,
+  DatePicker,
   // 基础组件
   cIcon,
   cButton,
@@ -52,6 +55,7 @@ export {
   cRange,
   cRangeDouble,
   cSwitch,
+  cInput,
   // 布局组件
   cSticky,
   cFixed,
