@@ -39,8 +39,8 @@ config中包含的属性：
 |value|当前值，v-model双向绑定|String||''|
 |type|input类型|String||`search`|
 |placeholder|提示文字|String||''|
-|label|搜索框前面的label|String|''|''|
-|button|搜索框后面的按钮文案|String|''|''|
+|label|搜索框前面的label|String||''|
+|button|搜索框后面的按钮文案|String||''|
 |maxlength|最大输入长度|Number||1000|
 
 
