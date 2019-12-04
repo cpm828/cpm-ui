@@ -42,7 +42,7 @@ config中包含的属性：
 |title|当前提示文案|String||''|
 |value|当前值，v-model双向绑定|String||''|
 |type|input类型|String||`text`|
-|placeholder|提示文字|String|''|''|
+|placeholder|提示文字|String||''|
 |maxlength|最大输入长度|Number||1000|
 |lr|输入框对齐方式|String||`right`|
 |readonly|是否只读|Boolean||`false`|
