@@ -31,7 +31,7 @@
     <span class="code-btn" @click.prevent.stop="showCode">code</span>
     <code-block type="html" :code="code" v-if="showCodeFlag"></code-block>
     <div>
-      <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui/tree/gh-pages/document/cSearch.md">查看文档</a>
+      <a class="aLink" c_wrap="fs-12" href="https://cpm828.github.io/cpm-ui-docs/basic/cSearch.html">查看文档</a>
     </div>
   </div>
 </template>

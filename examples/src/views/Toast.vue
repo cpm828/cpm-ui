@@ -13,8 +13,7 @@
     </div>
 
     <div>
-      <a class="aLink" c_wrap="fs-12"
-        href="https://github.com/cpm828/cpm-ui/tree/gh-pages/document/Toast.md">查看文档</a>
+      <a class="aLink" c_wrap="fs-12" href="https://cpm828.github.io/cpm-ui-docs/feedback/Toast.html">查看文档</a>
     </div>
   </div>
 </template>

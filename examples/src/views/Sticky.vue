@@ -29,7 +29,7 @@
     <div v-for="n in 50" :key="n" class="item">{{n}}</div>
     <div>
       <a class="aLink" c_wrap="fs-12"
-        href="https://github.com/cpm828/cpm-ui/tree/gh-pages/document/Sticky.md">查看文档</a>
+        href="https://cpm828.github.io/cpm-ui-docs/layout/cSticky.html">查看文档</a>
     </div>
   </div>
 </template>

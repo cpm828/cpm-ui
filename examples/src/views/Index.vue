@@ -41,7 +41,7 @@
     </div>
 
     <div>
-      <a class="aLink" c_wrap="fs-12" href="https://github.com/cpm828/cpm-ui">查看文档</a>
+      <a class="aLink" c_wrap="fs-12" href="https://cpm828.github.io/cpm-ui-docs">查看文档</a>
     </div>
   </div>
 </template>

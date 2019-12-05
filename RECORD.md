@@ -5,9 +5,8 @@
 │
 ├── config: webpack配置文件
 │
-├── examples: cpm-ui教程，最后会存放在cpm828.github.io(个人博客已占用，使用hexo发布)项目中，使用github page服务访问
+├── examples: cpm-ui教程，最后会存放在cpm828.github.io/cpm-ui项目中，使用github page服务访问
 │   ├── demo: 各组件demo编译后代码
-│   ├── document: 各组件markdown文档
 │   ├── fontdemo: 阿里巴巴矢量库图表使用教程，详细列举了cIcon组件所包含的icon
 │   └── src: 各组件demo开发时代码
 │
@@ -36,4 +35,16 @@
 
 流程一：1. 开发src/packages组件 -> 2. 测试通过后使用npm发布
 
-流程二：1.编写examples/demo教程 -> 2. 发布到cpm828.github.io中，cpm828.github.io已被个人博客占用，故将该教程存放在cpm_ui目录下
+流程二：1. 编写examples/demo教程 -> 2. 发布到cpm828.github.io/cpm-ui上
+```bash
+npm run build
+
+npm run deploy # 发布dist目录到cpm-ui工程的gh-pages分支上
+```
+
+流程三：1. 进入另一个工程cpm-ui-docs编写说明文档 -> 2. 发布到cpm828.github.io/cpm-ui-docs上
+```bash
+npm run build
+
+npm run deploy # 发布dist目录到cpm-ui-docs工程的gh-pages分支上
+```
