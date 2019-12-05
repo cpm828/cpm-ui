@@ -6,7 +6,7 @@
 ## 查看示例
 
 ### 链接查看
-[点击查看教程](https://cpm828.github.io/cpm-ui/demo/index.html)
+[点击查看](https://cpm828.github.io/cpm-ui)
 
 ### 扫码查看
 <img src="https://cpm828.github.io/cpm-ui/images/cpm_ui_qrcode.png">
