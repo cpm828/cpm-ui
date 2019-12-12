@@ -1,6 +1,6 @@
 <template>
-  <div class="page-wrap search-wrap">
-    <div c_wrap="mb-20">
+  <cFixed class="page-wrap search-wrap">
+    <div c_wrap="mb-20" slot="header">
       <cSearch :config="config1" v-model="config1.value"></cSearch>
     </div>
     <div class="top">Search搜索</div>
@@ -33,7 +33,7 @@
     <div>
       <a class="aLink" c_wrap="fs-12" href="https://cpm828.github.io/cpm-ui-docs/basic/cSearch.html">查看文档</a>
     </div>
-  </div>
+  </cFixed>
 </template>
 
 <script>
