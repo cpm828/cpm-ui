@@ -19,10 +19,10 @@
 
     <div class="block">
       <div c_wrap="ta-l p-20">
-        <p c_wrap="fs-18 c_000">常用的icon如下：</p>
+        <p c_wrap="fs-16 c_000">常用的icon如下：</p>
         <p c_wrap="fs-14 ta-j">1. icon下方依次是unicode，font-class和symbol字段值，font-class和symbol同名，对应于组件内type；</p>
         <p c_wrap="fs-14 ta-j">2. font-class和symbol真实字段前面有icon-，如icon-close，已在组件内统一处理。</p>
-        <p c_wrap="fs-18 ta-l mt-20">您可以点击icon随机更换颜色哦~</p>
+        <p c_wrap="fs-16 ta-l mt-20">您可以点击icon随机更换颜色哦~</p>
       </div>
       <div c_wrap="flex ai-c fw-w">
         <div
