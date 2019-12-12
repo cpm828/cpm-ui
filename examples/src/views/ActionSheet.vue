@@ -49,7 +49,7 @@ export default {
       activeSheet: item._choiceInfo && item._choiceInfo.key
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     }
@@ -85,7 +85,7 @@ export default {
       activeSheet: item._choiceInfo && item._choiceInfo.key
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     }
@@ -114,7 +114,7 @@ export default {
       activeSheet: item._choiceInfo && item._choiceInfo.key
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     }
@@ -149,7 +149,7 @@ export default {
       activeSheet: item._choiceInfo && item._choiceInfo.key
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     }
@@ -221,7 +221,7 @@ export default {
       activeSheet: item._choiceInfo && item._choiceInfo.key, // 默认勾选项
     },
     mounted () {
-      this.$on('actionSheetChoiceItem', (actionSheet) => {
+      this.$on('onChoiceItem', (actionSheet) => {
         self.$set(item, '_choiceInfo', actionSheet)
       })
     }
