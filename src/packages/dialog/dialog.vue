@@ -22,9 +22,9 @@
         <template v-if="showCloseBtn">
           <!-- 右上角关闭按钮 -->
           <cIcon type="close-simple" color="#333" size="1.2rem" class="close-simple"
-            v-if="closeBtnPostion === 'rightTop'" @cIconClick="onClose"></cIcon>
+            v-if="closeBtnPostion === 'rightTop'" @onClick="onClose"></cIcon>
           <!-- 底部关闭按钮 -->
-          <cIcon type="close" color="white" size="1.7rem" class="close" v-else @cIconClick="onClose"></cIcon>
+          <cIcon type="close" color="white" size="1.7rem" class="close" v-else @onClick="onClose"></cIcon>
         </template>
       </div>
     </transition>
