@@ -9,7 +9,7 @@ export default {
   springBack: {
     bind (el, binding) {
       const ua = window.navigator.userAgent
-      if (!(/iphone|ipad/gi.test(ua) && /MicroMessenger/gi.test(ua))) return
+      if (!(/iphone|ipad/gi.test(ua))) return
 
       function focusEvent () {
         el.__keyboardState__ = 1
