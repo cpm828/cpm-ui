@@ -134,51 +134,11 @@ export default {
 })`
         },
         {
-          title: '带动效1的dialog',
+          title: '带动效的dialog',
           showCode: false,
           code: `this.$dialog({
   propsData: {
-    animateName: 'zoom-in',
-    showTitle: true,
-    titleText: '请完成实名认证',
-    message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
-  },
-  methods: {
-    onCancel () {
-      this.remove()
-    },
-    onConfirm () {
-      this.remove()
-    }
-  }
-})`
-        },
-        {
-          title: '带动效2的dialog',
-          showCode: false,
-          code: `this.$dialog({
-  propsData: {
-    animateName: 'bounce-in-up',
-    showTitle: true,
-    titleText: '请完成实名认证',
-    message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
-  },
-  methods: {
-    onCancel () {
-      this.remove()
-    },
-    onConfirm () {
-      this.remove()
-    }
-  }
-})`
-        },
-        {
-          title: '带动效3的dialog',
-          showCode: false,
-          code: `this.$dialog({
-  propsData: {
-    animateName: 'bounce-in-down',
+    animate: true,
     showTitle: true,
     titleText: '请完成实名认证',
     message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
@@ -198,7 +158,7 @@ export default {
           showCode: false,
           code: `this.$dialog({
   propsData: {
-    animateName: 'zoom-in',
+    animate: true,
     cContentData: {
       title: '你喜欢的歌手的身价榜',
       list: [
@@ -363,49 +323,11 @@ export default {
         }
       })
     },
-    // 带动效的dialog1
+    // 带动效的dialog
     showDialog6 () {
       this.$dialog({
         propsData: {
-          animateName: 'zoom-in',
-          showTitle: true,
-          titleText: '请完成实名认证',
-          message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
-        },
-        methods: {
-          onCancel () {
-            this.remove()
-          },
-          onConfirm () {
-            this.remove()
-          }
-        }
-      })
-    },
-    // 带动效的dialog2
-    showDialog7 () {
-      this.$dialog({
-        propsData: {
-          animateName: 'bounce-in-up',
-          showTitle: true,
-          titleText: '请完成实名认证',
-          message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
-        },
-        methods: {
-          onCancel () {
-            this.remove()
-          },
-          onConfirm () {
-            this.remove()
-          }
-        }
-      })
-    },
-    // 带动效的dialog2
-    showDialog8 () {
-      this.$dialog({
-        propsData: {
-          animateName: 'bounce-in-down',
+          animate: true,
           showTitle: true,
           titleText: '请完成实名认证',
           message: '实名认证后您可以得到0~10万的人民币奖励，名额有限，先到先得'
@@ -421,10 +343,10 @@ export default {
       })
     },
     // 传入组件的dialog2
-    showDialog9 () {
+    showDialog7 () {
       this.$dialog({
         propsData: {
-          animateName: 'zoom-in',
+          animate: true,
           cContentData: {
             title: '你喜欢的歌手的身价榜',
             list: [

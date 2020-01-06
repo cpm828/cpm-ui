@@ -4,7 +4,7 @@
       <div class="cpm-dialog-cliper" :style="cliperStyleObj" @click="onClickCliper" v-show="animateShow"></div>
     </transition>
 
-    <transition :name="animateName" v-on:after-leave="afterLeave">
+    <transition :name="animate ? 'zoom-in' : ''" v-on:after-leave="afterLeave">
       <div class="cpm-dialog-wrap" ref="cpmDialog" :style="dialogWrapStyle" v-show="animateShow">
         <!-- 常规传入 -->
         <div class="cpm-main" :style="contentWrapStyle" v-if="message">
@@ -57,11 +57,6 @@ export default {
       type: Object,
       default: () => { }
     },
-    // 开启动画：''/zoom-in/bounce-in-up/bounce-in-down
-    animateName: {
-      type: String,
-      default: ''
-    },
     // 是否显示标题
     showTitle: {
       type: Boolean,
@@ -81,6 +76,11 @@ export default {
     messageAlign: {
       type: String,
       default: 'center'
+    },
+    // 是否有动画
+    animate: {
+      type: Boolean,
+      default: false
     },
     // 是否显示关闭按钮
     showCloseBtn: {
@@ -345,24 +345,6 @@ export default {
     100% {
       transform: translate(0, -50%) scale(1);
     }
-  }
-  // 弹窗内容动画2：bounce-in-up（底部进入，从下往上）
-  .bounce-in-up-enter-active,
-  .bounce-in-up-leave-active {
-    transition: transform 0.5s;
-  }
-  .bounce-in-up-enter,
-  .bounce-in-up-leave-active {
-    transform: translateY(700px);
-  }
-  // 弹窗内容动画3：bounce-in-down（顶部进入，从上往下）
-  .bounce-in-down-enter-active,
-  .bounce-in-down-leave-active {
-    transition: transform 0.5s;
-  }
-  .bounce-in-down-enter,
-  .bounce-in-down-leave-active {
-    transform: translateY(-700px);
   }
 }
 </style>
