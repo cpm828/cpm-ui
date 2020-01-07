@@ -8,7 +8,7 @@
       <div class="input-wrap">
         <input v-springBack :ref="conf.name" :style="inputStyle" :type="conf.type" :maxlength="conf.maxlength"
           :placeholder="conf.placeholder" :readonly="conf.readonly" :disabled="conf.disabled" @focus="onfocus"
-          @blur="onblur" @input="onInput" @change="onChange" v-model="currentValue">
+          @blur="onblur" @input="onInput" @change="onChange" v-model="config.newValue">
         <cIcon type="close-filled" color="#d0d0d3" style="margin-left:.37333rem;" @onClick="onClear"
           v-if="clearIconShow2"></cIcon>
       </div>
@@ -37,18 +37,19 @@ export default {
   data () {
     return {
       isIos,
-      currentValue: this.config.value || '',
       clearIconShow: false // 是否显示清除icon
     }
   },
-  created () { },
+  created () {
+    this.$set(this.config, 'newValue', this.config.value) // 新增一个newValue
+  },
   mounted () { },
   computed: {
     conf () {
       const defaultConfig = {
         name: '', // name字段为回传给后端的key
         title: '', // label文字
-        value: '', // 输入框值
+        value: '', // 输入框初始值
         type: 'text', // 输入框类型
         placeholder: '请输入',
         maxlength: 20, // 最大输入长度
@@ -72,7 +73,7 @@ export default {
     },
     // 控制清除按钮的显示
     clearIconShow2 () {
-      return this.clearIconShow && !!this.currentValue
+      return this.clearIconShow && !!this.config.newValue
     }
   },
   methods: {
@@ -82,7 +83,7 @@ export default {
         e.target.blur()
         return
       }
-      if (this.currentValue) this.clearIconShow = true
+      if (this.config.newValue) this.clearIconShow = true
       this.$emit('onFocus', e)
     },
     onblur (e) {
@@ -96,20 +97,19 @@ export default {
     onInput (e) {
       this.clearIconShow = true
       // 解决type=number时maxlength不生效问题
-      if (this.conf.type === 'number' && this.currentValue.length > this.conf.maxlength) {
-        this.currentValue = this.currentValue.slice(0, this.conf.maxlength)
+      if (this.conf.type === 'number' && this.config.newValue.length > this.conf.maxlength) {
+        this.config.newValue = this.config.newValue.slice(0, this.conf.maxlength)
       }
-      this.$emit('input', this.currentValue)
-      this.$emit('onInput', e, this.currentValue)
+      this.$emit('onInput', e, this.config.newValue)
     },
     // 失去焦点时才触发
     onChange (e) {
-      this.$emit('onChange', e, this.currentValue)
+      this.$emit('onChange', e, this.config.newValue)
     },
     // 点击输入框后面的清除按钮
     onClear () {
       this.$refs[this.conf.name].focus()
-      this.currentValue = ''
+      this.config.newValue = ''
       this.$emit('input', '')
       this.$emit('onClear')
     },
@@ -119,12 +119,12 @@ export default {
     },
     // 获取key=value字符串
     getKVString () {
-      return `${this.conf.name}=${this.currentValue}`
+      return `${this.conf.name}=${this.config.newValue}`
     },
     // 获取key:value键值对
     getKVObject () {
       let obj = {}
-      obj[this.conf.name] = this.currentValue
+      obj[this.conf.name] = this.config.newValue
       return obj
     }
   }

@@ -3,21 +3,21 @@
     <div class="top">Input用户输入</div>
 
     <div c_wrap="ta-l pl-20 pr-20 mb-20">
-      <h3 c_wrap="mb-15">请输入用户信息</h3>
+      <h3 c_wrap="mb-15">请输入用户信息（{{usernameConfig.value}}、{{usernameConfig.newValue}}）</h3>
       <div c_wrap="mb-30">
-        <cInput :ref="usernameConfig.name" :config="usernameConfig" v-model="usernameConfig.value" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onClear="onClear"></cInput>
-        <cInput :ref="telConfig.name" :config="telConfig" v-model="telConfig.value"></cInput>
-        <cInput :ref="amountConfig.name" :config="amountConfig" v-model="amountConfig.value"></cInput>
-        <cInput :ref="dateConfig.name" :config="dateConfig" v-model="dateConfig.value" @onClickLabelIcon="onClickLabelIcon"></cInput>
-        <cInput :ref="accountConfig.name" :config="accountConfig" v-model="accountConfig.value"></cInput>
-        <cInput :ref="passwordConfig.name" :config="passwordConfig" v-model="passwordConfig.value"></cInput>
-        <cInput :ref="addressConfig.name" :config="addressConfig" v-model="addressConfig.value"></cInput>
+        <cInput :ref="usernameConfig.name" :config="usernameConfig" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onClear="onClear"></cInput>
+        <cInput :ref="telConfig.name" :config="telConfig"></cInput>
+        <cInput :ref="amountConfig.name" :config="amountConfig"></cInput>
+        <cInput :ref="dateConfig.name" :config="dateConfig" @onClickLabelIcon="onClickLabelIcon"></cInput>
+        <cInput :ref="accountConfig.name" :config="accountConfig"></cInput>
+        <cInput :ref="passwordConfig.name" :config="passwordConfig"></cInput>
+        <cInput :ref="addressConfig.name" :config="addressConfig"></cInput>
       </div>
       <div c_wrap="mb-10">
-        <cButton type="primary" size="large" :circle="true" @onClick="onSubmit1">提交（String）</cButton>
+        <cButton :type="isDisabled ? 'default' : 'primary'" size="large" :circle="true" @onClick="onSubmit1">提交（String）</cButton>
       </div>
       <div>
-        <cButton type="primary" size="large" :circle="true" @onClick="onSubmit2">提交（键值对）</cButton>
+        <cButton :type="isDisabled ? 'default' : 'primary'" size="large" :circle="true" @onClick="onSubmit2">提交（键值对）</cButton>
       </div>
     </div>
 
@@ -40,20 +40,20 @@ export default {
       usernameConfig: {
         name: 'username',
         title: '用户姓名',
-        value: '', // value单独提取出来使用v-model双向绑定
+        value: '张三',
         maxlength: 15
       },
       telConfig: {
         name: 'tel',
         title: '手机号',
-        value: '',
+        value: '15211112222',
         type: 'tel',
         maxlength: 11
       },
       amountConfig: {
         name: 'amount',
         title: '存款金额',
-        value: 0,
+        value: '',
         type: 'number',
         unit: '元',
         maxlength: 10
@@ -61,7 +61,7 @@ export default {
       dateConfig: {
         name: 'date',
         title: '日期',
-        value: '',
+        value: '2020-02-02',
         placeholder: '请选择',
         readonly: true,
         labelIconType: 'info',
@@ -101,29 +101,37 @@ config: {
   },
   created () {},
   mounted () {},
+  computed: {
+    isDisabled () {
+      return ['usernameConfig', 'telConfig', 'amountConfig', 'dateConfig', 'accountConfig', 'passwordConfig', 'addressConfig'].some(item => {
+        return this[item].newValue === ''
+      })
+    }
+  },
   methods: {
     showCode () {
       this.showCodeFlag = !this.showCodeFlag
     },
     onFocus (e) {
-      console.log('onFocus', e)
+      // console.log('onFocus', e)
     },
     onBlur (e) {
-      console.log('onBlur', e)
+      // console.log('onBlur', e)
     },
     onInput (e, value) {
-      console.log('onInput', e, value)
+      // console.log('onInput', e, value)
     },
     onChange (e, value) {
-      console.log('onChange', e, value)
+      // console.log('onChange', e, value)
     },
     onClear () {
-      console.log('onClear')
+      // console.log('onClear')
     },
     onClickLabelIcon () {
       this.$toast('日期组件开发中')
     },
     onSubmit1 () {
+      if (this.isDisabled) return
       const nameArr = ['usernameConfig', 'telConfig', 'amountConfig', 'dateConfig', 'accountConfig', 'passwordConfig', 'addressConfig']
       let submitObj = {}
       nameArr.forEach(item => {
@@ -132,6 +140,7 @@ config: {
       console.log(submitObj)
     },
     onSubmit2 () {
+      if (this.isDisabled) return
       const nameArr = ['usernameConfig', 'telConfig', 'amountConfig', 'dateConfig', 'accountConfig', 'passwordConfig', 'addressConfig']
       let submitArr = []
       nameArr.forEach(item => {

@@ -48,6 +48,14 @@ export default new Router({
       }
     },
     {
+      path: '/picker',
+      name: 'Picker',
+      component: () => import(/* webpackChunkName: "/feedback/picker" */ '../views/Picker'),
+      meta: {
+        title: 'Picker'
+      }
+    },
+    {
       path: '/datepicker',
       name: 'DatePicker',
       component: () => import(/* webpackChunkName: "/feedback/datepicker" */ '../views/DatePicker'),

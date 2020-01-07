@@ -68,6 +68,10 @@ export default {
           title: 'ActionSheet选择',
           path: '/actionsheet'
         },
+        {
+          title: 'Picker选择器',
+          path: '/picker'
+        }
         // {
         //   title: 'DatePicker日期选择器',
         //   path: '/datepicker'
