@@ -1,4 +1,4 @@
-import cRange from './cRange'
+import cRange from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 cRange.install = function (Vue) {

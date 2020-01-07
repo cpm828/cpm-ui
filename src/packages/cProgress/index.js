@@ -1,4 +1,4 @@
-import cProgress from './cProgress'
+import cProgress from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 cProgress.install = function (Vue) {

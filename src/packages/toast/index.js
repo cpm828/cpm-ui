@@ -1,4 +1,4 @@
-import Toast from './toast'
+import Toast from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 Toast.install = function (Vue) {

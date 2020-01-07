@@ -1,33 +1,34 @@
 // 全局基础类
-import Toast from './packages/toast'
-import Loading from './packages/loading'
-import Dialog from './packages/dialog'
-import ActionSheet from './packages/actionSheet'
-import DatePicker from './packages/datePicker'
+import Toast from './packages/toast/index'
+import Loading from './packages/loading/index'
+import Dialog from './packages/dialog/index'
+import ActionSheet from './packages/actionSheet/index'
+import Picker from './packages/picker/index'
+import DatePicker from './packages/datePicker/index'
 
 // 页面组件类（以c开头）
-import cIcon from './packages/cIcon'
-import cButton from './packages/cButton'
-import cRange from './packages/cRange'
-import cRate from './packages/cRate'
-import cProgress from './packages/cProgress'
-import cSearch from './packages/cSearch'
-import cCountDown from './packages/cCountDown'
+import cIcon from './packages/cIcon/index'
+import cButton from './packages/cButton/index'
+import cRange from './packages/cRange/index'
+import cRate from './packages/cRate/index'
+import cProgress from './packages/cProgress/index'
+import cSearch from './packages/cSearch/index'
+import cCountDown from './packages/cCountDown/index'
 
 // 表单类（以c开头）
-import cRadio from './packages/cRadio'
-import cRadioGroup from './packages/cRadioGroup'
-import cCheckbox from './packages/cCheckbox'
-import cCheckboxGroup from './packages/cCheckboxGroup'
-import cRangeDouble from './packages/cRangeDouble'
-import cIndexList from './packages/cIndexList'
-import cSwitch from './packages/cSwitch'
-import cInput from './packages/cInput'
+import cRadio from './packages/cRadio/index'
+import cRadioGroup from './packages/cRadioGroup/index'
+import cCheckbox from './packages/cCheckbox/index'
+import cCheckboxGroup from './packages/cCheckboxGroup/index'
+import cRangeDouble from './packages/cRangeDouble/index'
+import cIndexList from './packages/cIndexList/index'
+import cSwitch from './packages/cSwitch/index'
+import cInput from './packages/cInput/index'
 
 // 布局类（以c开头）
-import cSticky from './packages/cSticky'
-import cFixed from './packages/cFixed'
-import cTitleBar from './packages/cTitleBar'
+import cSticky from './packages/cSticky/index'
+import cFixed from './packages/cFixed/index'
+import cTitleBar from './packages/cTitleBar/index'
 
 // css类
 // 1px解决方案，直接导入class即可
@@ -39,6 +40,7 @@ export {
   Dialog,
   ActionSheet,
   DatePicker,
+  Picker,
   // 基础组件
   cIcon,
   cButton,

@@ -1,4 +1,4 @@
-import cSwitch from './cSwitch'
+import cSwitch from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 cSwitch.install = function (Vue) {

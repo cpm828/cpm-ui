@@ -1,4 +1,4 @@
-import Dialog from './dialog'
+import Dialog from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 Dialog.install = function (Vue) {

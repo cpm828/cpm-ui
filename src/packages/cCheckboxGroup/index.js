@@ -1,4 +1,4 @@
-import cCheckboxGroup from './cCheckboxGroup'
+import cCheckboxGroup from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 cCheckboxGroup.install = function (Vue) {

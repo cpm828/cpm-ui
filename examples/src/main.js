@@ -7,7 +7,7 @@ import router from './router'
 
 // cpm-ui
 import {
-  Toast, Loading, Dialog, ActionSheet,
+  Toast, Loading, Dialog, ActionSheet, Picker,
   cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch, cInput
@@ -23,7 +23,7 @@ require('./assets/common.js')
 require('./assets/common.scss')
 
 const components = [
-  Toast, Loading, Dialog, ActionSheet,
+  Toast, Loading, Dialog, ActionSheet, Picker,
   cIcon, cButton, cIndexList, cRate, cProgress, cSearch, cCountDown,
   cSticky, cFixed, cTitleBar,
   cRadio, cRadioGroup, cCheckbox, cCheckboxGroup, cRange, cRangeDouble, cSwitch, cInput
