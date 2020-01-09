@@ -1,5 +1,5 @@
 <template>
-  <div class="cpm-actionsheet" @touchmove="touchmoveActionSheet($event)">
+  <div class="cpm-actionsheet" id="cpmActionSheet" @touchmove="touchmoveActionSheet($event)">
     <transition name="actionsheet-fade">
       <div
         class="cpm-actionsheet-cliper"

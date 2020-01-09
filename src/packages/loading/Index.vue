@@ -1,6 +1,6 @@
 <template>
   <!-- 动画参考：https://github.com/duenyang/css3-loading -->
-  <div class="cpm-loading" @touchmove="touchmoveLoading($event)">
+  <div class="cpm-loading" id="cpmLoading" @touchmove="touchmoveLoading($event)">
     <div class="cpm-loading-cliper" :sytle="cliperStyleObj"></div>
     <div class="cpm-loading-wrap">
       <!-- ball-spin-fade-loader -->

@@ -1,5 +1,5 @@
 <template>
-  <div class="cpm-toast">
+  <div class="cpm-toast" id="cpmToast">
     <div :class="['cpm-toast-wrap', iconType ? 'cpm-toast2-wrap' : '']" v-bind:style="[styleObj, wrapStyleObj]">
       <cIcon class="icon" :type="iconType" color="white" size="2rem" v-if="iconType"></cIcon>
       <div class="cpm-toast-msg" v-html="message"></div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="cpm-dialog" @touchstart="touchstartDialog($event)" @touchmove="touchmoveDialog($event)">
+  <div class="cpm-dialog" id="cpmDialog" @touchstart="touchstartDialog($event)" @touchmove="touchmoveDialog($event)">
     <transition name="dialog-fade">
       <div class="cpm-dialog-cliper" :style="cliperStyleObj" @click="onClickCliper" v-show="animateShow"></div>
     </transition>

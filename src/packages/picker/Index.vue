@@ -1,5 +1,5 @@
 <template>
-  <div class="cpm-cPicker">
+  <div class="cpm-picker" id="cpmPicker">
   </div>
 </template>
 
