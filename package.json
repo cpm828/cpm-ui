@@ -1,6 +1,6 @@
 {
   "name": "cpm-ui",
-  "version": "1.0.0",
+  "version": "1.1.11",
   "description": "A Vue.js project",
   "homepage": "https://cpm828.github.io/cpm-ui/demo/index.html",
   "author": "chenpengmin <1019242875@qq.com>",
@@ -14,7 +14,8 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
     "build:debug": "node build/build.js --debug",
-    "deploy": "gh-pages -d examples/dist"
+    "deploy": "gh-pages -d examples/dist",
+    "compress": "node build/compress.js"
   },
   "dependencies": {
     "clipboard": "^2.0.4",
