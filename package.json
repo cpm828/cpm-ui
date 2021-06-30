@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "clipboard": "^2.0.4",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.4.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "vue": "^2.6.10",
