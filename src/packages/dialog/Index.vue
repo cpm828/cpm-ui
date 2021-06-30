@@ -149,6 +149,9 @@ export default {
       }
     })
     window.addEventListener('hashchange', this.remove)
+    window.addEventListener('pushstate', this.remove)
+    window.addEventListener('replacestate', this.remove)
+    window.addEventListener('popstate', this.remove)
   },
   computed: {
     messageStyle () {
@@ -223,6 +226,9 @@ export default {
         this.$el.parentNode.removeChild(this.$el)
         this.$destroy()
         window.removeEventListener('hashchange', this.remove)
+        window.removeEventListener('pushstate', this.remove)
+        window.removeEventListener('replacestate', this.remove)
+        window.removeEventListener('popstate', this.remove)
       }
     },
     // 点击蒙层

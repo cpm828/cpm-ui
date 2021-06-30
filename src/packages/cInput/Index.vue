@@ -8,7 +8,7 @@
       <div class="input-wrap">
         <input v-springBack :ref="conf.name" :style="inputStyle" :type="conf.type" :maxlength="conf.maxlength"
           :placeholder="conf.placeholder" :readonly="conf.readonly" :disabled="conf.disabled" @focus="onfocus"
-          @blur="onblur" @input="onInput" @change="onChange" v-model="config.newValue">
+          @blur="onblur" @input="onInput" @change="onChange" v-model="config.value">
         <cIcon type="close-filled" color="#d0d0d3" style="margin-left:.37333rem;" @onClick="onClear"
           v-if="clearIconShow2"></cIcon>
       </div>
@@ -29,6 +29,11 @@ export default {
   directives: springBack,
   components: { cIcon },
   props: {
+    // 表单值：v-model传入
+    value: {
+      type: String,
+      default: ''
+    },
     config: {
       type: Object,
       default: () => { }
@@ -40,10 +45,6 @@ export default {
       clearIconShow: false // 是否显示清除icon
     }
   },
-  created () {
-    this.$set(this.config, 'newValue', this.config.value) // 新增一个newValue
-  },
-  mounted () { },
   computed: {
     conf () {
       const defaultConfig = {
@@ -73,7 +74,7 @@ export default {
     },
     // 控制清除按钮的显示
     clearIconShow2 () {
-      return this.clearIconShow && !!this.config.newValue
+      return this.clearIconShow && !!this.config.value
     }
   },
   methods: {
@@ -83,7 +84,7 @@ export default {
         e.target.blur()
         return
       }
-      if (this.config.newValue) this.clearIconShow = true
+      if (this.config.value) this.clearIconShow = true
       this.$emit('onFocus', e)
     },
     onblur (e) {
@@ -97,19 +98,21 @@ export default {
     onInput (e) {
       this.clearIconShow = true
       // 解决type=number时maxlength不生效问题
-      if (this.conf.type === 'number' && this.config.newValue.length > this.conf.maxlength) {
-        this.config.newValue = this.config.newValue.slice(0, this.conf.maxlength)
+      if (this.conf.type === 'number' && this.config.value.length > this.conf.maxlength) {
+        this.config.value = this.config.value.slice(0, this.conf.maxlength)
       }
-      this.$emit('onInput', e, this.config.newValue)
+      this.$emit('onInput', e, this.config.value)
+      this.$emit('input', this.config.value)
     },
     // 失去焦点时才触发
     onChange (e) {
-      this.$emit('onChange', e, this.config.newValue)
+      this.$emit('onChange', e, this.config.value)
+      this.$emit('input', this.config.value)
     },
     // 点击输入框后面的清除按钮
     onClear () {
       this.$refs[this.conf.name].focus()
-      this.config.newValue = ''
+      this.config.value = ''
       this.$emit('input', '')
       this.$emit('onClear')
     },
@@ -119,12 +122,12 @@ export default {
     },
     // 获取key=value字符串
     getKVString () {
-      return `${this.conf.name}=${this.config.newValue}`
+      return `${this.conf.name}=${this.config.value}`
     },
     // 获取key:value键值对
     getKVObject () {
       let obj = {}
-      obj[this.conf.name] = this.config.newValue
+      obj[this.conf.name] = this.config.value
       return obj
     }
   }

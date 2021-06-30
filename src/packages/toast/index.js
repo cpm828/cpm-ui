@@ -2,7 +2,7 @@ import Toast from './Index.vue'
 
 // https://cn.vuejs.org/v2/guide/plugins.html#开发插件
 Toast.install = function (Vue) {
-  if (document.getElementById('#cpmToast')) return
+  if (document.getElementById('cpmToast')) return
   Vue.prototype.$toast = function (options) {
     if (typeof options === 'string') {
       options = {

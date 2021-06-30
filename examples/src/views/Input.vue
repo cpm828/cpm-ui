@@ -5,13 +5,13 @@
     <div c_wrap="ta-l pl-20 pr-20 mb-20">
       <h3 c_wrap="mb-15">请输入用户信息（{{usernameConfig.value}}、{{usernameConfig.newValue}}）</h3>
       <div c_wrap="mb-30">
-        <cInput :ref="usernameConfig.name" :config="usernameConfig" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onClear="onClear"></cInput>
-        <cInput :ref="telConfig.name" :config="telConfig"></cInput>
-        <cInput :ref="amountConfig.name" :config="amountConfig"></cInput>
-        <cInput :ref="dateConfig.name" :config="dateConfig" @onClickLabelIcon="onClickLabelIcon"></cInput>
-        <cInput :ref="accountConfig.name" :config="accountConfig"></cInput>
-        <cInput :ref="passwordConfig.name" :config="passwordConfig"></cInput>
-        <cInput :ref="addressConfig.name" :config="addressConfig"></cInput>
+        <cInput :ref="usernameConfig.name" :config="usernameConfig" v-model="usernameConfig.value" @onFocus="onFocus" @onBlur="onBlur" @onInput="onInput" @onChange="onChange" @onClear="onClear"></cInput>
+        <cInput :ref="telConfig.name" :config="telConfig" v-model="telConfig.value"></cInput>
+        <cInput :ref="amountConfig.name" :config="amountConfig" v-model="amountConfig.value"></cInput>
+        <cInput :ref="dateConfig.name" :config="dateConfig" v-model="dateConfig.value" @onClickLabelIcon="onClickLabelIcon"></cInput>
+        <cInput :ref="accountConfig.name" :config="accountConfig" v-model="accountConfig.value"></cInput>
+        <cInput :ref="passwordConfig.name" :config="passwordConfig" v-model="passwordConfig.value"></cInput>
+        <cInput :ref="addressConfig.name" :config="addressConfig" v-model="addressConfig.value"></cInput>
       </div>
       <div c_wrap="mb-10">
         <cButton :type="isDisabled ? 'default' : 'primary'" size="large" :circle="true" @onClick="onSubmit1">提交（String）</cButton>

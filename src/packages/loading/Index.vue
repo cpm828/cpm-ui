@@ -131,12 +131,18 @@ export default {
   },
   mounted () {
     window.addEventListener('hashchange', this.remove) // 监听SPA页面hash的变化
+    window.addEventListener('pushstate', this.remove)
+    window.addEventListener('replacestate', this.remove)
+    window.addEventListener('popstate', this.remove)
   },
   methods: {
     remove () {
       this.$el.remove() // 删除toast
       this.$destroy() // 销毁组件
       window.removeEventListener('hashchange', this.remove)
+      window.removeEventListener('pushstate', this.remove)
+      window.removeEventListener('replacestate', this.remove)
+      window.removeEventListener('popstate', this.remove)
     },
     touchmoveLoading (e) {
       e.preventDefault()
