@@ -147,7 +147,7 @@ export default {
           path: '/sticky'
         },
         {
-          title: 'Fixed顶部或底部固定',
+          title: 'Fixed页面布局顶部或底部固定',
           path: '/fixed'
         },
         {

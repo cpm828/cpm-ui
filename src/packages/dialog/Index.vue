@@ -8,8 +8,8 @@
       <div class="cpm-dialog-wrap" ref="cpmDialog" :style="dialogWrapStyle" v-show="animateShow">
         <!-- 常规传入 -->
         <div class="cpm-main" :style="contentWrapStyle" v-if="message">
-          <div class="cpm-title" v-html="titleText" v-if="showTitle"></div>
-          <div class="cpm-content" v-html="message" :style="messageStyle"></div>
+          <div class="cpm-title" :style="messageStyle" v-html="titleText" v-if="showTitle"></div>
+          <div class="cpm-content" :style="messageStyle" v-html="message"></div>
         </div>
         <!-- 组件传入 -->
         <cContent :cContentData="cContentData"></cContent>

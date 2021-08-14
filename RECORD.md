@@ -34,6 +34,13 @@
 开发流程：
 
 流程一：1. 开发src/packages组件 -> 2. 测试通过后使用npm发布
+```bash
+cd src
+
+# 修改src/package.json中的版本号
+
+npm publish # 发布到npm上
+```
 
 流程二：1. 编写examples/demo教程 -> 2. 发布到cpm828.github.io/cpm-ui上
 ```bash

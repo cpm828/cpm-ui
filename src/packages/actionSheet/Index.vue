@@ -179,6 +179,7 @@ export default {
       line-height: 45px;
       background: #fff;
       position: relative;
+      text-align: center;
       &::after {
         content: "";
         display: block;

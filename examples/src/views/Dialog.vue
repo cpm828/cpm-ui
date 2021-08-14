@@ -2,6 +2,13 @@
   <div class="page-wrap dialog-wrap">
     <div class="top">Dialog弹窗</div>
 
+    <p c_wrap="fs-14 ta-j pl-20 pr-20">
+      提示：<br>
+      1. 定义了常见的弹窗风格，支持参数设置显示或相关样式<br>
+      2. 默认状态下，弹窗整体是不可滑动的，防止滑动穿透。但是可能弹窗内部存在可滚动区域，所以在弹窗touchmove的时候做了一些处理达到原生效果，给内部需要滚动的元素设置scrollable，可查看7。
+    </p>
+    <br />
+
     <div class="block">
       <div
         class="block-item"
@@ -21,6 +28,7 @@
       <a class="aLink" c_wrap="fs-12"
         href="https://cpm828.github.io/cpm-ui-docs/feedback/Dialog.html">查看文档</a>
     </div>
+    <p style="height:400px;font-size:12px;">以下为空内容，模拟页面可滚动</p>
   </div>
 </template>
 
@@ -170,7 +178,11 @@ export default {
         { name: '陈奕迅', price: '60,000,000' },
         { name: '周杰伦', price: '70,000,000' },
         { name: '张国荣', price: '80,000,000' },
-        { name: '中国星', price: '90,000,000' }
+        { name: '其他1', price: '90,000,000' },
+        { name: '其他2', price: '90,000,000' },
+        { name: '其他3', price: '90,000,000' },
+        { name: '其他4', price: '90,000,000' },
+        { name: '其他5', price: '90,000,000' }
       ],
       content: '歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手'
     }
@@ -358,7 +370,11 @@ export default {
               { name: '陈奕迅', price: '60,000,000' },
               { name: '周杰伦', price: '70,000,000' },
               { name: '张国荣', price: '80,000,000' },
-              { name: '中国星', price: '90,000,000' }
+              { name: '其他1', price: '90,000,000' },
+              { name: '其他2', price: '90,000,000' },
+              { name: '其他3', price: '90,000,000' },
+              { name: '其他4', price: '90,000,000' },
+              { name: '其他5', price: '90,000,000' }
             ],
             content: '歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手歌手'
           }
